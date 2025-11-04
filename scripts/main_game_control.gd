@@ -3,7 +3,6 @@ extends Node2D
 # preload enemy scenes
 const BasicEnemyPreload = preload("res://scenes/objects/enemy.tscn")
 
-
 # spawn enemy at inputted coordinates
 func spawnEnemyAtCoords(x,y):
 	var BasicEnemy = BasicEnemyPreload.instantiate()
@@ -16,3 +15,7 @@ func _ready():
 	spawnEnemyAtCoords(100,100)
 	spawnEnemyAtCoords(500,500)
 	spawnEnemyAtCoords(350,200)
+
+# runs every frame
+func _process(_time):
+	pass

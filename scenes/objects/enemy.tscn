@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjg11et2mdoda"]
 
 [ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="1_ja0ge"]
-[ext_resource type="Script" uid="uid://dn2oymd7sclxd" path="res://scripts/enemyHitbox.gd" id="2_lp353"]
+[ext_resource type="Script" uid="uid://dn2oymd7sclxd" path="res://scripts/BasicEnemy.gd" id="2_lp353"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ja0ge"]
 size = Vector2(128, 128)
 
 [node name="Enemy" type="Node2D"]
+script = ExtResource("2_lp353")
 
 [node name="LargeEnemyHitbox" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("2_lp353")
 
 [node name="Icon" type="Sprite2D" parent="LargeEnemyHitbox"]
 texture = ExtResource("1_ja0ge")
