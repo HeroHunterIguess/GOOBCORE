@@ -1,8 +1,8 @@
 extends Node2D
 
 # preload enemy scenes
-const BasicEnemyPreload = preload("res://scenes/objects/enemy.tscn")
-const BasicBulletPreload = preload("res://scenes/objects/basic_bullet.tscn")
+const basicEnemyPreload = preload("res://scenes/objects/enemy.tscn")
+const basicBulletPreload = preload("res://scenes/objects/basic_bullet.tscn")
 
 var mousePos
 
@@ -16,22 +16,22 @@ func _ready():
 
 # spawn enemy at inputted coordinates
 func spawnEnemyAtCoords(x,y):
-	var BasicEnemy = BasicEnemyPreload.instantiate()
-	add_child(BasicEnemy)
-	BasicEnemy.global_position = Vector2(x,y)
+	var basicEnemy = basicEnemyPreload.instantiate()
+	add_child(basicEnemy)
+	basicEnemy.global_position = Vector2(x,y)
 
 # spawn a bullet and make it go towards the mouse
 func spawnBullet():
 	print("spawnikng bullet")
 	
 	# spawning bullet at player location
-	var BasicBullet = BasicBulletPreload.instantiate()
-	add_child(BasicBullet)
-	BasicBullet.global_position = Vector2(580,580)
+	var basicBullet = basicBulletPreload.instantiate()
+	add_child(basicBullet)
+	basicBullet.global_position = Vector2(580,580)
 	
 	# get direction and set velocity to go there
-	var dir = (get_global_mouse_position() - BasicBullet.global_position).normalized()
-	BasicBullet.velocity = dir * BasicBullet.speed
+	var dir = (get_global_mouse_position() - basicBullet.global_position).normalized()
+	basicBullet.velocity = dir * basicBullet.speed
 
 # runs every frame
 func _process(_time):

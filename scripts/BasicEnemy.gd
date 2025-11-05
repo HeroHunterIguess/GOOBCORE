@@ -17,4 +17,9 @@ func moveToPlayer():
 
 func _process(_time):
 	moveToPlayer()
-	
+	if health <= 0:
+		queue_free()
+
+func _on_basic_enemy_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("basicBulletShot"):
+		health = Globals.hitByBasicBullet(health)
