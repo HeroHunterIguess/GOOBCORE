@@ -22,7 +22,6 @@ func spawnEnemyAtCoords(x,y):
 
 # spawn a bullet and make it go towards the mouse
 func spawnBullet():
-	print("spawnikng bullet")
 	
 	# spawning bullet at player location
 	var basicBullet = basicBulletPreload.instantiate()
@@ -40,3 +39,13 @@ func _process(_time):
 	#keybind for abilities
 	if Input.is_action_just_pressed("ability1"):
 		spawnBullet()
+	
+	# send to game over if player dies
+	if Globals.playerHealth <= 0:
+		get_tree().change_scene_to_file("res://scenes/worlds/game_over.tscn")
+
+
+func _on_player_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemy"):
+		Globals.decreasePlayerHealth(2)
+		print(Globals.playerHealth)

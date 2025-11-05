@@ -1,15 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene load_steps=4 format=3 uid="uid://dh0s4wxpw43wx"]
 
 [ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="1_e1ei7"]
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltt4m"]
+size = Vector2(118.15381, 118.15387)
+
 [node name="MainGameScene" type="Node2D"]
 script = ExtResource("1_ltt4m")
 
-[node name="PlayerIconSprite" type="Sprite2D" parent="."]
-position = Vector2(576, 580)
-scale = Vector2(1, 1.0625)
+[node name="playerIconSprite" type="Sprite2D" parent="."]
+position = Vector2(576, 592)
+scale = Vector2(0.8125, 0.81250024)
 texture = ExtResource("1_e1ei7")
+
+[node name="playerHitbox" type="Area2D" parent="playerIconSprite" groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerIconSprite/playerHitbox"]
+shape = SubResource("RectangleShape2D_ltt4m")
 
 [node name="SpawningTimer" type="Timer" parent="."]
 
@@ -31,6 +39,7 @@ offset_bottom = 127.0
 theme_override_font_sizes/font_size = 32
 text = "[Timer]"
 
+[connection signal="area_entered" from="playerIconSprite/playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]
 [connection signal="timeout" from="WaveTimer" to="." method="_on_overalltimer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoottimer_timeout"]

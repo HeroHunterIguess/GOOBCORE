@@ -14,10 +14,12 @@ func moveToPlayer():
 	var dy = Globals.playerLocation.y - position.y
 	var distance = sqrt(pow(dx, 2) + pow(dy, 2))
 	
-	if distance > 0:
+	if distance > 25:
 		# increase x and y to get to location
 		position.x += (dx / distance) * speed
 		position.y += (dy / distance) * speed
+	elif distance <= 25:
+		queue_free()
 
 # each frame move towards player and check if dead
 func _process(_time):
