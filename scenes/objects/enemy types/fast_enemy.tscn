@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dteniksdjlqeb"]
+
+[ext_resource type="Texture2D" uid="uid://bx7puvxr2075k" path="res://art/temporary sprites/icon.jpg" id="1_iw6nk"]
+[ext_resource type="Script" uid="uid://1l412ero0cg4" path="res://scripts/fast_enemy.gd" id="1_uskad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6j77"]
+size = Vector2(48, 48)
+
+[node name="fastEnemy" type="Node2D"]
+script = ExtResource("1_uskad")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-2.3841858e-07, -4.7683716e-07)
+scale = Vector2(0.37499997, 0.37499997)
+texture = ExtResource("1_iw6nk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_e6j77")
+debug_color = Color(0.7207982, 0.35915285, 0.8100697, 0.41960785)

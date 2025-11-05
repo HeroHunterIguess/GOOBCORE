@@ -1,32 +1,46 @@
 extends Node2D
 
 # preload enemy scenes
-const basicEnemyPreload = preload("res://scenes/objects/enemy.tscn")
+const basicEnemyPreload = preload("res://scenes/objects/enemy types/enemy.tscn")
 const basicBulletPreload = preload("res://scenes/objects/basic_bullet.tscn")
+const fastEnemyPreload = preload("res://scenes/objects/enemy types/fast_enemy.tscn")
 
 var mousePos
 
+# spawn a wave with a certain amount of basic enemies at random positions (off-screen)
+var rng = RandomNumberGenerator.new()
+func spawnBasicWave(amountOfEnemies):
+	for i in amountOfEnemies:
+		spawnBasicEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-40,-600))
+
+
+# spawn a wave of a certain amount of faster enemies
+func spawnFastEnemyWave(amountOfEnemies):
+	for i in amountOfEnemies:
+		spawnFastEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-40,-600))
 
 
 
 # runs the frame this script/scene is loaded
 func _ready(): 
-	
 	# spawn some test enemies
-	spawnEnemyAtCoords(100,100)
-	spawnEnemyAtCoords(500,500)
-	spawnEnemyAtCoords(350,200)
+	spawnBasicWave(8)
+	spawnFastEnemyWave(3)
 
 
 
 
 # spawn enemy at inputted coordinates
-func spawnEnemyAtCoords(x,y):
+func spawnBasicEnemyAtCoords(x,y):
 	var basicEnemy = basicEnemyPreload.instantiate()
 	add_child(basicEnemy)
 	basicEnemy.global_position = Vector2(x,y)
 
-
+# spawn faster variant enemy at coords x y
+func spawnFastEnemyAtCoords(x,y):
+	var fastEnemy = fastEnemyPreload.instantiate()
+	add_child(fastEnemy)
+	fastEnemy.global_position = Vector2(x,y)
 
 
 

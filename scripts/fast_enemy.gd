@@ -1,6 +1,6 @@
 extends Node2D
 
-var health = 4
+var health = 2.5
 
 # take an amount of damage for the projectiles to call
 func takeDamage(amount):
@@ -8,7 +8,7 @@ func takeDamage(amount):
 
 # enemy will travel towards the player location
 func moveToPlayer():
-	var speed = 0.5
+	var speed = 1.2
 	# calculate distance to player location
 	var dx = Globals.playerLocation.x - position.x
 	var dy = Globals.playerLocation.y - position.y

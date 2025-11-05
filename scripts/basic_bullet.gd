@@ -2,7 +2,7 @@ extends Node2D
 
 var velocity = Vector2.ZERO
 var speed = 500
-var damage = 1
+var damage = 1.25
 
 # go to position based on velocity
 func _process(delta: float):
