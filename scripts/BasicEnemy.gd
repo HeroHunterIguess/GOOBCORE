@@ -1,6 +1,6 @@
 extends Node2D
 
-var health = 2
+var health = 5
 
 # take an amount of damage for the projectiles to call
 func takeDamage(amount):
@@ -25,4 +25,5 @@ func moveToPlayer():
 func _process(_time):
 	moveToPlayer()
 	if health <= 0:
+		Globals.score += 1
 		queue_free()

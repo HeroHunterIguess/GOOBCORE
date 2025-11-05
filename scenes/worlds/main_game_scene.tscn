@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="1_e1ei7"]
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltt4m"]
-size = Vector2(118.15381, 118.15387)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ltt4m"]
+radius = 49.230774
 
 [node name="MainGameScene" type="Node2D"]
 script = ExtResource("1_ltt4m")
@@ -17,12 +17,12 @@ texture = ExtResource("1_e1ei7")
 [node name="playerHitbox" type="Area2D" parent="playerIconSprite" groups=["Player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerIconSprite/playerHitbox"]
-shape = SubResource("RectangleShape2D_ltt4m")
+shape = SubResource("CircleShape2D_ltt4m")
 
 [node name="SpawningTimer" type="Timer" parent="."]
 
 [node name="WaveTimer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 32.0
 
 [node name="ShootTimer" type="Timer" parent="."]
 
