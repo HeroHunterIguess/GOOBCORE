@@ -2,9 +2,14 @@ extends Node2D
 
 var health = 2.5
 
+
+
 # take an amount of damage for the projectiles to call
 func takeDamage(amount):
 	health -= amount
+
+
+
 
 # enemy will travel towards the player location
 func moveToPlayer():
@@ -21,9 +26,13 @@ func moveToPlayer():
 	elif distance <= 25:
 		queue_free()
 
+
+
+
+
 # each frame move towards player and check if dead
 func _process(_time):
 	moveToPlayer()
 	if health <= 0:
-		Globals.score += 1
+		Globals.orbs += 1
 		queue_free()

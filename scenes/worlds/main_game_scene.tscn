@@ -21,12 +21,20 @@ shape = SubResource("CircleShape2D_ltt4m")
 
 [node name="SpawningTimer" type="Timer" parent="."]
 
-[node name="Score" type="Label" parent="."]
+[node name="Orbs" type="Label" parent="."]
 offset_left = 8.0
 offset_right = 200.0
 offset_bottom = 64.0
 theme_override_font_sizes/font_size = 32
 text = "Score: "
+
+[node name="waveNum" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 200.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 32
+text = "Wave: "
 
 [connection signal="area_entered" from="playerIconSprite/playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]

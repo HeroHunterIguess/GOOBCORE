@@ -1,10 +1,28 @@
 extends Node2D
 
+var normalSprite = preload("res://icon.svg")
+var hurtSprite = preload("res://art/temporary sprites/erm what.jpg")
+
 var health = 4
+
+
+
+
 
 # take an amount of damage for the projectiles to call
 func takeDamage(amount):
 	health -= amount
+	$Sprite2D.texture = hurtSprite
+	$Sprite2D.scale = Vector2(0.06, 0.06) # TEMPORARY WITH THESE TEST IMAGES
+	
+	await get_tree().create_timer(0.175).timeout
+	
+	$Sprite2D.texture = normalSprite
+	$Sprite2D.scale = Vector2(0.5, 0.5) # TEMPORARY WITH THESE TEST IMAGES
+
+
+
+
 
 # enemy will travel towards the player location
 func moveToPlayer():
@@ -21,9 +39,13 @@ func moveToPlayer():
 	elif distance <= 25:
 		queue_free()
 
+
+
+
+
 # each frame move towards player and check if dead
 func _process(_time):
 	moveToPlayer()
 	if health <= 0:
-		Globals.score += 1
+		Globals.orbs += 1
 		queue_free()

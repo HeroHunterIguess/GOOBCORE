@@ -4,6 +4,9 @@ var velocity = Vector2.ZERO
 var speed = 500
 var damage = 1.25
 
+
+
+
 # go to position based on velocity
 func _process(delta: float):
 	if velocity != Vector2.ZERO:
@@ -13,6 +16,9 @@ func _process(delta: float):
 		queue_free()
 	if self.position.y > 2000 or self.position.y < -1000:
 		queue_free()
+
+
+
 
 
 func _on_bullet_hitbox_area_entered(area: Area2D) -> void:
