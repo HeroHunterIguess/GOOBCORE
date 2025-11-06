@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene load_steps=8 format=3 uid="uid://dh0s4wxpw43wx"]
 
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 [ext_resource type="Texture2D" uid="uid://cjmhedyfgbq1f" path="res://art/character sprites/goobert.png" id="2_yqbs0"]
+[ext_resource type="PackedScene" uid="uid://c2auc2m4mpwfa" path="res://scenes/ui/ShopMenu.tscn" id="3_yqbs0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ltt4m"]
 atlas = ExtResource("2_yqbs0")
@@ -70,6 +71,10 @@ offset_right = 776.0
 offset_bottom = 639.0
 theme_override_font_sizes/font_size = 32
 text = "HP:"
+
+[node name="pauseMenuLayer" type="CanvasLayer" parent="."]
+
+[node name="pauseMenu" parent="pauseMenuLayer" instance=ExtResource("3_yqbs0")]
 
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]

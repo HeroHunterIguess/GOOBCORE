@@ -8,9 +8,6 @@ const fastEnemyPreload = preload("res://scenes/objects/enemy types/fast_enemy.ts
 const tankEnemyPreload = preload("res://scenes/objects/enemy types/tank_enemy.tscn")
 
 var mousePos
-var isPaused = false
-
-
 
 
 
@@ -65,6 +62,7 @@ func spawnTankEnemyWave(amountOfEnemies):
 func _ready(): 
 	# initialize first wave
 	advancedWaveControl(Globals.currentWave)
+	$pauseMenuLayer.visible = false
 
 
 
@@ -110,8 +108,6 @@ func spawnBullet():
 # runs every frame
 func _process(_time):
 	
-	
-	
 	# display info on screen
 	$Orbs.text = "Orbs: " + str(Globals.orbs)
 	if Globals.noWave == false:
@@ -125,7 +121,9 @@ func _process(_time):
 	
 	
 	
-	
+	if Input.is_action_just_pressed("openShop"):
+		get_tree().paused = true
+		$pauseMenuLayer.visible = true
 	#keybind for abilities
 	if Input.is_action_just_pressed("ability3"):
 		spawnBullet()
