@@ -12,6 +12,7 @@ var mousePos
 
 
 
+
 # create a wave of different types of enemies based on the wave number
 func advancedWaveControl(waveNum):
 	# timer between wave start and emphasize what wave is starting
@@ -30,9 +31,10 @@ func advancedWaveControl(waveNum):
 		spawnFastEnemyWave(round(waveNum / 2))
 	# full standardized waves starting at wave 5
 	if waveNum >= 5:
-		spawnBasicWave(waveNum + 2)
+		spawnBasicWave(waveNum + 1)
 		spawnFastEnemyWave(round(waveNum / 2))
 		spawnTankEnemyWave(round((waveNum / 4))+ 0.5)
+	
 
 
 
@@ -41,7 +43,7 @@ func advancedWaveControl(waveNum):
 var rng = RandomNumberGenerator.new()
 func spawnBasicWave(amountOfEnemies):
 	for i in amountOfEnemies:
-		spawnBasicEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-40,-600))
+		spawnBasicEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-40,-800))
 
 # spawn a wave of a certain amount of faster enemies
 func spawnFastEnemyWave(amountOfEnemies):
@@ -93,7 +95,7 @@ func spawnBullet():
 	# spawning bullet at player location
 	var basicBullet = basicBulletPreload.instantiate()
 	add_child(basicBullet)
-	basicBullet.global_position = Vector2(580,580)
+	basicBullet.global_position = Vector2(576,616)
 	
 	# get direction and set velocity to go there
 	var dir = (get_global_mouse_position() - basicBullet.global_position).normalized()
@@ -104,6 +106,9 @@ func spawnBullet():
 
 # runs every frame
 func _process(_time):
+	
+	
+	
 	# display info on screen
 	$Orbs.text = "Orbs: " + str(Globals.orbs)
 	if Globals.noWave == false:
@@ -112,6 +117,8 @@ func _process(_time):
 	
 	# get mouse position obv
 	mousePos = get_viewport().get_mouse_position()
+	$goobert.look_at(mousePos)
+	$goobert.rotation_degrees += 90
 	
 	
 	

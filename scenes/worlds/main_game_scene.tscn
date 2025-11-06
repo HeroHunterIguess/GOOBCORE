@@ -1,7 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene load_steps=7 format=3 uid="uid://dh0s4wxpw43wx"]
 
-[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="1_e1ei7"]
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
+[ext_resource type="Texture2D" uid="uid://cjmhedyfgbq1f" path="res://art/character sprites/goobert.png" id="2_yqbs0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltt4m"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqbs0"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dq5l5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltt4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqbs0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ltt4m"]
 radius = 49.230774
@@ -9,14 +31,19 @@ radius = 49.230774
 [node name="MainGameScene" type="Node2D"]
 script = ExtResource("1_ltt4m")
 
-[node name="playerIconSprite" type="Sprite2D" parent="."]
-position = Vector2(576, 600)
+[node name="goobert" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 616)
+scale = Vector2(1.2499995, 1.2500001)
+sprite_frames = SubResource("SpriteFrames_dq5l5")
+autoplay = "default"
+
+[node name="playerHitbox" type="Area2D" parent="." groups=["Player"]]
+position = Vector2(575.99994, 615.99994)
 scale = Vector2(0.8125, 0.81250024)
-texture = ExtResource("1_e1ei7")
 
-[node name="playerHitbox" type="Area2D" parent="playerIconSprite" groups=["Player"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playerIconSprite/playerHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]
+position = Vector2(7.6293945e-05, 7.6293945e-05)
 shape = SubResource("CircleShape2D_ltt4m")
 
 [node name="SpawningTimer" type="Timer" parent="."]
@@ -37,12 +64,12 @@ theme_override_font_sizes/font_size = 32
 text = "Wave: "
 
 [node name="Health" type="Label" parent="."]
-offset_left = 640.0
+offset_left = 624.0
 offset_top = 576.0
-offset_right = 792.0
+offset_right = 776.0
 offset_bottom = 639.0
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 
-[connection signal="area_entered" from="playerIconSprite/playerHitbox" to="." method="_on_player_hitbox_area_entered"]
+[connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]

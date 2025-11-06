@@ -5,7 +5,7 @@ extends Node
 var orbs = 0
 var overallScore = 0
 var currentWave = 1
-var playerLocation = Vector2(580,580)
+var playerLocation = Vector2(576,616)
 var playerHealth = 20
 var noWave = false
 
