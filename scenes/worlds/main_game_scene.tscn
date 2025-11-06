@@ -36,5 +36,13 @@ offset_bottom = 128.0
 theme_override_font_sizes/font_size = 32
 text = "Wave: "
 
+[node name="Health" type="Label" parent="."]
+offset_left = 640.0
+offset_top = 576.0
+offset_right = 792.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 32
+text = "HP:"
+
 [connection signal="area_entered" from="playerIconSprite/playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]

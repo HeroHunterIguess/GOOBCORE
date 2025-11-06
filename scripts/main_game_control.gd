@@ -12,10 +12,10 @@ var mousePos
 
 # create a wave of different types of enemies based on the wave number
 func advancedWaveControl(waveNum):
-	# basics for every wave
-	$waveNum.text = "WAVE " + str(Globals.currentWave) + "STARTING"
+	# timer between wave start and emphasize what wave is starting
+	$waveNum.text = "WAVE [ " + str(Globals.currentWave) + " ] STARTING"
 	Globals.noWave = true
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.75).timeout
 	Globals.noWave = false
 	$waveNum.text = "Wave: " + str(Globals.currentWave)
 	
@@ -49,7 +49,7 @@ func spawnFastEnemyWave(amountOfEnemies):
 
 func spawnTankEnemyWave(amountOfEnemies):
 	for i in amountOfEnemies:
-		spawnTankEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-70,-1000))
+		spawnTankEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-70,-200))
 
 
 
@@ -106,13 +106,25 @@ func spawnBullet():
 # runs every frame
 func _process(_time):
 	$Orbs.text = "Orbs: " + str(Globals.orbs)
-	$waveNum.text = "Wave: " + str(Globals.currentWave)
+	if Globals.noWave == false:
+		$waveNum.text = "Wave: " + str(Globals.currentWave)
+	$Health.text = "HP: " + str(Globals.playerHealth)
 	
 	mousePos = get_viewport().get_mouse_position()
 	
+	
+	
+	
+	
 	#keybind for abilities
-	if Input.is_action_just_pressed("ability1"):
+	if Input.is_action_just_pressed("ability3"):
 		spawnBullet()
+	
+	
+	
+	
+	
+	
 	
 	# send to game over if player dies
 	if Globals.playerHealth <= 0:
