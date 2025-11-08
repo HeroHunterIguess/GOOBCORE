@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene load_steps=17 format=3 uid="uid://dh0s4wxpw43wx"]
 
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 [ext_resource type="Shader" uid="uid://b1xuob6aqtiku" path="res://shaders/main_background.gdshader" id="2_dq5l5"]
 [ext_resource type="Texture2D" uid="uid://cjmhedyfgbq1f" path="res://art/character sprites/goobert.png" id="2_yqbs0"]
 [ext_resource type="PackedScene" uid="uid://c2auc2m4mpwfa" path="res://scenes/ui/ShopMenu.tscn" id="3_yqbs0"]
+[ext_resource type="Texture2D" uid="uid://dobae4cuk80r0" path="res://art/character sprites/wave-Sheet.png" id="4_xxp0d"]
+[ext_resource type="FontFile" uid="uid://nc51osgctt71" path="res://fonts/playful-time-star-font/PlayfulTime-BLBB8.ttf" id="5_ct5qv"]
 [ext_resource type="Shader" uid="uid://dpgrreyk6hoah" path="res://shaders/game_overlay.gdshader" id="5_faocy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_faocy"]
@@ -44,6 +46,28 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ltt4m"]
 radius = 49.230774
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct5qv"]
+atlas = ExtResource("4_xxp0d")
+region = Rect2(0, 0, 135, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seagn"]
+atlas = ExtResource("4_xxp0d")
+region = Rect2(135, 0, 135, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7761"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct5qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seagn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xxp0d"]
 shader = ExtResource("5_faocy")
 shader_parameter/speed = 0.3
@@ -78,7 +102,7 @@ position = Vector2(576, 616)
 scale = Vector2(1.2499995, 1.2500001)
 sprite_frames = SubResource("SpriteFrames_dq5l5")
 autoplay = "default"
-frame_progress = 0.63328534
+frame_progress = 0.19942129
 
 [node name="playerHitbox" type="Area2D" parent="." groups=["Player"]]
 position = Vector2(575.99994, 615.99994)
@@ -91,19 +115,30 @@ shape = SubResource("CircleShape2D_ltt4m")
 [node name="SpawningTimer" type="Timer" parent="."]
 
 [node name="Orbs" type="Label" parent="."]
-offset_left = 8.0
-offset_right = 200.0
-offset_bottom = 64.0
+offset_left = 24.0
+offset_top = 136.0
+offset_right = 216.0
+offset_bottom = 200.0
 theme_override_font_sizes/font_size = 32
-text = "Score: "
+text = "Orbs: "
+
+[node name="waveTextAnimation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(111.99999, 64.00001)
+scale = Vector2(1.5833335, 1.875)
+sprite_frames = SubResource("SpriteFrames_c7761")
+autoplay = "default"
+frame_progress = 0.45813566
 
 [node name="waveNum" type="Label" parent="."]
-offset_left = 8.0
-offset_top = 64.0
-offset_right = 200.0
-offset_bottom = 128.0
-theme_override_font_sizes/font_size = 32
-text = "Wave: "
+modulate = Color(0.98240346, 0.9709955, 0.9668992, 1)
+texture_filter = 1
+offset_left = 216.0
+offset_right = 360.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("5_ct5qv")
+theme_override_font_sizes/font_size = 90
+text = "1"
 
 [node name="Health" type="Label" parent="."]
 offset_left = 624.0

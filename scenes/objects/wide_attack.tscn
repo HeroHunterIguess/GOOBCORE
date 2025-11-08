@@ -1,7 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddi84eeklmagj"]
+[gd_scene load_steps=7 format=3 uid="uid://ddi84eeklmagj"]
 
 [ext_resource type="Script" uid="uid://d33oab0xanfcr" path="res://scripts/wide_attack.gd" id="1_bwep8"]
-[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="1_kvoci"]
+[ext_resource type="Texture2D" uid="uid://bdtelb8l835qf" path="res://art/character sprites/bullet-Sheet.png" id="2_bwep8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6njs0"]
+atlas = ExtResource("2_bwep8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekxum"]
+atlas = ExtResource("2_bwep8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x7qt6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6njs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekxum")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvoci"]
 size = Vector2(144, 16)
@@ -9,10 +31,11 @@ size = Vector2(144, 16)
 [node name="wideAttack" type="Node2D"]
 script = ExtResource("1_bwep8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3.8146973e-06, 0)
-scale = Vector2(1.1249999, 0.12499999)
-texture = ExtResource("1_kvoci")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-3.8146973e-06, 0)
+scale = Vector2(9, 1)
+sprite_frames = SubResource("SpriteFrames_x7qt6")
 
 [node name="wideAttackHitbox" type="Area2D" parent="." groups=["basicBulletShot"]]
 

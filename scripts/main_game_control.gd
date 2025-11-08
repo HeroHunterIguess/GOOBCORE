@@ -15,11 +15,10 @@ var mousePos
 # create a wave of different types of enemies based on the wave number
 func advancedWaveControl(waveNum):
 	# timer between wave start and emphasize what wave is starting
-	$waveNum.text = "WAVE [ " + str(Globals.currentWave) + " ] STARTING"
 	Globals.noWave = true
 	await get_tree().create_timer(1.75).timeout
 	Globals.noWave = false
-	$waveNum.text = "Wave: " + str(Globals.currentWave)
+	$waveNum.text = str(Globals.currentWave)
 	
 	# create a basic wave for the first one
 	if waveNum == 1:
@@ -135,7 +134,7 @@ func _process(delta):
 	# display info on screen
 	$Orbs.text = "Orbs: " + str(Globals.orbs)
 	if Globals.noWave == false:
-		$waveNum.text = "Wave: " + str(Globals.currentWave)
+		$waveNum.text =  str(Globals.currentWave)
 	$Health.text = "HP: " + str(Globals.playerHealth)
 	
 	# get mouse position obv
