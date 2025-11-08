@@ -5,13 +5,21 @@ extends Node
 var orbs = 0
 var overallScore = 0
 var currentWave = 1
-var playerLocation = Vector2(576,616)
+
+var playerLocation = Vector2(640,688)
 var playerHealth = 20
 var noWave = false
 
 var wideAttackCooldown = 200
 var basicBulletCooldown = 18
 
+# vars for basic bullet upgrades
+var basicBulletDamage = 1.25
+var basicBulletSpeed = 500
+var basicBulletSpeedCost = 20
+var basicBulletDamageCost = 20
+
+#
 
 
 # decrease player health by certain amount

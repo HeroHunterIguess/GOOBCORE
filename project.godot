@@ -13,6 +13,7 @@ config_version=5
 config/name="waves"
 run/main_scene="uid://cdpcax5u84qrl"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0.08855995, 0.0885599, 0.08855987, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
@@ -22,6 +23,9 @@ Globals="*res://scripts/globals.gd"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [global_group]
@@ -63,4 +67,5 @@ openShop={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 textures/default_filters/anisotropic_filtering_level=0

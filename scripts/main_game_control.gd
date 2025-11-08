@@ -96,7 +96,7 @@ func spawnBullet():
 	# spawning bullet at player location
 	var basicBullet = basicBulletPreload.instantiate()
 	add_child(basicBullet)
-	basicBullet.global_position = Vector2(576,616)
+	basicBullet.global_position = Vector2(640,688)
 	
 	# get direction and set velocity to go there
 	var dir = (get_global_mouse_position() - basicBullet.global_position).normalized()
@@ -109,7 +109,7 @@ func spawnWideAttack():
 	# spawning the wave at player location
 	var wideAttack = wideAttackPreload.instantiate()
 	add_child(wideAttack)
-	wideAttack.global_position = Vector2(576,616)
+	wideAttack.global_position = Vector2(640,688)
 	
 	# get direction and set velocity to go there
 	var dir = (get_global_mouse_position() - wideAttack.global_position).normalized()

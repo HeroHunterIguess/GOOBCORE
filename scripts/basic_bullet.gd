@@ -1,8 +1,8 @@
 extends Node2D
 
 var velocity = Vector2.ZERO
-var speed = 500
-var damage = 1.25
+var speed = Globals.basicBulletSpeed
+var damage = Globals.basicBulletDamage
 
 
 
