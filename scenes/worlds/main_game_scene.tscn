@@ -78,6 +78,7 @@ position = Vector2(576, 616)
 scale = Vector2(1.2499995, 1.2500001)
 sprite_frames = SubResource("SpriteFrames_dq5l5")
 autoplay = "default"
+frame_progress = 0.63328534
 
 [node name="playerHitbox" type="Area2D" parent="." groups=["Player"]]
 position = Vector2(575.99994, 615.99994)

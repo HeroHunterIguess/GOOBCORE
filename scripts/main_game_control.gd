@@ -166,7 +166,7 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://scenes/worlds/game_over.tscn")
 	
 	# spawn new wave if current wave ends
-	if get_tree() != null:
+	if is_inside_tree():
 		if get_tree().get_nodes_in_group("Enemy").size() == 0 && Globals.noWave == false:
 			Globals.currentWave += 1
 			advancedWaveControl(Globals.currentWave)
