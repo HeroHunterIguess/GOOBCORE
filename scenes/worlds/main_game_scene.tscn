@@ -102,7 +102,7 @@ position = Vector2(576, 616)
 scale = Vector2(1.2499995, 1.2500001)
 sprite_frames = SubResource("SpriteFrames_dq5l5")
 autoplay = "default"
-frame_progress = 0.19942129
+frame_progress = 0.39684796
 
 [node name="playerHitbox" type="Area2D" parent="." groups=["Player"]]
 position = Vector2(575.99994, 615.99994)
@@ -128,7 +128,7 @@ position = Vector2(111.99999, 64.00001)
 scale = Vector2(1.5833335, 1.875)
 sprite_frames = SubResource("SpriteFrames_c7761")
 autoplay = "default"
-frame_progress = 0.45813566
+frame_progress = 0.59913623
 
 [node name="waveNum" type="Label" parent="."]
 modulate = Color(0.98240346, 0.9709955, 0.9668992, 1)
