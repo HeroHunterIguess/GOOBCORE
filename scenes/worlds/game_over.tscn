@@ -7,9 +7,9 @@ script = ExtResource("1_hdh6o")
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_left = 480.0
-offset_top = 192.0
+offset_top = 200.0
 offset_right = 672.0
-offset_bottom = 256.0
+offset_bottom = 264.0
 theme_override_font_sizes/font_size = 32
 text = "Score: "
 
@@ -19,5 +19,13 @@ offset_top = 256.0
 offset_right = 672.0
 offset_bottom = 320.0
 text = "Restart Game"
+
+[node name="waveLabel" type="Label" parent="."]
+offset_left = 480.0
+offset_top = 328.0
+offset_right = 672.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 32
+text = "Wave: "
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

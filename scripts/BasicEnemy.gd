@@ -4,6 +4,7 @@ var normalSprite = preload("res://icon.svg")
 var hurtSprite = preload("res://art/temporary sprites/erm what.jpg")
 
 var health = 4
+var damage = 2
 
 
 

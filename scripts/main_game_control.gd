@@ -166,9 +166,10 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://scenes/worlds/game_over.tscn")
 	
 	# spawn new wave if current wave ends
-	if get_tree().get_nodes_in_group("Enemy").size() == 0 && Globals.noWave == false:
-		Globals.currentWave += 1
-		advancedWaveControl(Globals.currentWave)
+	if get_tree() != null:
+		if get_tree().get_nodes_in_group("Enemy").size() == 0 && Globals.noWave == false:
+			Globals.currentWave += 1
+			advancedWaveControl(Globals.currentWave)
 
 
 
@@ -176,5 +177,5 @@ func _process(delta):
 # decrease player health if enemy hits player
 func _on_player_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
-		Globals.decreasePlayerHealth(2)
+		Globals.decreasePlayerHealth(area.get_parent().damage)
 		print(Globals.playerHealth)

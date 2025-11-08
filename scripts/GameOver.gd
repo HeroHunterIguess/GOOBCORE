@@ -1,11 +1,13 @@
 extends Node2D
 
 @onready var score_label = $ScoreLabel
+@onready var wave_label = $waveLabel
 
 # tell player their score
 
 func _ready():
 	score_label.text = "Score: " + str(Globals.orbs)
+	wave_label.text = "Wave: " + str(Globals.currentWave) 
 
 
 

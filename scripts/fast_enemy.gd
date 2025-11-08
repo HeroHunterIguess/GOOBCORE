@@ -1,7 +1,7 @@
 extends Node2D
 
 var health = 2.5
-
+var damage = 1
 
 
 # take an amount of damage for the projectiles to call
