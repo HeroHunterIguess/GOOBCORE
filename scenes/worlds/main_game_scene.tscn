@@ -8,7 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_faocy"]
 shader = ExtResource("2_dq5l5")
-shader_parameter/speed = 0.1
+shader_parameter/speed = 0.15
 shader_parameter/pixelation = 2.5
 shader_parameter/zoom = 2.5
 shader_parameter/gradient_pixelation = 0.134000006365
@@ -46,6 +46,16 @@ radius = 49.230774
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xxp0d"]
 shader = ExtResource("5_faocy")
+shader_parameter/speed = 0.3
+shader_parameter/pixelation = 3.0
+shader_parameter/zoom = 2.0
+shader_parameter/gradient_pixelation = 0.08300000394250001
+shader_parameter/background_threshold = 0.0
+shader_parameter/color_low_threshold = 0.24
+shader_parameter/color_mid_threshold = 0.48
+shader_parameter/color_low = Color(0, 0, 0, 1)
+shader_parameter/color_mid = Color(0, 0, 0, 1)
+shader_parameter/color_high = Color(0, 0, 0, 1)
 
 [node name="MainGameScene" type="Node2D"]
 script = ExtResource("1_ltt4m")
@@ -57,7 +67,7 @@ color = Color(3.85046e-07, 0.1639067, 0.23488745, 1)
 
 [node name="shaderBG" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_faocy")
-offset_left = -104.0
+offset_left = -128.0
 offset_top = -136.0
 offset_right = 1496.0
 offset_bottom = 864.0
@@ -102,20 +112,22 @@ offset_bottom = 639.0
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_xxp0d")
+offset_left = -144.0
+offset_top = -192.0
+offset_right = 1360.0
+offset_bottom = 792.0
+color = Color(0, 0, 0, 0.30588236)
+
 [node name="pauseMenuLayer" type="CanvasLayer" parent="."]
 visible = false
 
 [node name="pauseMenu" parent="pauseMenuLayer" instance=ExtResource("3_yqbs0")]
 offset_left = 16.0
 offset_right = -16.0
-
-[node name="overallShader" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_xxp0d")
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 1216.0
-offset_bottom = 704.0
-color = Color(0, 0, 0, 0.38039216)
 
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]
