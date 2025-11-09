@@ -27,13 +27,14 @@ func _on_resume_pressed() -> void:
 
 
 
+
 # upgrade basic bullet damage on button pressed
 func _on_bb_damage_pressed() -> void:
 	# upgrading if you have enough orbs
 	if Globals.orbs >= Globals.basicBulletDamageCost:
 		Globals.orbs -= Globals.basicBulletDamageCost
-		Globals.basicBulletDamage += 0.6 # amount it increases by
-		Globals.basicBulletDamageCost = round(Globals.basicBulletDamageCost * 1.85)
+		Globals.basicBulletDamage += 0.25 # amount it increases by
+		Globals.basicBulletDamageCost = int(round(Globals.basicBulletDamageCost * 1.9))
 		$PanelContainer/VBoxContainer/bbDamage.text = "UPGRADED!"
 		await get_tree().create_timer(0.65).timeout
 		$PanelContainer/VBoxContainer/bbDamage.text = "upgrade basic bullet damage ("+str(Globals.basicBulletDamageCost)+" orbs)"
@@ -44,13 +45,14 @@ func _on_bb_damage_pressed() -> void:
 		$PanelContainer/VBoxContainer/bbDamage.text = "upgrade basic bullet damage ("+str(Globals.basicBulletDamageCost)+" orbs)"
 
 
+
 # upgrade basic bullet speed on button pressed
 func _on_bb_speed_pressed() -> void:
 	# upgrading if you have enough orbs
 	if Globals.orbs >= Globals.basicBulletSpeedCost:
 		Globals.orbs -= Globals.basicBulletSpeedCost
-		Globals.basicBulletSpeed += 92 # how much the speed increases upon upgrade
-		Globals.basicBulletSpeedCost = round(Globals.basicBulletSpeedCost * 1.85)
+		Globals.basicBulletSpeed += 85 # how much the speed increases upon upgrade
+		Globals.basicBulletSpeedCost = round(Globals.basicBulletSpeedCost * 1.9)
 		$PanelContainer/VBoxContainer/bbSpeed.text = "UPGRADED!"
 		await get_tree().create_timer(0.65).timeout
 		$PanelContainer/VBoxContainer/bbSpeed.text = "upgrade basic bullet speed ("+str(Globals.basicBulletSpeedCost)+" orbs)"

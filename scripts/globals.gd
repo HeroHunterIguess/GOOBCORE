@@ -18,8 +18,8 @@ var basicBulletCooldown = 18
 # vars for basic bullet upgrades
 var basicBulletDamage = 1.25
 var basicBulletSpeed = 500
-var basicBulletSpeedCost = 20
-var basicBulletDamageCost = 20
+var basicBulletSpeedCost = 30
+var basicBulletDamageCost = 30
 
 #
 

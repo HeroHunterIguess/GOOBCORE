@@ -2,13 +2,13 @@ extends Node2D
 
 var velocity = Vector2.ZERO
 var speed = 250
-var damage = 0.5
+var damage = 0.75
 
 var enemyHitCount = 0
 
 
 func _ready():
-	await get_tree().create_timer(1.7).timeout
+	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
 
@@ -29,6 +29,6 @@ func _on_wide_attack_hitbox_area_entered(area: Area2D) -> void:
 		area.get_parent().takeKB()
 		enemyHitCount += 1
 		# check if its hit its 4 enemy limit and reset timer
-		if enemyHitCount >= 5:
+		if enemyHitCount >= 10:
 			Globals.wideAttackCooldown = 200
 			queue_free()

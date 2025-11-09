@@ -22,16 +22,16 @@ func advancedWaveControl(waveNum):
 	
 	# create a basic wave for the first one
 	if waveNum == 1:
-		spawnBasicWave(waveNum + 2)
+		spawnBasicWave(waveNum + 2, 4 + 0.12 * waveNum) # spawn amount of basic enemies w/ scaled hp
 	# slightly more advanced waves until wave 5
 	if waveNum > 1 && waveNum < 5:
-		spawnBasicWave(waveNum + 2)
-		spawnFastEnemyWave(round(waveNum / 2))
+		spawnBasicWave(waveNum + 2, 4 + 0.12 * waveNum) # spawn amount of basic enemies w/ scaled hp
+		spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.1 * waveNum) # spawn fast enemies w/ scaled hp
 	# full standardized waves starting at wave 5
-	if waveNum >= 5:
-		spawnBasicWave(waveNum + 1)
-		spawnFastEnemyWave(round(waveNum / 2))
-		spawnTankEnemyWave(round((waveNum / 4))+ 0.5)
+	if waveNum >= 6:
+		spawnBasicWave(waveNum + 1, 4 + 0.12 * waveNum) # spawn amount of basic enemies w/ scaled hp
+		spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.1 * waveNum) # spawn fast enemies w/ scaled hp
+		spawnTankEnemyWave(round((waveNum / 4))+ 0.5, 17 + 0.13 * waveNum) # spawn tank enemies w/ amount of scaled hp
 	
 
 
@@ -39,19 +39,29 @@ func advancedWaveControl(waveNum):
 
 # spawn a wave with a certain amount of basic enemies at random positions (off-screen)
 var rng = RandomNumberGenerator.new()
-func spawnBasicWave(amountOfEnemies):
+func spawnBasicWave(amountOfEnemies,hp):
 	for i in amountOfEnemies:
-		spawnBasicEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-40,-800))
+		var basicEnemy = basicEnemyPreload.instantiate()
+		add_child(basicEnemy)
+		basicEnemy.health = hp
+		basicEnemy.global_position = Vector2(rng.randi_range(-50,1200),rng.randi_range(-70,-1000))
 
 # spawn a wave of a certain amount of faster enemies
-func spawnFastEnemyWave(amountOfEnemies):
+func spawnFastEnemyWave(amountOfEnemies,hp):
 	for i in amountOfEnemies:
-		spawnFastEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-70,-1000))
+		var fastEnemy = fastEnemyPreload.instantiate()
+		add_child(fastEnemy)
+		fastEnemy.health = hp
+		fastEnemy.global_position = Vector2(rng.randi_range(-50,1200),rng.randi_range(-70,-1000))
 
 # spawn a wave of tank enemies
-func spawnTankEnemyWave(amountOfEnemies):
-	for i in amountOfEnemies:
-		spawnTankEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-70,-200))
+func spawnTankEnemyWave(amountOfEnemies,hp):
+	for i in amountOfEnemies: 
+		var tankEnemy = tankEnemyPreload.instantiate()
+		add_child(tankEnemy)
+		tankEnemy.health = hp
+		tankEnemy.global_position = Vector2(rng.randi_range(-50,1200),rng.randi_range(-70,-200))
+
 
 
 
@@ -64,25 +74,6 @@ func _ready():
 	$pauseMenuLayer.visible = false
 
 
-
-
-# spawn enemy at inputted coordinates
-func spawnBasicEnemyAtCoords(x,y):
-	var basicEnemy = basicEnemyPreload.instantiate()
-	add_child(basicEnemy)
-	basicEnemy.global_position = Vector2(x,y)
-
-# spawn faster variant enemy at coords x y
-func spawnFastEnemyAtCoords(x,y):
-	var fastEnemy = fastEnemyPreload.instantiate()
-	add_child(fastEnemy)
-	fastEnemy.global_position = Vector2(x,y)
-
-# spawn a tank enemy at coords x y
-func spawnTankEnemyAtCoords(x,y):
-	var tankEnemy = tankEnemyPreload.instantiate()
-	add_child(tankEnemy)
-	tankEnemy.global_position = Vector2(x,y)
 
 
 
