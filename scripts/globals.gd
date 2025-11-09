@@ -12,16 +12,29 @@ var playerHealth = 20
 var noWave = false
 
 
-var wideAttackCooldown = 200
-var basicBulletCooldown = 18
 
-# vars for basic bullet upgrades
+
+# vars for push wall attack
+var wideAttackCooldown = 200
+var wideAttackDamage = 0.75
+
+
+
+# vars for basic bullet
+var basicBulletCooldown = 18
 var basicBulletDamage = 1.25
 var basicBulletSpeed = 500
 var basicBulletSpeedCost = 30
 var basicBulletDamageCost = 30
 
-#
+
+
+# abilities selected
+var ability1 = "Basic bullet" 
+var ability2 = "Push wall"
+var ability3 = ""
+
+
 
 
 # decrease player health by certain amount

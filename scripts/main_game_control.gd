@@ -118,7 +118,10 @@ func _process(delta):
 	# attack cooldowns
 	Globals.wideAttackCooldown -= 125 * delta
 	Globals.basicBulletCooldown -= 125 * delta
-	
+	if Globals.wideAttackCooldown < 0:
+		Globals.wideAttackCooldown = 0
+	if Globals.basicBulletCooldown < 0:
+		Globals.basicBulletCooldown = 0
 	
 	
 	

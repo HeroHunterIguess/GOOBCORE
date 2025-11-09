@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbwd7k4w1smjy"]
+[gd_scene load_steps=3 format=3 uid="uid://bbwd7k4w1smjy"]
 
+[ext_resource type="Script" uid="uid://bgq7gmk3uefqj" path="res://scripts/uiScripts/ability_ui.gd" id="1_eel0r"]
 [ext_resource type="Texture2D" uid="uid://cvbi6wdnrat2r" path="res://art/ui sprites/temporaryUI.png" id="1_neavp"]
 
 [node name="abilityUI" type="Node2D"]
 position = Vector2(196.00006, 712.00006)
+script = ExtResource("1_eel0r")
 
 [node name="ability1" type="Node" parent="."]
 

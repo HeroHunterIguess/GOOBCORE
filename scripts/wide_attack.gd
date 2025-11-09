@@ -2,7 +2,7 @@ extends Node2D
 
 var velocity = Vector2.ZERO
 var speed = 250
-var damage = 0.75
+var damage = Globals.wideAttackDamage
 
 var enemyHitCount = 0
 
