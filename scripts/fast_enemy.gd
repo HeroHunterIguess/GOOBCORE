@@ -18,7 +18,7 @@ func takeKB():
 
 # enemy will travel towards the player location
 func moveToPlayer():
-	var speed = 1.2
+	var speed = 1.9
 	# calculate distance to player location
 	var dx = Globals.playerLocation.x - position.x
 	var dy = Globals.playerLocation.y - position.y

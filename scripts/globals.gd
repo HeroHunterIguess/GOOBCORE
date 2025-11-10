@@ -16,17 +16,15 @@ var noWave = false
 
 
 # vars for push wall attack
-var wideAttackCooldown = 200
-var wideAttackDamage = 0.75
+var wideAttackCooldown = 225
+var wideAttackDamage = 0.4
 
 
 
 # vars for basic bullet
 var basicBulletCooldown = 18
-var basicBulletDamage = 1.25
-var basicBulletSpeed = 500
-var basicBulletSpeedCost = 30
-var basicBulletDamageCost = 30
+var basicBulletDamage = 1.35
+var basicBulletSpeed = 550
 
 
 
