@@ -28,4 +28,6 @@ func _on_wide_attack_hitbox_area_entered(area: Area2D) -> void:
 		area.get_parent().takeDamage(damage)
 		area.get_parent().takeKB()
 		enemyHitCount += 1
-		# check if its hit its 4 enemy limit and reset timer
+		# check if its hit its enemy limit and reset timer
+		if enemyHitCount >= 20:
+			queue_free()
