@@ -22,16 +22,16 @@ func advancedWaveControl(waveNum):
 	
 	# create a basic wave for the first one
 	if waveNum == 1:
-		spawnBasicWave(waveNum + 2, 4 + 0.12 * waveNum) # spawn amount of basic enemies w/ scaled hp
+		spawnBasicWave(waveNum + 2, 4.2 + 0.17 * waveNum) # spawn amount of basic enemies w/ scaled hp
 	# slightly more advanced waves until wave 5
 	elif waveNum > 1 && waveNum < 5:
-		spawnBasicWave(waveNum + 2, 4 + 0.12 * waveNum) # spawn amount of basic enemies w/ scaled hp
-		spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.1 * waveNum) # spawn fast enemies w/ scaled hp
+		spawnBasicWave(waveNum + 2, 4.2 + 0.12 * waveNum) # spawn amount of basic enemies w/ scaled hp
+		spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.15 * waveNum) # spawn fast enemies w/ scaled hp
 	# full standardized waves starting at wave 5
 	elif waveNum >= 6:
-		spawnBasicWave(waveNum + 1, 4 + 0.12 * waveNum) # spawn amount of basic enemies w/ scaled hp
+		spawnBasicWave(waveNum + 1, 4.2 + 0.12 * waveNum) # spawn amount of basic enemies w/ scaled hp
 		spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.1 * waveNum) # spawn fast enemies w/ scaled hp
-		spawnTankEnemyWave(round((waveNum / 4))+ 0.5, 17 + 0.13 * waveNum) # spawn tank enemies w/ amount of scaled hp
+		spawnTankEnemyWave(round((waveNum / 4))+ 0.5, 18 + 0.15 * waveNum) # spawn tank enemies w/ amount of scaled hp
 	
 
 
