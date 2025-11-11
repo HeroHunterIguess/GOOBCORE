@@ -1,21 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjg11et2mdoda"]
+[gd_scene load_steps=9 format=3 uid="uid://cjg11et2mdoda"]
 
 [ext_resource type="Script" uid="uid://dn2oymd7sclxd" path="res://scripts/BasicEnemy.gd" id="1_p0amp"]
-[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="2_klu8s"]
+[ext_resource type="Texture2D" uid="uid://deiiqrc87l1kp" path="res://art/character sprites/BasicEnemy.png" id="2_p0amp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja0ge"]
-size = Vector2(128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_klu8s"]
+atlas = ExtResource("2_p0amp")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ehun"]
+atlas = ExtResource("2_p0amp")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3c81"]
+atlas = ExtResource("2_p0amp")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb4mn"]
+atlas = ExtResource("2_p0amp")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ehkv2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klu8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ehun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3c81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb4mn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0amp"]
+radius = 64.0
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_p0amp")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_klu8s")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ehkv2")
+autoplay = "default"
+frame_progress = 0.21709113
 
 [node name="basicEnemyHitbox" type="Area2D" parent="." groups=["Enemy"]]
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="basicEnemyHitbox"]
-shape = SubResource("RectangleShape2D_ja0ge")
+shape = SubResource("CircleShape2D_p0amp")
 debug_color = Color(0.6067997, 0.41553488, 0.8874666, 0.41960785)

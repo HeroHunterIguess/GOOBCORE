@@ -1,21 +1,121 @@
-[gd_scene load_steps=4 format=3 uid="uid://dteniksdjlqeb"]
+[gd_scene load_steps=18 format=3 uid="uid://dteniksdjlqeb"]
 
-[ext_resource type="Texture2D" uid="uid://bx7puvxr2075k" path="res://art/temporary sprites/icon.jpg" id="1_iw6nk"]
 [ext_resource type="Script" uid="uid://1l412ero0cg4" path="res://scripts/fast_enemy.gd" id="1_uskad"]
+[ext_resource type="Texture2D" uid="uid://bj3obgjeinm56" path="res://art/character sprites/fastEnemy.png" id="2_uskad"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6j77"]
-size = Vector2(48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vixxe"]
+atlas = ExtResource("2_uskad")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxx7t"]
+atlas = ExtResource("2_uskad")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm72c"]
+atlas = ExtResource("2_uskad")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0pr7"]
+atlas = ExtResource("2_uskad")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv4rv"]
+atlas = ExtResource("2_uskad")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olr3w"]
+atlas = ExtResource("2_uskad")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr5kg"]
+atlas = ExtResource("2_uskad")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2eh6"]
+atlas = ExtResource("2_uskad")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7isq"]
+atlas = ExtResource("2_uskad")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnsio"]
+atlas = ExtResource("2_uskad")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dh6er"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vixxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxx7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm72c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0pr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv4rv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olr3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr5kg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2eh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7isq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnsio")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uskad"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vixxe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxx7t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lm72c"]
 
 [node name="fastEnemy" type="Node2D"]
 script = ExtResource("1_uskad")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dh6er")
+autoplay = "default"
+frame_progress = 0.6895885
+
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(-2.3841858e-07, -4.7683716e-07)
-scale = Vector2(0.37499997, 0.37499997)
-texture = ExtResource("1_iw6nk")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_e6j77")
-debug_color = Color(0.7207982, 0.35915285, 0.8100697, 0.41960785)
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_uskad")
+debug_color = Color(0.978452, 0, 0.41714665, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-20, 21)
+shape = SubResource("CircleShape2D_vixxe")
+debug_color = Color(0.9673057, 1.92523e-07, 0.47810715, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20, 21)
+shape = SubResource("CircleShape2D_mxx7t")
+debug_color = Color(0.9696874, 0, 0.46285427, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -21)
+shape = SubResource("CircleShape2D_lm72c")
+debug_color = Color(0.9849536, 0, 0.34310836, 0.41960785)

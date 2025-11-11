@@ -13,13 +13,6 @@ var damage = 2
 # take an amount of damage for the projectiles to call
 func takeDamage(amount):
 	health -= amount
-	$Sprite2D.texture = hurtSprite
-	$Sprite2D.scale = Vector2(0.06, 0.06) # TEMPORARY WITH THESE TEST IMAGES
-	
-	await get_tree().create_timer(0.175).timeout
-	
-	$Sprite2D.texture = normalSprite
-	$Sprite2D.scale = Vector2(0.5, 0.5) # TEMPORARY WITH THESE TEST IMAGES
 
 # take knockback from being hit by bigger attacks
 func takeKB():
