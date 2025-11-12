@@ -27,7 +27,6 @@ func _process(_time):
 		self.get_parent().visible = false
 
 
-
 # check if you open shop and like youre paused or smth yk
 func shopInput():
 	if Input.is_action_just_pressed("openShop") && get_tree().paused == false:
@@ -50,19 +49,19 @@ func _on_resume_pressed() -> void:
 
 # funcs to do the upgrading
 func upgradeBasicBullet():
+	Globals.orbs -= Globals.basicBulletLevel * 40
 	Globals.basicBulletCooldown -= 5
 	Globals.basicBulletDamage += 1
 	Globals.basicBulletSpeed += 90
 	Globals.basicBulletLevel += 1
-	Globals.orbs -= Globals.basicBulletLevel * 40
+
 
 func upgradePushWall():
+	Globals.orbs -= Globals.wideAttackLevel * 40
 	Globals.wideAttackCooldown -= 15
 	Globals.wideAttackDamage += 0.25
-	Globals.wideAttackSpeed += 50
+	Globals.wideAttackSpeed += 40
 	Globals.wideAttackLevel += 1
-	Globals.orbs -= Globals.wideAttackLevel * 40
-	
 
 
 
@@ -84,9 +83,9 @@ func _on_ability_1_upgrade_pressed() -> void:
 	
 	# upgrades for push wall
 	if Globals.ability1 == "Push wall":
-		if Globals.orbs >= Globals.wideAttackLevel * 50:
+		if Globals.orbs >= Globals.wideAttackLevel * 40:
 			upgradePushWall()
-			$ability1Upgrade.text = "PURCAHSED"
+			$ability1Upgrade.text = "PURCHASED"
 		else:
 			$ability1Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
@@ -103,7 +102,7 @@ func _on_ability_2_upgrade_pressed() -> void:
 	if Globals.ability2 == "Basic bullet": 
 		if Globals.orbs >= Globals.basicBulletLevel * 40:
 			upgradeBasicBullet()
-			$ability1Upgrade.text = "PURCHASED"
+			$ability2Upgrade.text = "PURCHASED"
 		else:
 			$ability2Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
@@ -111,9 +110,9 @@ func _on_ability_2_upgrade_pressed() -> void:
 	
 	# upgrades for push wall
 	if Globals.ability2 == "Push wall":
-		if Globals.orbs >= Globals.wideAttackLevel * 50:
+		if Globals.orbs >= Globals.wideAttackLevel * 40:
 			upgradePushWall()
-			$ability1Upgrade.text = "PURCHASED"
+			$ability2Upgrade.text = "PURCHASED"
 		else:
 			$ability2Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
