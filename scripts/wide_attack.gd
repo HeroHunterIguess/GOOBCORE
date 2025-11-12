@@ -8,7 +8,7 @@ var enemyHitCount = 0
 
 
 func _ready():
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.75).timeout
 	queue_free()
 
 
@@ -29,5 +29,5 @@ func _on_wide_attack_hitbox_area_entered(area: Area2D) -> void:
 		area.get_parent().takeKB(20)
 		enemyHitCount += 1
 		# check if its hit its enemy limit and reset timer
-		if enemyHitCount >= 20:
+		if enemyHitCount >= 22:
 			queue_free()
