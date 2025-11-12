@@ -76,6 +76,8 @@ func _on_ability_1_upgrade_pressed() -> void:
 		if Globals.orbs >= Globals.basicBulletLevel * 40:
 			upgradeBasicBullet()
 			$ability1Upgrade.text = "PURCHASED"
+			await get_tree().create_timer(1.0).timeout
+			$ability2Upgrade.text = "Purchase Basic Bullet MK." + str(Globals.basicBulletLevel + 1) + "\n (" + str(Globals.basicBulletLevel * 40) +" orbs)"
 		else:
 			$ability1Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
@@ -86,6 +88,8 @@ func _on_ability_1_upgrade_pressed() -> void:
 		if Globals.orbs >= Globals.wideAttackLevel * 40:
 			upgradePushWall()
 			$ability1Upgrade.text = "PURCHASED"
+			await get_tree().create_timer(1.0).timeout
+			$ability1Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n (" + str(Globals.wideAttackLevel * 40) +" orbs)"
 		else:
 			$ability1Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
@@ -103,6 +107,8 @@ func _on_ability_2_upgrade_pressed() -> void:
 		if Globals.orbs >= Globals.basicBulletLevel * 40:
 			upgradeBasicBullet()
 			$ability2Upgrade.text = "PURCHASED"
+			await get_tree().create_timer(1.0).timeout
+			$ability2Upgrade.text = "Purchase Basic Bullet MK." + str(Globals.basicBulletLevel + 1) + "\n (" + str(Globals.basicBulletLevel * 40) +" orbs)"
 		else:
 			$ability2Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
@@ -113,6 +119,8 @@ func _on_ability_2_upgrade_pressed() -> void:
 		if Globals.orbs >= Globals.wideAttackLevel * 40:
 			upgradePushWall()
 			$ability2Upgrade.text = "PURCHASED"
+			await get_tree().create_timer(1.0).timeout
+			$ability1Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n (" + str(Globals.wideAttackLevel * 40) +" orbs)"
 		else:
 			$ability2Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
