@@ -1,11 +1,11 @@
 extends Node
 
 
-
+# random things
 var orbs = 0
 var overallScore = 0
 var currentWave = 1
-
+var rerollCost = 20
 
 
 

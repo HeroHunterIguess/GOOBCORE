@@ -39,9 +39,10 @@ text = "Resume"
 [node name="ability1Upgrade" type="Button" parent="."]
 layout_mode = 0
 offset_left = 432.0
-offset_top = 216.0
+offset_top = 184.0
 offset_right = 672.0
-offset_bottom = 384.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 20
 text = "Purcahse upgrade 1
 (x orbs)"
 autowrap_mode = 2
@@ -49,9 +50,10 @@ autowrap_mode = 2
 [node name="ability2Upgrade" type="Button" parent="."]
 layout_mode = 0
 offset_left = 736.0
-offset_top = 216.0
+offset_top = 184.0
 offset_right = 976.0
-offset_bottom = 383.088
+offset_bottom = 351.088
+theme_override_font_sizes/font_size = 20
 text = "Purcahse upgrade 2 
 (x orbs)"
 autowrap_mode = 2
@@ -59,10 +61,29 @@ autowrap_mode = 2
 [node name="buyNewAbility" type="Button" parent="."]
 layout_mode = 0
 offset_left = 432.0
+offset_top = 368.0
+offset_right = 976.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 17
+text = "Replace [ability] with [new ability] (x orbs)"
+
+[node name="buyNewAbility2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 432.0
 offset_top = 432.0
 offset_right = 976.0
-offset_bottom = 496.0
-text = "Purcahse new ability (x orbs)"
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 17
+text = "Replace [ability] with [new ability] (x orbs)"
+
+[node name="rerollNewAbilities" type="Button" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 504.0
+offset_right = 808.0
+offset_bottom = 536.0
+theme_override_font_sizes/font_size = 14
+text = "Reroll abilities (x orbs) "
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="ability1Upgrade" to="." method="_on_ability_1_upgrade_pressed"]
