@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://b25mmfy6g46gw"]
+
+[ext_resource type="Texture2D" uid="uid://bdtelb8l835qf" path="res://art/character sprites/bullet-Sheet.png" id="1_0ja2e"]
+[ext_resource type="Script" uid="uid://do8dciyx6uapn" path="res://scripts/frag_grenade.gd" id="1_udr5m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udr5m"]
+atlas = ExtResource("1_0ja2e")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn2s0"]
+atlas = ExtResource("1_0ja2e")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8k04o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udr5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn2s0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ah37l"]
+radius = 16.0
+
+[node name="fragGrenade" type="Node2D"]
+script = ExtResource("1_udr5m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.125, 2.125)
+sprite_frames = SubResource("SpriteFrames_8k04o")
+autoplay = "default"
+frame_progress = 0.65971684
+
+[node name="fragGrenadeHitbox" type="Area2D" parent="." groups=["basicBulletShot"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fragGrenadeHitbox"]
+shape = SubResource("CircleShape2D_ah37l")
+
+[connection signal="area_entered" from="fragGrenadeHitbox" to="." method="_on_frag_grenade_hitbox_area_entered"]

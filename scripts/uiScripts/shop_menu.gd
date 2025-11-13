@@ -15,6 +15,8 @@ func _ready():
 	if Globals.ability2 == "Push wall":
 		$ability2Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n (" + str(Globals.wideAttackLevel * 40) +" orbs)"
 	
+	$rerollNewAbilities.text = "Reroll abilities (" + str(Globals.rerollCost) + " orbs)"
+	
 
 
 
