@@ -159,6 +159,7 @@ func _process(delta):
 	
 	
 	if Input.is_action_just_pressed("openShop"):
+		$openShopLabel.visible = false
 		get_tree().paused = true
 		$pauseMenuLayer.visible = true
 	
