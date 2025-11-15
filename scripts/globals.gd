@@ -26,9 +26,9 @@ var wideAttackLevel = 1
 
 
 # vars for basic bullet
-var basicBulletCooldown = 18
-var basicBulletDamage = 1.7
-var basicBulletSpeed = 560
+var basicBulletCooldown = 16
+var basicBulletDamage = 1.75
+var basicBulletSpeed = 585
 var basicBulletLevel = 1
 
 
