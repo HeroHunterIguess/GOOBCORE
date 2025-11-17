@@ -41,11 +41,7 @@ func setRandomNewAbility():
 	
 	# setup all the text displays
 	
-	if currentNewAbility == "Push wall":
-		$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.wideAttackBaseCost) + " orbs)"
-	elif currentNewAbility == "Frag grenade":
-		$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.fragGrenadeBaseCost) + " orbs)"
-	
+	abilityTextSlots()
 	
 	# set text for which ability is in each slot
 	$whichAbility/selectAbility1.text = "Replace " + Globals.ability1 + ""
@@ -264,7 +260,8 @@ func _on_buy_new_ability_pressed() -> void:
 			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.wideAttackBaseCost) + " orbs)"
 		elif currentNewAbility == "Frag grenade":
 			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.fragGrenadeBaseCost) + " orbs)"
-	
+		elif currentNewAbility == "Burst attack":
+			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.burstBaseCost) + " orbs)"
 
 
 
@@ -293,8 +290,14 @@ func _on_select_ability_2_pressed() -> void:
 	
 	$buyNewAbility.visible = true
 
-
-
+# set the text for the ability to buy
+func abilityTextSlots():
+	if currentNewAbility == "Push wall":
+		$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.wideAttackBaseCost) + " orbs)"
+	elif currentNewAbility == "Frag grenade":
+		$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.fragGrenadeBaseCost) + " orbs)"
+	elif currentNewAbility == "Burst attack":
+		$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.burstBaseCost) + " orbs)"
 
 # reroll
 func _on_reroll_new_abilities_pressed() -> void:
@@ -305,6 +308,11 @@ func _on_reroll_new_abilities_pressed() -> void:
 		$rerollNewAbilities.text = "REROLLED"
 		await get_tree().create_timer(0.75).timeout
 		$rerollNewAbilities.text = "Reroll abilities (" + str(Globals.rerollCost) + " orbs)"
+		
+		# reset text for the new ability to buy
+		abilityTextSlots()
+	
+		
 	else: 
 		$rerollNewAbilities.text = "NOT ENOUGH ORBS"
 		await get_tree().create_timer(0.75).timeout
