@@ -88,3 +88,28 @@ func reset():
 	playerHealth = 30
 	currentWave = 1
 	noWave = false
+	ability1 = "Basic bullet" 
+	ability2 = "empty slot"
+	
+	# reset all ability stats
+	wideAttackCooldown = 230
+	wideAttackDamage = 0.375
+	wideAttackSpeed = 190
+	wideAttackLevel = 1
+	
+	basicBulletCooldown = 16
+	basicBulletDamage = 1.75
+	basicBulletSpeed = 585
+	basicBulletLevel = 1
+	
+	fragGrenadeCooldown = 325
+	fragGrenadeDamage = 10
+	fragGrenadeSpeed = 350
+	fragGrenadeAmount = 8
+	fragDamage = 1.5
+	fragGrenadeLevel = 1
+	
+	burstAmount = 15
+	burstDamage = 1.5
+	burstCooldown = 300
+	burstLevel = 1
