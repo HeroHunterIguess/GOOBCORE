@@ -104,33 +104,35 @@ func _on_resume_pressed() -> void:
 # funcs to do the upgrading
 func upgradeBasicBullet():
 	Globals.orbs -= Globals.basicBulletLevel * 35
-	Globals.basicBulletCooldown -= 5
-	Globals.basicBulletDamage += 1
+	Globals.basicBulletCooldown -= 3
+	Globals.basicBulletDamage += 1.1
 	Globals.basicBulletSpeed += 90
 	Globals.basicBulletLevel += 1
+	if Globals.basicBulletCooldown <= 0:
+		Globals.basicBulletCooldown = 0
 
 
 func upgradePushWall():
 	Globals.orbs -= Globals.wideAttackLevel * 35
-	Globals.wideAttackCooldown -= 15
-	Globals.wideAttackDamage += 0.25
+	Globals.wideAttackCooldown -= 20
+	Globals.wideAttackDamage += 0.35
 	Globals.wideAttackSpeed += 40
 	Globals.wideAttackLevel += 1
 
 
 func upgradeFragGrenade():
 	Globals.orbs -= Globals.fragGrenadeLevel * 35
-	Globals.fragGrenadeCooldown -= 10
-	Globals.fragGrenadeDamage += 0.25
+	Globals.fragGrenadeCooldown -= 25
+	Globals.fragGrenadeDamage += 1
 	Globals.fragGrenadeSpeed += 50
 	Globals.fragGrenadeAmount += 1
 	Globals.fragGrenadeLevel += 1
-	Globals.fragDamage += 0.2
+	Globals.fragDamage += 0.8
 
 func upgradeBurstAttack():
 	Globals.orbs -= Globals.burstLevel * 35
 	Globals.burstAmount += 4
-	Globals.burstDamage += 0.5
+	Globals.burstDamage += 0.75
 	Globals.burstCooldown -= 40
 	Globals.burstLevel += 1
 

@@ -5,7 +5,7 @@ extends Node
 var orbs = 0
 var overallScore = 0
 var currentWave = 1
-var rerollCost = 10
+var rerollCost = 5
 
 
 
@@ -18,9 +18,9 @@ var noWave = false
 
 
 # vars for push wall attack
-var wideAttackBaseCost = 35
-var wideAttackCooldown = 230
-var wideAttackDamage = 0.375
+var wideAttackBaseCost = 25
+var wideAttackCooldown = 215
+var wideAttackDamage = 0.5
 var wideAttackSpeed = 190
 var wideAttackLevel = 1
 
@@ -33,9 +33,9 @@ var basicBulletLevel = 1
 
 
 # vars for frag grenade
-var fragGrenadeBaseCost = 25
-var fragGrenadeCooldown = 325
-var fragGrenadeDamage = 10
+var fragGrenadeBaseCost = 18
+var fragGrenadeCooldown = 150
+var fragGrenadeDamage = 12
 var fragGrenadeSpeed = 350
 var fragGrenadeAmount = 8
 var fragDamage = 1.5
@@ -44,8 +44,8 @@ var fragGrenadeLevel = 1
 
 # vars for bullet burst attack
 var burstAmount = 15
-var burstDamage = 1.5
-var burstCooldown = 300
+var burstDamage = 8
+var burstCooldown = 180
 var burstLevel = 1
 var burstBaseCost = 30
 
@@ -92,24 +92,35 @@ func reset():
 	ability2 = "empty slot"
 	
 	# reset all ability stats
-	wideAttackCooldown = 230
-	wideAttackDamage = 0.375
+
+	# vars for push wall attack
+	wideAttackBaseCost = 25
+	wideAttackCooldown = 215
+	wideAttackDamage = 0.5
 	wideAttackSpeed = 190
 	wideAttackLevel = 1
-	
+
+
+	# vars for basic bullet
 	basicBulletCooldown = 16
 	basicBulletDamage = 1.75
 	basicBulletSpeed = 585
 	basicBulletLevel = 1
-	
-	fragGrenadeCooldown = 325
-	fragGrenadeDamage = 10
+
+
+	# vars for frag grenade
+	fragGrenadeBaseCost = 18
+	fragGrenadeCooldown = 158
+	fragGrenadeDamage = 12
 	fragGrenadeSpeed = 350
 	fragGrenadeAmount = 8
 	fragDamage = 1.5
 	fragGrenadeLevel = 1
-	
+
+
+	# vars for bullet burst attack
 	burstAmount = 15
-	burstDamage = 1.5
-	burstCooldown = 300
+	burstDamage = 8
+	burstCooldown = 180
 	burstLevel = 1
+	burstBaseCost = 30
