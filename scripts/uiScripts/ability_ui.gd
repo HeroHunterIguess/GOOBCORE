@@ -25,7 +25,7 @@ func _process(_delta):
 	elif Globals.ability1 == "Burst attack":
 		# if the ability is the burst attack
 		$ability1/ability1Damage.text = str(Globals.burstDamage) + " DMG"
-		$ability1/ability1Cooldown.text = str(Globals.burstCooldown) + " CD"
+		$ability1/ability1Cooldown.text = str(round(Globals.burstCooldown)) + " CD"
 	
 	
 	
