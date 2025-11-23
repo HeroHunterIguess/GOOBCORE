@@ -77,9 +77,6 @@ func _ready():
 	
 	
 	
-	# KEEP THIS LAST IN _READY
-	await get_tree().create_timer(25.0).timeout
-	$ui/openShopLabel.visible = true
 
 
 

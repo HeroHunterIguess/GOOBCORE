@@ -203,7 +203,6 @@ autoplay = "default"
 frame_progress = 0.37356403
 
 [node name="openShopLabel" type="Label" parent="ui"]
-visible = false
 offset_left = 384.0
 offset_right = 896.0
 offset_bottom = 88.0
@@ -231,7 +230,7 @@ position = Vector2(166, 720.00006)
 scale = Vector2(1.859375, 1.7340425)
 sprite_frames = SubResource("SpriteFrames_wo2sw")
 autoplay = "default"
-frame_progress = 0.9034526
+frame_progress = 0.6188056
 
 [node name="abilitysfx" type="Node" parent="."]
 
