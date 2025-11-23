@@ -35,6 +35,7 @@ func updateUpgradeText():
 var currentNewAbility = ""
 
 
+# pick a random ability based on the (hopefully random) number provided
 func checkAbilitiesToRandomNumber(number):
 	if number == 1:
 		currentNewAbility = "Push wall"
@@ -60,8 +61,8 @@ func setRandomNewAbility(current):
 		rngAbilityNum = rng.randi_range(1,3)
 		checkAbilitiesToRandomNumber(rngAbilityNum)
 	
-	# setup all the text displays
 	
+	# setup all the text displays
 	updateUpgradeText()
 	
 	# set text for which ability is in each slot
@@ -294,7 +295,7 @@ func _on_select_ability_2_pressed() -> void:
 func _on_reroll_new_abilities_pressed() -> void:
 	if Globals.orbs >= Globals.rerollCost:
 		Globals.orbs -= Globals.rerollCost
-		Globals.rerollCost *= 2
+		Globals.rerollCost = int(round(Globals.rerollCost * 1.85))
 		setRandomNewAbility(currentNewAbility)
 		$rerollNewAbilities.text = "REROLLED"
 		await get_tree().create_timer(0.75).timeout
