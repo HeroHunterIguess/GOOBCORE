@@ -41,10 +41,10 @@ func _process(_delta):
 	elif Globals.ability2 == "Frag grenade":
 		# if the ability is the frag grenade
 		$ability2/ability2Damage.text = str(Globals.fragGrenadeDamage) + " DMG"
-		$ability2/ability2Cooldown.text = str(round(Globals.fragGrenadeCooldown)) + " COOLDOWN"
+		$ability2/ability2Cooldown.text = str(int(round(Globals.fragGrenadeCooldown))) + " COOLDOWN"
 	elif Globals.ability2 == "Burst attack":
 		# if the ability is the burst attack
 		$ability2/ability2Damage.text = str(Globals.burstDamage) + " DMG"
-		$ability2/ability2Cooldown.text = str(round(Globals.burstCooldown)) + " COOLDOWN"
+		$ability2/ability2Cooldown.text = str(int(round(Globals.burstCooldown))) + " COOLDOWN"
 	
 	

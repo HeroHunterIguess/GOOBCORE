@@ -34,7 +34,7 @@ var basicBulletLevel = 1
 
 # vars for frag grenade
 var fragGrenadeBaseCost = 18
-var fragGrenadeCooldown = 150
+var fragGrenadeCooldown = 120
 var fragGrenadeDamage = 12
 var fragGrenadeSpeed = 350
 var fragGrenadeAmount = 8
@@ -110,7 +110,7 @@ func reset():
 
 	# vars for frag grenade
 	fragGrenadeBaseCost = 18
-	fragGrenadeCooldown = 158
+	fragGrenadeCooldown = 120
 	fragGrenadeDamage = 12
 	fragGrenadeSpeed = 350
 	fragGrenadeAmount = 8

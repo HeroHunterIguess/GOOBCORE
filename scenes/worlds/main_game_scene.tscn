@@ -230,7 +230,7 @@ position = Vector2(166, 720.00006)
 scale = Vector2(1.859375, 1.7340425)
 sprite_frames = SubResource("SpriteFrames_wo2sw")
 autoplay = "default"
-frame_progress = 0.6188056
+frame_progress = 0.8410804
 
 [node name="abilitysfx" type="Node" parent="."]
 
