@@ -266,6 +266,7 @@ func _on_buy_new_ability_pressed() -> void:
 
 
 
+
 # buttons pressed to acutally make the purchase of the new ability and put it in that slot
 
 func _on_select_ability_1_pressed() -> void:

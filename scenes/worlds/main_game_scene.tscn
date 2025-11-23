@@ -230,11 +230,12 @@ position = Vector2(166, 720.00006)
 scale = Vector2(1.859375, 1.7340425)
 sprite_frames = SubResource("SpriteFrames_wo2sw")
 autoplay = "default"
-frame_progress = 0.8061261
+frame_progress = 0.29447833
 
 [node name="abilitysfx" type="Node" parent="."]
 
 [node name="splat1" type="AudioStreamPlayer2D" parent="abilitysfx"]
+position = Vector2(640, 576)
 stream = ExtResource("11_jumef")
 volume_db = -9.579
 
