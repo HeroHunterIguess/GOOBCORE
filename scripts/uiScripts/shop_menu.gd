@@ -104,7 +104,7 @@ func _ready():
 	updateUpgradeText()
 	
 	# reroll text
-	$rerollNewAbilities.text = "Reroll abilities (" + str(Globals.rerollCost) + " orbs)"
+	$rerollNewAbilities.text = "Reroll (" + str(Globals.rerollCost) + " orbs)"
 	
 	
 	# set random ability & passive to buy
