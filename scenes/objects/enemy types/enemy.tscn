@@ -70,13 +70,13 @@ script = ExtResource("1_p0amp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ehkv2")
 autoplay = "default"
-frame_progress = 0.8245709
+frame_progress = 0.25051254
 
 [node name="hurtanim" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_bg23f")
 autoplay = "default"
-frame_progress = 0.88646805
+frame_progress = 0.047847
 
 [node name="basicEnemyHitbox" type="Area2D" parent="." groups=["Enemy"]]
 scale = Vector2(0.5, 0.5)
