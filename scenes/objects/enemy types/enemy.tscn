@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjg11et2mdoda"]
+[gd_scene load_steps=12 format=3 uid="uid://cjg11et2mdoda"]
 
 [ext_resource type="Script" uid="uid://dn2oymd7sclxd" path="res://scripts/BasicEnemy.gd" id="1_p0amp"]
 [ext_resource type="Texture2D" uid="uid://deiiqrc87l1kp" path="res://art/character sprites/BasicEnemy.png" id="2_p0amp"]
@@ -39,6 +39,28 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0amp"]
+atlas = ExtResource("2_p0amp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehkv2"]
+atlas = ExtResource("2_p0amp")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bg23f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0amp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehkv2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0amp"]
 radius = 64.0
 
@@ -48,7 +70,13 @@ script = ExtResource("1_p0amp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ehkv2")
 autoplay = "default"
-frame_progress = 0.21709113
+frame_progress = 0.8245709
+
+[node name="hurtanim" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_bg23f")
+autoplay = "default"
+frame_progress = 0.88646805
 
 [node name="basicEnemyHitbox" type="Area2D" parent="." groups=["Enemy"]]
 scale = Vector2(0.5, 0.5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1k7oanp3mdeg"]
+[gd_scene load_steps=10 format=3 uid="uid://d1k7oanp3mdeg"]
 
 [ext_resource type="Script" uid="uid://bs4nclnswi5kv" path="res://scripts/tank_enemy.gd" id="1_yei3t"]
 [ext_resource type="Texture2D" uid="uid://b4r3dmlpg4v00" path="res://art/character sprites/fat.png" id="2_yei3t"]
@@ -25,6 +25,28 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yei3t"]
+atlas = ExtResource("2_yei3t")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm3ml"]
+atlas = ExtResource("2_yei3t")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vb11s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yei3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm3ml")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuxre"]
 size = Vector2(96, 96)
 
@@ -35,7 +57,14 @@ script = ExtResource("1_yei3t")
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_tm3ml")
 autoplay = "default"
-frame_progress = 0.39639297
+frame_progress = 0.48718247
+
+[node name="hurtanim" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_vb11s")
+autoplay = "default"
+frame_progress = 0.27814475
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 

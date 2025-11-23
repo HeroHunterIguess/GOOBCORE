@@ -10,10 +10,14 @@ var damage = 2
 
 
 
-
 # take an amount of damage for the projectiles to call
 func takeDamage(amount):
 	health -= amount
+	$AnimatedSprite2D.visible = false
+	$hurtanim.visible = true
+	await get_tree().create_timer(0.15).timeout
+	$AnimatedSprite2D.visible = true
+	$hurtanim.visible = false
 
 # take knockback from being hit by bigger attacks
 func takeKB(amount):

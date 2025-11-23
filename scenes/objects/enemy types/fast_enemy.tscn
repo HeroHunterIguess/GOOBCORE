@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dteniksdjlqeb"]
+[gd_scene load_steps=21 format=3 uid="uid://dteniksdjlqeb"]
 
 [ext_resource type="Script" uid="uid://1l412ero0cg4" path="res://scripts/fast_enemy.gd" id="1_uskad"]
 [ext_resource type="Texture2D" uid="uid://bj3obgjeinm56" path="res://art/character sprites/fastEnemy.png" id="2_uskad"]
@@ -81,6 +81,28 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uskad"]
+atlas = ExtResource("2_uskad")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh6er"]
+atlas = ExtResource("2_uskad")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ehnx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uskad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh6er")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_uskad"]
 radius = 24.0
 
@@ -96,7 +118,13 @@ script = ExtResource("1_uskad")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dh6er")
 autoplay = "default"
-frame_progress = 0.6895885
+frame_progress = 0.0052153864
+
+[node name="hurtanim" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_5ehnx")
+autoplay = "default"
+frame_progress = 0.56929594
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 
