@@ -57,19 +57,19 @@ vertical_alignment = 1
 
 [node name="music" type="Label" parent="Node"]
 offset_left = 8.0
-offset_top = 544.0
+offset_top = 664.0
 offset_right = 320.0
-offset_bottom = 587.0
+offset_bottom = 707.0
 theme_override_fonts/font = ExtResource("2_jg4ok")
 theme_override_font_sizes/font_size = 12
 text = "main theme 
 prod.  richmnkey"
 
 [node name="game designer" type="Label" parent="Node"]
-offset_left = 5.0
-offset_top = 608.0
-offset_right = 328.0
-offset_bottom = 651.0
+offset_left = 8.0
+offset_top = 552.0
+offset_right = 331.0
+offset_bottom = 595.0
 theme_override_fonts/font = ExtResource("2_jg4ok")
 theme_override_font_sizes/font_size = 12
 text = "Game design and development
@@ -77,19 +77,19 @@ HeroHunter"
 
 [node name="art" type="Label" parent="Node"]
 offset_left = 8.0
-offset_top = 672.0
+offset_top = 608.0
 offset_right = 328.0
-offset_bottom = 721.0
+offset_bottom = 651.0
 theme_override_fonts/font = ExtResource("2_jg4ok")
 theme_override_font_sizes/font_size = 12
 text = "art and sprite design
 Danmrboi"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(160, 640)
-scale = Vector2(1.40625, 1.3085107)
+position = Vector2(168.00003, 648)
+scale = Vector2(1.421875, 1.3085107)
 sprite_frames = SubResource("SpriteFrames_80ey4")
 autoplay = "default"
-frame_progress = 0.7200602
+frame_progress = 0.96096337
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
