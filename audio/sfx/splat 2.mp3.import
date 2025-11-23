@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://beuttq7l5hyqh"
+path="res://.godot/imported/splat 2.mp3-8b0eac237ea84225d4b7a75bbe30a8e0.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/splat 2.mp3"
+dest_files=["res://.godot/imported/splat 2.mp3-8b0eac237ea84225d4b7a75bbe30a8e0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
