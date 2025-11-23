@@ -22,6 +22,7 @@ func updateUpgradeText():
 	if Globals.ability2 == "Burst attack":
 		$ability2Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n (" + str(Globals.burstLevel * 35) +" orbs)"
 	
+	
 	# new ability purchasing thing
 	if currentNewAbility == "Push wall":
 			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.wideAttackBaseCost) + " orbs)"
@@ -31,22 +32,33 @@ func updateUpgradeText():
 			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.burstBaseCost) + " orbs)"
 
 
+var currentNewAbility = ""
+
+
+func checkAbilitiesToRandomNumber(number):
+	if number == 1:
+		currentNewAbility = "Push wall"
+		newAbilityCost = Globals.wideAttackBaseCost
+	elif number == 2:
+		currentNewAbility = "Frag grenade"
+		newAbilityCost = Globals.fragGrenadeBaseCost
+	elif number == 3:
+		currentNewAbility = "Burst attack"
+		newAbilityCost = Globals.burstBaseCost
+
 
 var rng = RandomNumberGenerator.new()
-func setRandomNewAbility():
+func setRandomNewAbility(current):
 	# the random new ability for you to purchase
 	var rngAbilityNum = rng.randi_range(1,3)
 	
-	# select it randomly based on a random number and set apropriate variables
-	if rngAbilityNum == 1:
-		currentNewAbility = "Push wall"
-		newAbilityCost = Globals.wideAttackBaseCost
-	elif rngAbilityNum == 2:
-		currentNewAbility = "Frag grenade"
-		newAbilityCost = Globals.fragGrenadeBaseCost
-	elif rngAbilityNum == 3:
-		currentNewAbility = "Burst attack"
-		newAbilityCost = Globals.burstBaseCost
+	# initially select an ability
+	checkAbilitiesToRandomNumber(rngAbilityNum)
+	
+	# if the ability is the same as the current new ability then pick new one till its diff
+	while current == currentNewAbility:
+		rngAbilityNum = rng.randi_range(1,3)
+		checkAbilitiesToRandomNumber(rngAbilityNum)
 	
 	# setup all the text displays
 	
@@ -57,7 +69,6 @@ func setRandomNewAbility():
 	$whichAbility/selectAbility2.text = "Replace " + Globals.ability2 + ""
 
 
-var currentNewAbility = ""
 var newAbilityCost = 0
 
 
@@ -70,7 +81,7 @@ func _ready():
 	
 	
 	# set random ability to buy
-	setRandomNewAbility()
+	setRandomNewAbility(currentNewAbility)
 
 
 
@@ -262,7 +273,7 @@ func _on_select_ability_1_pressed() -> void:
 	$whichAbility/selectAbility1.visible = false
 	$whichAbility/selectAbility2.visible = false
 	
-	setRandomNewAbility()
+	setRandomNewAbility(currentNewAbility)
 	updateUpgradeText()
 	
 	$buyNewAbility.visible = true
@@ -273,7 +284,7 @@ func _on_select_ability_2_pressed() -> void:
 	$whichAbility/selectAbility1.visible = false
 	$whichAbility/selectAbility2.visible = false
 	
-	setRandomNewAbility()
+	setRandomNewAbility(currentNewAbility)
 	updateUpgradeText()
 	
 	$buyNewAbility.visible = true
@@ -284,7 +295,7 @@ func _on_reroll_new_abilities_pressed() -> void:
 	if Globals.orbs >= Globals.rerollCost:
 		Globals.orbs -= Globals.rerollCost
 		Globals.rerollCost *= 2
-		setRandomNewAbility()
+		setRandomNewAbility(currentNewAbility)
 		$rerollNewAbilities.text = "REROLLED"
 		await get_tree().create_timer(0.75).timeout
 		$rerollNewAbilities.text = "Reroll abilities (" + str(Globals.rerollCost) + " orbs)"
