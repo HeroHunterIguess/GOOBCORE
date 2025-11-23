@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene load_steps=25 format=3 uid="uid://dh0s4wxpw43wx"]
 
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 [ext_resource type="Shader" uid="uid://b1xuob6aqtiku" path="res://shaders/main_background.gdshader" id="2_dq5l5"]
+[ext_resource type="Texture2D" uid="uid://ck87m27403yjp" path="res://art/world sprites/lowDetailBackground.png" id="2_q7wkj"]
 [ext_resource type="Texture2D" uid="uid://cjmhedyfgbq1f" path="res://art/character sprites/goobert.png" id="2_yqbs0"]
 [ext_resource type="PackedScene" uid="uid://c2auc2m4mpwfa" path="res://scenes/ui/ShopMenu.tscn" id="3_yqbs0"]
 [ext_resource type="Texture2D" uid="uid://dobae4cuk80r0" path="res://art/character sprites/wave-Sheet.png" id="4_xxp0d"]
@@ -109,6 +110,11 @@ animations = [{
 
 [node name="MainGameScene" type="Node2D"]
 script = ExtResource("1_ltt4m")
+
+[node name="LowDetailBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.9460459, 0.8977556)
+texture = ExtResource("2_q7wkj")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1280.0

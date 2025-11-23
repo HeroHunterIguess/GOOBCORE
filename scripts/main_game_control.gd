@@ -9,6 +9,7 @@ const tankEnemyPreload = preload("res://scenes/objects/enemy types/tank_enemy.ts
 const wideAttackPreload = preload("res://scenes/objects/wide_attack.tscn")
 const fragGrenadePreload = preload("res://scenes/objects/frag_grenade.tscn")
 const burstAttackPreload = preload("res://scenes/objects/bullet_burst.tscn")
+const shieldPreload = preload("res://scenes/objects/shield.tscn")
 
 var mousePos
 
@@ -76,7 +77,11 @@ func _ready():
 	$pauseMenuLayer.visible = false
 	
 	
-	
+	# hide shader if ldm is on
+	if Globals.ldm == true:
+		$shaderBG.visible = false
+		$CanvasLayer/ColorRect.visible = false
+		$ColorRect.visible = false
 
 
 
@@ -162,6 +167,15 @@ func _process(delta):
 		Globals.fragGrenadeCooldown = 0
 	if Globals.burstCooldown < 0:
 		Globals.burstCooldown = 0
+	
+	
+	
+	# spawn in shield if you own one but it isnt there
+	if Globals.hasShield == true && Globals.spawningShield == true:
+		var shieldObject = shieldPreload.instantiate()
+		add_child(shieldObject)
+		shieldObject.global_position = Vector2(640,688) # player position
+		Globals.spawningShield = false
 	
 	
 	

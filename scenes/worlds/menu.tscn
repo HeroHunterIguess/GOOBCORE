@@ -38,11 +38,12 @@ offset_bottom = 720.0
 color = Color(0.045499414, 0.058860138, 0.09975549, 1)
 
 [node name="Button" type="Button" parent="."]
-offset_left = 528.0
-offset_top = 320.0
-offset_right = 752.0
-offset_bottom = 432.0
+offset_left = 512.0
+offset_top = 352.0
+offset_right = 768.0
+offset_bottom = 424.0
 theme_override_fonts/font = ExtResource("2_jg4ok")
+theme_override_font_sizes/font_size = 18
 text = "Start Game"
 
 [node name="Label" type="Label" parent="."]
@@ -95,4 +96,14 @@ sprite_frames = SubResource("SpriteFrames_80ey4")
 autoplay = "default"
 frame_progress = 0.69183296
 
+[node name="ldmButton" type="Button" parent="."]
+offset_left = 1000.0
+offset_top = 680.0
+offset_right = 1281.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("2_jg4ok")
+theme_override_font_sizes/font_size = 12
+text = "Low detail mode (disabled)"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ldmButton" to="." method="_on_ldm_button_pressed"]

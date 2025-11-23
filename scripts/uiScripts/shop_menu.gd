@@ -30,8 +30,13 @@ func updateUpgradeText():
 			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.fragGrenadeBaseCost) + " orbs)"
 	elif currentNewAbility == "Burst attack":
 			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.burstBaseCost) + " orbs)"
+	
+	
+	# new passive ability purchasing
+	if currentNewPassive == "Shield":
+		$newPassiveAbility.text = "Buy " + currentNewPassive + " ( " + str(newPassiveCost) + " orbs)"
 
-
+var currentNewPassive = ""
 var currentNewAbility = ""
 
 
@@ -69,8 +74,29 @@ func setRandomNewAbility(current):
 	$whichAbility/selectAbility1.text = "Replace " + Globals.ability1 + ""
 	$whichAbility/selectAbility2.text = "Replace " + Globals.ability2 + ""
 
-
 var newAbilityCost = 0
+var newPassiveCost = 0
+
+func checkPassivesToRandomNumber(number):
+	if number == 1:
+		currentNewPassive = "Shield"
+		newPassiveCost = Globals.ShieldBaseCost
+
+func setRandomNewPassive():
+	var rngAbilityNum = rng.randi_range(1,1)
+	
+	# initially select an ability
+	checkPassivesToRandomNumber(rngAbilityNum)
+	
+	
+	updateUpgradeText()
+	
+
+
+
+
+
+
 
 
 func _ready():
@@ -81,8 +107,10 @@ func _ready():
 	$rerollNewAbilities.text = "Reroll abilities (" + str(Globals.rerollCost) + " orbs)"
 	
 	
-	# set random ability to buy
+	# set random ability & passive to buy
 	setRandomNewAbility(currentNewAbility)
+	
+	setRandomNewPassive()
 
 
 
@@ -242,6 +270,21 @@ func _on_ability_2_upgrade_pressed() -> void:
 
 
 
+# buy new passive ability
+func _on_new_passive_ability_pressed() -> void:
+	if Globals.orbs >= newPassiveCost:
+		# buy the abilities if you have enough orbs
+		if currentNewPassive == "Shield" && Globals.hasShield == false:
+			Globals.orbs -= newPassiveCost
+			Globals.hasShield = true
+			Globals.spawningShield = true
+			$newPassiveAbility.text = "PURCHASED"
+			await get_tree().create_timer(0.75).timeout
+			setRandomNewPassive()
+	
+	
+
+
 
 
 
@@ -300,7 +343,7 @@ func _on_reroll_new_abilities_pressed() -> void:
 		setRandomNewAbility(currentNewAbility)
 		$rerollNewAbilities.text = "REROLLED"
 		await get_tree().create_timer(0.75).timeout
-		$rerollNewAbilities.text = "Reroll abilities (" + str(Globals.rerollCost) + " orbs)"
+		$rerollNewAbilities.text = "Reroll (" + str(Globals.rerollCost) + " orbs)"
 		
 		# reset text for the new ability to buy
 		updateUpgradeText()
@@ -309,5 +352,5 @@ func _on_reroll_new_abilities_pressed() -> void:
 	else: 
 		$rerollNewAbilities.text = "NOT ENOUGH ORBS"
 		await get_tree().create_timer(0.75).timeout
-		$rerollNewAbilities.text = "Reroll abilities (" + str(Globals.rerollCost) + " orbs)"
+		$rerollNewAbilities.text = "Reroll (" + str(Globals.rerollCost) + " orbs)"
  

@@ -7,12 +7,19 @@ var overallScore = 0
 var currentWave = 1
 var rerollCost = 5
 
+var ldm = false
 
 
 var playerLocation = Vector2(640,688)
 var playerHealth = 30
 var noWave = false
 
+
+
+# vars for passive abilities
+var hasShield = false
+var ShieldBaseCost = 25
+var spawningShield = false
 
 
 

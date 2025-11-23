@@ -34,19 +34,19 @@ anchor_top = -0.089
 anchor_right = 1.0500001
 anchor_bottom = 1.067
 offset_left = 24.320004
-offset_top = 32.08
+offset_top = -7.919998
 offset_right = -24.000122
-offset_bottom = -16.240051
+offset_bottom = -56.24005
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ra75s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(680, 336)
-scale = Vector2(2.625, 2.6382978)
+position = Vector2(684, 368)
+scale = Vector2(2.6562502, 2.9787233)
 sprite_frames = SubResource("SpriteFrames_hadpg")
 autoplay = "default"
-frame_progress = 0.6099224
+frame_progress = 0.80862206
 
 [node name="Resume" type="Button" parent="."]
 layout_mode = 0
@@ -82,22 +82,32 @@ autowrap_mode = 2
 [node name="buyNewAbility" type="Button" parent="."]
 layout_mode = 0
 offset_left = 408.0
-offset_top = 384.0
+offset_top = 376.0
 offset_right = 952.0
-offset_bottom = 472.0
+offset_bottom = 448.0
 theme_override_fonts/font = ExtResource("3_kq6we")
 theme_override_font_sizes/font_size = 11
 text = "No abilities to buy."
 
 [node name="rerollNewAbilities" type="Button" parent="."]
 layout_mode = 0
-offset_left = 576.0
-offset_top = 496.0
-offset_right = 784.0
-offset_bottom = 536.0
+offset_left = 568.0
+offset_top = 560.0
+offset_right = 776.0
+offset_bottom = 600.0
 theme_override_fonts/font = ExtResource("3_kq6we")
 theme_override_font_sizes/font_size = 10
-text = "Reroll ability (x orbs) "
+text = "Reroll  (x orbs) "
+
+[node name="newPassiveAbility" type="Button" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 472.0
+offset_right = 952.0
+offset_bottom = 544.0
+theme_override_fonts/font = ExtResource("3_kq6we")
+theme_override_font_sizes/font_size = 11
+text = "No passive abilities to buy."
 
 [node name="whichAbility" type="Node" parent="."]
 
@@ -122,5 +132,6 @@ text = "Replace [ability 2]"
 [connection signal="pressed" from="ability2Upgrade" to="." method="_on_ability_2_upgrade_pressed"]
 [connection signal="pressed" from="buyNewAbility" to="." method="_on_buy_new_ability_pressed"]
 [connection signal="pressed" from="rerollNewAbilities" to="." method="_on_reroll_new_abilities_pressed"]
+[connection signal="pressed" from="newPassiveAbility" to="." method="_on_new_passive_ability_pressed"]
 [connection signal="pressed" from="whichAbility/selectAbility1" to="." method="_on_select_ability_1_pressed"]
 [connection signal="pressed" from="whichAbility/selectAbility2" to="." method="_on_select_ability_2_pressed"]

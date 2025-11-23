@@ -8,6 +8,10 @@ extends Node2D
 func _ready():
 	score_label.text = "Score: " + str(Globals.orbs)
 	wave_label.text = "Wave: " + str(Globals.currentWave) 
+	
+	# hide shader if ldm is on
+	if Globals.ldm == true:
+		$shaderBG.visible = false
 
 
 
