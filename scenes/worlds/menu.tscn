@@ -1,16 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdpcax5u84qrl"]
+[gd_scene load_steps=8 format=3 uid="uid://cdpcax5u84qrl"]
 
 [ext_resource type="Script" uid="uid://tbnxvnyaimvh" path="res://scripts/menu.gd" id="1_kxoy0"]
-[ext_resource type="Shader" uid="uid://cfn8u7gs3mowe" path="res://shaders/menu.gdshader" id="2_ded4i"]
 [ext_resource type="FontFile" uid="uid://cq6pxojdhmyhs" path="res://fonts/daydream_3/Daydream DEMO.otf" id="2_jg4ok"]
 [ext_resource type="Texture2D" uid="uid://cvxrte6ms2eh1" path="res://art/ui sprites/ShopUIFrame.png" id="3_rlfvu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vojhl"]
-shader = ExtResource("2_ded4i")
-shader_parameter/movement_speed = 0.1
-shader_parameter/movement_scale = 2.0
-shader_parameter/color_1 = Color(0.13771236, 0.34906748, 0.5331423, 1)
-shader_parameter/color_2 = Color(0.00977615, 0.2785118, 0.28822982, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ded4i"]
 atlas = ExtResource("3_rlfvu")
@@ -41,7 +35,7 @@ script = ExtResource("1_kxoy0")
 material = SubResource("ShaderMaterial_vojhl")
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0.021556647, 0.029716022, 0.049080476, 1)
+color = Color(0.045499414, 0.058860138, 0.09975549, 1)
 
 [node name="Button" type="Button" parent="."]
 offset_left = 528.0
@@ -99,6 +93,6 @@ position = Vector2(168.00003, 648)
 scale = Vector2(1.421875, 1.3085107)
 sprite_frames = SubResource("SpriteFrames_80ey4")
 autoplay = "default"
-frame_progress = 0.39236635
+frame_progress = 0.93285275
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
