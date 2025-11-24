@@ -17,7 +17,7 @@ var mousePos
 
 # create a wave of different types of enemies based on the wave number
 func advancedWaveControl(waveNum):
-	# timer between wave start and emphasize what wave is starting
+	# timer between a wave ending and a new wave starting
 	Globals.noWave = true
 	await get_tree().create_timer(1.75).timeout
 	Globals.noWave = false
@@ -69,7 +69,6 @@ func spawnTankEnemyWave(amountOfEnemies,hp):
 
 
 
-
 # runs the frame this script/scene is loaded
 func _ready(): 
 	# initialize first wave
@@ -82,8 +81,6 @@ func _ready():
 		$shaderBG.visible = false
 		$CanvasLayer/ColorRect.visible = false
 		$ColorRect.visible = false
-
-
 
 
 
@@ -102,7 +99,7 @@ func spawnBullet():
 	# get direction and set velocity to go there
 	var dir = (get_global_mouse_position() - basicBullet.global_position).normalized()
 	basicBullet.velocity = dir * basicBullet.speed
-	#sfx
+	# sfx
 	$abilitysfx/splat1.play()
 
 
@@ -122,6 +119,8 @@ func spawnWideAttack():
 	
 	wideAttack.look_at(mousePos)
 	wideAttack.rotation_degrees += 90
+	
+	# add sfx here
 
 func spawnFragGrenade():
 	
@@ -135,7 +134,7 @@ func spawnFragGrenade():
 	# get direction and set velocity to go there
 	var dir = (get_global_mouse_position() - fragGrenade.global_position).normalized()
 	fragGrenade.velocity = dir * fragGrenade.speed
-	#sfx
+	# sfx
 	$abilitysfx/splat1.play()
 
 # spawning burst attack
@@ -148,6 +147,8 @@ func spawnBurstAttack():
 	add_child(burstAttack)
 	burstAttack.global_position = Vector2(640,688)
 
+	# add sfx here
+
 
 
 # runs every frame
@@ -158,7 +159,8 @@ func _process(delta):
 	Globals.basicBulletCooldown -= 125 * delta
 	Globals.fragGrenadeCooldown -= 125 * delta
 	Globals.burstCooldown -= 125 * delta
-	
+
+	# keeping cooldowns at 0 so the ui displays it nicely
 	if Globals.wideAttackCooldown < 0:
 		Globals.wideAttackCooldown = 0
 	if Globals.basicBulletCooldown < 0:
@@ -170,12 +172,14 @@ func _process(delta):
 	
 	
 	
-	# spawn in shield if you own one but it isnt there
+	# spawn in shield if you just purchased one
 	if Globals.hasShield == true && Globals.spawningShield == true:
 		var shieldObject = shieldPreload.instantiate()
 		add_child(shieldObject)
 		shieldObject.global_position = Vector2(640,688) # player position
 		Globals.spawningShield = false
+
+		# maybe play sfx here as sheild spawns
 	
 	
 	
