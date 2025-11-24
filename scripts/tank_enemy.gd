@@ -19,7 +19,7 @@ func takeKB(amount):
 
 
 # enemy will travel towards the player location
-func moveToPlayer():
+func moveToPlayer(delta):
 	var speed = 0.65
 	var to_player = Globals.playerLocation - position
 	var distance = to_player.length()
@@ -27,15 +27,15 @@ func moveToPlayer():
 	if distance > 25:
 		if distance > 0:
 			var direction = to_player.normalized()
-			position += direction * speed
+			position += direction * speed * delta
 	else:
 		queue_free()
 
 
 
 # each frame move towards player and check if dead
-func _process(_delta):
-	moveToPlayer()
+func _process(delta):
+	moveToPlayer(delta)
 	if health <= 0:
 		Globals.orbs += 1
 		Globals.overallScore += 1

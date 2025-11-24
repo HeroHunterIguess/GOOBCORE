@@ -35,6 +35,10 @@ basicBulletShot=""
 Enemy=""
 Player=""
 
+[gui]
+
+theme/custom_font="uid://xvwrbanhma7l"
+
 [input]
 
 leftClick={
