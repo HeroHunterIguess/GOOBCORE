@@ -29,7 +29,7 @@ func takeKB(amount):
 
 # enemy will travel towards the player location
 func moveToPlayer(delta):
-	var speed = 1.25
+	var speed = 150
 	var to_player = Globals.playerLocation - position
 	var distance = to_player.length()
 	
