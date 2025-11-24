@@ -9,7 +9,7 @@ func _on_button_pressed() -> void:
 func _on_ldm_button_pressed() -> void:
 	if Globals.ldm == false:
 		Globals.ldm = true
-		$ldmButton.text = "Low detail mode (enabled)"
+		$ldmButton.text = "Low detail mode enabled"
 	else:
 		Globals.ldm = false
-		$ldmButton.text = "Low detail mode (disabled)"
+		$ldmButton.text = "Low detail mode disabled"

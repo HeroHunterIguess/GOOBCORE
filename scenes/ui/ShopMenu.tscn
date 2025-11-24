@@ -114,17 +114,21 @@ text = "No passive abilities to buy."
 [node name="selectAbility1" type="Button" parent="whichAbility"]
 visible = false
 offset_left = 376.0
-offset_top = 328.0
+offset_top = 304.0
 offset_right = 632.0
-offset_bottom = 400.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("3_kq6we")
+theme_override_font_sizes/font_size = 10
 text = "Replace [ability 1]"
 
 [node name="selectAbility2" type="Button" parent="whichAbility"]
 visible = false
-offset_left = 648.0
-offset_top = 328.0
-offset_right = 904.0
-offset_bottom = 400.0
+offset_left = 664.0
+offset_top = 304.0
+offset_right = 920.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("3_kq6we")
+theme_override_font_sizes/font_size = 10
 text = "Replace [ability 2]"
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]

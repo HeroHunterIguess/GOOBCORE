@@ -181,10 +181,10 @@ func _process(delta):
 	
 	
 	# display info on screen
-	$ui/Orbs.text = "Orbs: " + str(Globals.orbs)
+	$ui/Orbs.text = str(Globals.orbs) + " orbs"
 	if Globals.noWave == false:
 		$ui/waveNum.text =  str(Globals.currentWave)
-	$ui/Health.text = "HP: " + str(Globals.playerHealth)
+	$ui/Health.text = str(Globals.playerHealth) + " HP"
 	
 	# get mouse position obv
 	mousePos = get_viewport().get_mouse_position()

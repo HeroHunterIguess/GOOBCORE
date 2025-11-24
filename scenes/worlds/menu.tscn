@@ -97,13 +97,13 @@ autoplay = "default"
 frame_progress = 0.69183296
 
 [node name="ldmButton" type="Button" parent="."]
-offset_left = 1000.0
-offset_top = 680.0
-offset_right = 1281.0
+offset_left = 952.0
+offset_top = 664.0
+offset_right = 1279.0
 offset_bottom = 720.0
 theme_override_fonts/font = ExtResource("2_jg4ok")
-theme_override_font_sizes/font_size = 12
-text = "Low detail mode (disabled)"
+theme_override_font_sizes/font_size = 14
+text = "Low detail mode disabled"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ldmButton" to="." method="_on_ldm_button_pressed"]
