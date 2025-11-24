@@ -3,38 +3,38 @@ extends Control
 func updateUpgradeText():
 	# text for all abilities at slot 1
 	if Globals.ability1 == "Basic bullet":
-		$ability1Upgrade.text = "Purchase Basic Bullet MK." + str(Globals.basicBulletLevel + 1) + "\n (" + str(Globals.basicBulletLevel * 35) +" orbs)"
+		$ability1Upgrade.text = "Purchase Basic Bullet MK." + str(Globals.basicBulletLevel + 1) + "\n " + str(Globals.basicBulletLevel * 35) +" orbs"
 	if Globals.ability1 == "Push wall":
-		$ability1Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n (" + str(Globals.wideAttackLevel * 35) +" orbs)"
+		$ability1Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n " + str(Globals.wideAttackLevel * 35) +" orbs"
 	if Globals.ability1 == "Frag grenade":
-		$ability1Upgrade.text = "Purchase Frag Grenade MK." + str(Globals.fragGrenadeLevel + 1) + "\n (" + str(Globals.fragGrenadeLevel * 35) +" orbs)"
+		$ability1Upgrade.text = "Purchase Frag Grenade MK." + str(Globals.fragGrenadeLevel + 1) + "\n " + str(Globals.fragGrenadeLevel * 35) +" orbs"
 	if Globals.ability1 == "Burst attack":
-		$ability1Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n (" + str(Globals.burstLevel * 35) +" orbs)"
+		$ability1Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n " + str(Globals.burstLevel * 35) +" orbs"
 	
 	
 	# text for all abilities at slot 2
 	if Globals.ability2 == "Basic bullet":
-		$ability2Upgrade.text = "Purchase Basic Bullet MK." + str(Globals.basicBulletLevel + 1) + "\n (" + str(Globals.basicBulletLevel * 35) +" orbs)"
+		$ability2Upgrade.text = "Purchase Basic Bullet MK." + str(Globals.basicBulletLevel + 1) + "\n " + str(Globals.basicBulletLevel * 35) +" orbs"
 	if Globals.ability2 == "Push wall":
-		$ability2Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n (" + str(Globals.wideAttackLevel * 35) +" orbs)"
+		$ability2Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n " + str(Globals.wideAttackLevel * 35) +" orbs"
 	if Globals.ability2 == "Frag grenade":
-		$ability2Upgrade.text = "Purchase Frag Grenade MK." + str(Globals.fragGrenadeLevel + 1) + "\n (" + str(Globals.fragGrenadeLevel * 35) +" orbs)"
+		$ability2Upgrade.text = "Purchase Frag Grenade MK." + str(Globals.fragGrenadeLevel + 1) + "\n " + str(Globals.fragGrenadeLevel * 35) +" orbs"
 	if Globals.ability2 == "Burst attack":
-		$ability2Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n (" + str(Globals.burstLevel * 35) +" orbs)"
+		$ability2Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n " + str(Globals.burstLevel * 35) +" orbs"
 	
 	
 	# new ability purchasing thing
 	if currentNewAbility == "Push wall":
-			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.wideAttackBaseCost) + " orbs)"
+			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " for " + str(Globals.wideAttackBaseCost) + " orbs"
 	elif currentNewAbility == "Frag grenade":
-			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.fragGrenadeBaseCost) + " orbs)"
+			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " for " + str(Globals.fragGrenadeBaseCost) + " orbs"
 	elif currentNewAbility == "Burst attack":
-			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " (" + str(Globals.burstBaseCost) + " orbs)"
+			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " for " + str(Globals.burstBaseCost) + " orbs"
 	
 	
 	# new passive ability purchasing
 	if currentNewPassive == "Shield":
-		$newPassiveAbility.text = "Buy " + currentNewPassive + " ( " + str(newPassiveCost) + " orbs)"
+		$newPassiveAbility.text = "Buy " + currentNewPassive + " for " + str(newPassiveCost) + " orbs"
 
 var currentNewPassive = ""
 var currentNewAbility = ""
@@ -104,7 +104,7 @@ func _ready():
 	updateUpgradeText()
 	
 	# reroll text
-	$rerollNewAbilities.text = "Reroll (" + str(Globals.rerollCost) + " orbs)"
+	$rerollNewAbilities.text = "Reroll for " + str(Globals.rerollCost) + " orbs"
 	
 	
 	# set random ability & passive to buy
@@ -343,7 +343,7 @@ func _on_reroll_new_abilities_pressed() -> void:
 		setRandomNewAbility(currentNewAbility)
 		$rerollNewAbilities.text = "REROLLED"
 		await get_tree().create_timer(0.75).timeout
-		$rerollNewAbilities.text = "Reroll (" + str(Globals.rerollCost) + " orbs)"
+		$rerollNewAbilities.text = "Reroll for " + str(Globals.rerollCost) + " orbs"
 		
 		# reset text for the new ability to buy
 		updateUpgradeText()
@@ -352,5 +352,5 @@ func _on_reroll_new_abilities_pressed() -> void:
 	else: 
 		$rerollNewAbilities.text = "NOT ENOUGH ORBS"
 		await get_tree().create_timer(0.75).timeout
-		$rerollNewAbilities.text = "Reroll (" + str(Globals.rerollCost) + " orbs)"
+		$rerollNewAbilities.text = "Reroll for " + str(Globals.rerollCost) + " orbs"
  

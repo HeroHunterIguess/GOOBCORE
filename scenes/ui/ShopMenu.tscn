@@ -59,7 +59,7 @@ text = "Resume"
 
 [node name="ability1Upgrade" type="Button" parent="."]
 layout_mode = 0
-offset_left = 408.0
+offset_left = 400.0
 offset_top = 184.0
 offset_right = 648.0
 offset_bottom = 352.0
@@ -72,7 +72,7 @@ autowrap_mode = 2
 layout_mode = 0
 offset_left = 712.0
 offset_top = 184.0
-offset_right = 952.0
+offset_right = 960.0
 offset_bottom = 351.088
 theme_override_fonts/font = ExtResource("3_kq6we")
 theme_override_font_sizes/font_size = 13
@@ -81,9 +81,9 @@ autowrap_mode = 2
 
 [node name="buyNewAbility" type="Button" parent="."]
 layout_mode = 0
-offset_left = 408.0
+offset_left = 400.0
 offset_top = 376.0
-offset_right = 952.0
+offset_right = 960.0
 offset_bottom = 448.0
 theme_override_fonts/font = ExtResource("3_kq6we")
 theme_override_font_sizes/font_size = 11
@@ -91,19 +91,19 @@ text = "No abilities to buy."
 
 [node name="rerollNewAbilities" type="Button" parent="."]
 layout_mode = 0
-offset_left = 568.0
+offset_left = 560.0
 offset_top = 560.0
-offset_right = 776.0
+offset_right = 784.0
 offset_bottom = 600.0
 theme_override_fonts/font = ExtResource("3_kq6we")
 theme_override_font_sizes/font_size = 10
-text = "Reroll  (x orbs) "
+text = "Reroll for x orbs"
 
 [node name="newPassiveAbility" type="Button" parent="."]
 layout_mode = 0
-offset_left = 408.0
+offset_left = 400.0
 offset_top = 472.0
-offset_right = 952.0
+offset_right = 960.0
 offset_bottom = 544.0
 theme_override_fonts/font = ExtResource("3_kq6we")
 theme_override_font_sizes/font_size = 11

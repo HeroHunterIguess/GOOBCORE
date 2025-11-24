@@ -11,7 +11,8 @@ func _ready():
 	
 	# hide shader if ldm is on
 	if Globals.ldm == true:
-		$shaderBG.visible = false
+		$ColorRect.visible = false
+		$ColorRect2.visible = false
 
 
 
