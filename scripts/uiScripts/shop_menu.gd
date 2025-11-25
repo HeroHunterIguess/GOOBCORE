@@ -340,7 +340,6 @@ func _on_select_ability_2_pressed() -> void:
 func _on_reroll_new_abilities_pressed() -> void:
 	if Globals.orbs >= Globals.rerollCost:
 		Globals.orbs -= Globals.rerollCost
-		Globals.rerollCost = int(round(Globals.rerollCost * 1.85))
 		setRandomNewAbility(currentNewAbility)
 		$rerollNewAbilities.text = "REROLLED"
 		await get_tree().create_timer(0.75).timeout
