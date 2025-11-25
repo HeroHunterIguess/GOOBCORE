@@ -54,7 +54,7 @@ var burstAmount = 10
 var burstDamage = 8
 var burstCooldown = 180
 var burstLevel = 1
-var burstBaseCost = 30
+var burstBaseCost = 35
 
 
 # list of all ability names:
@@ -132,7 +132,7 @@ func reset():
 	burstDamage = 8
 	burstCooldown = 180
 	burstLevel = 1
-	burstBaseCost = 30
+	burstBaseCost = 35
 	
 	
 	
