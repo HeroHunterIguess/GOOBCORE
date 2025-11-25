@@ -6,7 +6,7 @@ extends Node2D
 # tell player their score
 
 func _ready():
-	score_label.text = "Score  " + str(Globals.orbs) 
+	score_label.text = "Score  " + str(Globals.overallScore) 
 	wave_label.text = "Wave  " + str(Globals.currentWave) 
 	
 	# hide shader if ldm is on
