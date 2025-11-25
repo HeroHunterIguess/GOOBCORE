@@ -2,7 +2,7 @@ extends Node
 
 
 # random things
-var orbs = 10999
+var orbs = 10
 var overallScore = 0
 var currentWave = 1
 var rerollCost = 5
@@ -27,7 +27,7 @@ var spawningShield = false
 # vars for push wall attack
 var wideAttackBaseCost = 25
 var wideAttackCooldown = 200
-var wideAttackDamage = 0.5
+var wideAttackDamage = 0.45
 var wideAttackSpeed = 190
 var wideAttackLevel = 1
 
@@ -40,7 +40,7 @@ var basicBulletLevel = 1
 
 
 # vars for frag grenade
-var fragGrenadeBaseCost = 18
+var fragGrenadeBaseCost = 20
 var fragGrenadeCooldown = 100
 var fragGrenadeDamage = 12
 var fragGrenadeSpeed = 350
@@ -54,7 +54,7 @@ var burstAmount = 10
 var burstDamage = 8
 var burstCooldown = 180
 var burstLevel = 1
-var burstBaseCost = 30
+var burstBaseCost = 35
 
 
 # list of all ability names:
@@ -103,15 +103,15 @@ func reset():
 	# reset all ability stats
 
 	# vars for push wall attack
-	wideAttackBaseCost = 25
+	wideAttackBaseCost = 20
 	wideAttackCooldown = 200
-	wideAttackDamage = 0.5
+	wideAttackDamage = 0.45
 	wideAttackSpeed = 190
 	wideAttackLevel = 1
 
 
 	# vars for basic bullet
-	basicBulletCooldown = 16
+	basicBulletCooldown = 18
 	basicBulletDamage = 1.75
 	basicBulletSpeed = 585
 	basicBulletLevel = 1
@@ -132,7 +132,7 @@ func reset():
 	burstDamage = 8
 	burstCooldown = 180
 	burstLevel = 1
-	burstBaseCost = 30
+	burstBaseCost = 35
 	
 	
 	

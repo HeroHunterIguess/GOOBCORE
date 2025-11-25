@@ -153,7 +153,7 @@ func upgradeBasicBullet():
 	Globals.orbs -= Globals.basicBulletLevel * 35
 	Globals.basicBulletCooldown -= 3
 	Globals.basicBulletDamage += 1.1
-	Globals.basicBulletSpeed += 90
+	Globals.basicBulletSpeed += 30
 	Globals.basicBulletLevel += 1
 	if Globals.basicBulletCooldown <= 0:
 		Globals.basicBulletCooldown = 0
@@ -162,14 +162,14 @@ func upgradePushWall():
 	Globals.orbs -= Globals.wideAttackLevel * 35
 	Globals.wideAttackCooldown -= 20
 	Globals.wideAttackDamage += 0.35
-	Globals.wideAttackSpeed += 40
+	Globals.wideAttackSpeed += 20
 	Globals.wideAttackLevel += 1
 
 func upgradeFragGrenade():
 	Globals.orbs -= Globals.fragGrenadeLevel * 35
 	Globals.fragGrenadeCooldown -= 25
 	Globals.fragGrenadeDamage += 1
-	Globals.fragGrenadeSpeed += 50
+	Globals.fragGrenadeSpeed += 25
 	Globals.fragGrenadeAmount += 1
 	Globals.fragGrenadeLevel += 1
 	Globals.fragDamage += 0.8
@@ -340,7 +340,6 @@ func _on_select_ability_2_pressed() -> void:
 func _on_reroll_new_abilities_pressed() -> void:
 	if Globals.orbs >= Globals.rerollCost:
 		Globals.orbs -= Globals.rerollCost
-		Globals.rerollCost = int(round(Globals.rerollCost * 1.85))
 		setRandomNewAbility(currentNewAbility)
 		$rerollNewAbilities.text = "REROLLED"
 		await get_tree().create_timer(0.75).timeout
