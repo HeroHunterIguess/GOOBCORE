@@ -2,7 +2,7 @@ extends Node
 
 
 # random things
-var orbs = 10
+var orbs = 10999
 var overallScore = 0
 var currentWave = 1
 var rerollCost = 5
@@ -26,7 +26,7 @@ var spawningShield = false
 
 # vars for push wall attack
 var wideAttackBaseCost = 25
-var wideAttackCooldown = 215
+var wideAttackCooldown = 200
 var wideAttackDamage = 0.5
 var wideAttackSpeed = 190
 var wideAttackLevel = 1
@@ -41,7 +41,7 @@ var basicBulletLevel = 1
 
 # vars for frag grenade
 var fragGrenadeBaseCost = 18
-var fragGrenadeCooldown = 120
+var fragGrenadeCooldown = 100
 var fragGrenadeDamage = 12
 var fragGrenadeSpeed = 350
 var fragGrenadeAmount = 8
@@ -104,7 +104,7 @@ func reset():
 
 	# vars for push wall attack
 	wideAttackBaseCost = 25
-	wideAttackCooldown = 215
+	wideAttackCooldown = 200
 	wideAttackDamage = 0.5
 	wideAttackSpeed = 190
 	wideAttackLevel = 1
@@ -119,7 +119,7 @@ func reset():
 
 	# vars for frag grenade
 	fragGrenadeBaseCost = 18
-	fragGrenadeCooldown = 120
+	fragGrenadeCooldown = 100
 	fragGrenadeDamage = 12
 	fragGrenadeSpeed = 350
 	fragGrenadeAmount = 8

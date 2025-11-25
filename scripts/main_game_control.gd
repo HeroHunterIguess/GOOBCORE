@@ -125,7 +125,7 @@ func spawnWideAttack():
 func spawnFragGrenade():
 	
 	# reset shoot cooldown
-	Globals.fragGrenadeCooldown = 325
+	Globals.fragGrenadeCooldown = 100
 	# spawning bullet at player location
 	var fragGrenade = fragGrenadePreload.instantiate()
 	add_child(fragGrenade)
@@ -135,12 +135,12 @@ func spawnFragGrenade():
 	var dir = (get_global_mouse_position() - fragGrenade.global_position).normalized()
 	fragGrenade.velocity = dir * fragGrenade.speed
 	# sfx
-	$abilitysfx/splat1.play()
+	$abilitysfx/lowerPitchSplat.play()
 
 # spawning burst attack
 func spawnBurstAttack():
 	#reset cooldown
-	Globals.burstCooldown = 300
+	Globals.burstCooldown = 180
 	
 	#set position
 	var burstAttack = burstAttackPreload.instantiate()
