@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene load_steps=27 format=3 uid="uid://dh0s4wxpw43wx"]
 
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 [ext_resource type="Shader" uid="uid://b1xuob6aqtiku" path="res://shaders/main_background.gdshader" id="2_dq5l5"]
@@ -12,6 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://083dyvnfmb62" path="res://audio/songs/maintheme(temp).mp3" id="9_c7761"]
 [ext_resource type="Texture2D" uid="uid://cfqc8p7vgikvy" path="res://art/ui sprites/newshopui.png" id="10_camfd"]
 [ext_resource type="AudioStream" uid="uid://68v45nhxvho8" path="res://audio/sfx/splat 1.mp3" id="11_jumef"]
+[ext_resource type="AudioStream" uid="uid://dt0cgnudhi3dy" path="res://audio/sfx/disgusting explosion.wav" id="13_wo2sw"]
+[ext_resource type="AudioStream" uid="uid://beuttq7l5hyqh" path="res://audio/sfx/splat 2.mp3" id="14_718pp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_faocy"]
 shader = ExtResource("2_dq5l5")
@@ -238,17 +240,28 @@ sprite_frames = SubResource("SpriteFrames_wo2sw")
 autoplay = "default"
 frame_progress = 0.29447833
 
-[node name="abilitysfx" type="Node" parent="."]
+[node name="sfx" type="Node" parent="."]
 
-[node name="splat1" type="AudioStreamPlayer2D" parent="abilitysfx"]
+[node name="splat1" type="AudioStreamPlayer2D" parent="sfx"]
 position = Vector2(640, 576)
 stream = ExtResource("11_jumef")
-volume_db = -9.579
+volume_db = -6.842
 
-[node name="lowerPitchSplat" type="AudioStreamPlayer2D" parent="abilitysfx"]
+[node name="lowerPitchSplat" type="AudioStreamPlayer2D" parent="sfx"]
+position = Vector2(640, 568)
 stream = ExtResource("11_jumef")
 volume_db = -8.211
 pitch_scale = 0.69
+
+[node name="burst" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("13_wo2sw")
+volume_db = -5.474
+pitch_scale = 0.95
+
+[node name="splat2" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("14_718pp")
+volume_db = -6.842
+pitch_scale = 0.84
 
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]

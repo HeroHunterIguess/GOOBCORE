@@ -100,7 +100,7 @@ func spawnBullet():
 	var dir = (get_global_mouse_position() - basicBullet.global_position).normalized()
 	basicBullet.velocity = dir * basicBullet.speed
 	# sfx
-	$abilitysfx/splat1.play()
+	$sfx/splat1.play()
 
 
 # spawns the wide push attack in mouse dir
@@ -120,7 +120,8 @@ func spawnWideAttack():
 	wideAttack.look_at(mousePos)
 	wideAttack.rotation_degrees += 90
 	
-	# add sfx here
+	# sfx
+	$sfx/splat2.play()
 
 func spawnFragGrenade():
 	
@@ -135,7 +136,7 @@ func spawnFragGrenade():
 	var dir = (get_global_mouse_position() - fragGrenade.global_position).normalized()
 	fragGrenade.velocity = dir * fragGrenade.speed
 	# sfx
-	$abilitysfx/lowerPitchSplat.play()
+	$sfx/lowerPitchSplat.play()
 
 # spawning burst attack
 func spawnBurstAttack():
@@ -147,7 +148,8 @@ func spawnBurstAttack():
 	add_child(burstAttack)
 	burstAttack.global_position = Vector2(640,688)
 
-	# add sfx here
+	# sfx
+	$sfx/burst.play()
 
 
 
