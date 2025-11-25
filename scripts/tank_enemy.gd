@@ -41,6 +41,6 @@ func moveToPlayer(delta):
 func _process(delta):
 	moveToPlayer(delta)
 	if health <= 0:
-		Globals.orbs += 1
+		Globals.orbs += 3
 		Globals.overallScore += 1
 		queue_free()
