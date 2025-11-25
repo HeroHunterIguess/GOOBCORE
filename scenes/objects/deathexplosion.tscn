@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://dv1kev0itbeke"]
+[gd_scene load_steps=21 format=3 uid="uid://dv1kev0itbeke"]
 
 [ext_resource type="Texture2D" uid="uid://bxe7twx00wuk4" path="res://art/world sprites/explosion.png" id="1_820aj"]
 [ext_resource type="Script" uid="uid://bwnx8ck0gafr4" path="res://scripts/deathexplosion.gd" id="1_mtunb"]
+[ext_resource type="AudioStream" uid="uid://dg54l0a8wgyl2" path="res://audio/sfx/deathExplosion.wav" id="3_sywc6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtunb"]
 atlas = ExtResource("1_820aj")
@@ -120,15 +121,21 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 63.0
+"speed": 60.0
 }]
 
 [node name="deathexplosion" type="Node2D"]
 script = ExtResource("1_mtunb")
 
 [node name="explosion" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.3841858e-06, -2.3841858e-06)
+scale = Vector2(1.2499999, 1.2499999)
 sprite_frames = SubResource("SpriteFrames_07sp6")
+autoplay = "default"
 frame = 15
 frame_progress = 1.0
 
 [node name="explodeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_sywc6")
+volume_db = -10.947
+pitch_scale = 1.29

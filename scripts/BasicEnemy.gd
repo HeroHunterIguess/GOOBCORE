@@ -2,6 +2,7 @@ extends Node2D
 
 var normalSprite = preload("res://icon.svg")
 var hurtSprite = preload("res://art/temporary sprites/erm what.jpg")
+var explodeScene = preload("res://scenes/objects/deathexplosion.tscn")
 
 var health = 4
 var damage = 2
@@ -50,8 +51,19 @@ func moveToPlayer(delta):
 
 # each frame move towards player and check if dead
 func _process(delta):
-	moveToPlayer(delta)
+	
 	if health <= 0:
 		Globals.orbs += 1
 		Globals.overallScore += 1
+		#spawn and play death animation
+		var explosion = explodeScene.instantiate()
+		get_tree().get_current_scene().add_child(explosion)
+		explosion.global_position = self.position
+		# hide sprites
+		#await get_tree().create_timer(0.1).timeout
+		$AnimatedSprite2D.visible=false
+		$hurtanim.visible=false
+		# let death animation play out
 		queue_free()
+	else:
+		moveToPlayer(delta)
