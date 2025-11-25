@@ -2,7 +2,7 @@ extends Node
 
 
 # random things
-var orbs = 10999
+var orbs = 10
 var overallScore = 0
 var currentWave = 1
 var rerollCost = 5
@@ -50,7 +50,7 @@ var fragGrenadeLevel = 1
 
 
 # vars for bullet burst attack
-var burstAmount = 15
+var burstAmount = 10
 var burstDamage = 8
 var burstCooldown = 180
 var burstLevel = 1
@@ -128,7 +128,7 @@ func reset():
 
 
 	# vars for bullet burst attack
-	burstAmount = 15
+	burstAmount = 10
 	burstDamage = 8
 	burstCooldown = 180
 	burstLevel = 1
