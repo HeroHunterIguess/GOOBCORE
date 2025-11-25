@@ -250,7 +250,7 @@ volume_db = -6.842
 [node name="lowerPitchSplat" type="AudioStreamPlayer2D" parent="sfx"]
 position = Vector2(640, 568)
 stream = ExtResource("11_jumef")
-volume_db = -8.211
+volume_db = -4.106
 pitch_scale = 0.69
 
 [node name="burst" type="AudioStreamPlayer2D" parent="sfx"]
@@ -260,7 +260,7 @@ pitch_scale = 0.95
 
 [node name="splat2" type="AudioStreamPlayer2D" parent="sfx"]
 stream = ExtResource("14_718pp")
-volume_db = -6.842
+volume_db = -2.737
 pitch_scale = 0.84
 
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
