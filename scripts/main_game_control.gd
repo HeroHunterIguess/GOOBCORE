@@ -81,7 +81,14 @@ func _ready():
 		$shaderBG.visible = false
 		$CanvasLayer/ColorRect.visible = false
 		$ColorRect.visible = false
-
+	
+	
+	
+	# play spin animation when you initially start
+	$goobertSpin.play()
+	await get_tree().create_timer(1.7).timeout
+	$goobert.visible = true
+	$goobertSpin.visible = false
 
 
 

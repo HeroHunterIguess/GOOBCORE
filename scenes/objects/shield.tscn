@@ -1,24 +1,24 @@
 [gd_scene load_steps=7 format=3 uid="uid://bsww4csck1kj"]
 
-[ext_resource type="Texture2D" uid="uid://jen0kcl7suab" path="res://art/other/shield.png" id="1_02aew"]
 [ext_resource type="Script" uid="uid://bjd3w15thpola" path="res://scripts/passives/shield.gd" id="1_kdf5a"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kdf5a"]
-atlas = ExtResource("1_02aew")
-region = Rect2(0, 0, 120, 120)
+[ext_resource type="Texture2D" uid="uid://ctxa73pj2eonn" path="res://art/world sprites/zappy128x64.png" id="2_kdf5a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3nqv"]
-atlas = ExtResource("1_02aew")
-region = Rect2(120, 0, 120, 120)
+atlas = ExtResource("2_kdf5a")
+region = Rect2(0, 0, 128, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_am3y5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_am3y5"]
+atlas = ExtResource("2_kdf5a")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qf3ha"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kdf5a")
+"texture": SubResource("AtlasTexture_i3nqv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i3nqv")
+"texture": SubResource("AtlasTexture_am3y5")
 }],
 "loop": true,
 "name": &"default",
@@ -26,21 +26,23 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_02aew"]
-radius = 56.0
-height = 128.0
+radius = 80.0
+height = 176.0
 
 [node name="Shield" type="Node2D"]
 script = ExtResource("1_kdf5a")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_am3y5")
+[node name="shieldSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5.684342e-14, -8.000001)
+scale = Vector2(1.53125, 1.9687499)
+sprite_frames = SubResource("SpriteFrames_qf3ha")
 autoplay = "default"
-frame_progress = 0.84948075
+frame_progress = 0.9957356
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 24)
+position = Vector2(0, 32)
 shape = SubResource("CapsuleShape2D_02aew")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

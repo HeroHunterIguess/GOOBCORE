@@ -354,3 +354,9 @@ func _on_reroll_new_abilities_pressed() -> void:
 		await get_tree().create_timer(0.75).timeout
 		$rerollNewAbilities.text = "Reroll for " + str(Globals.rerollCost) + " orbs"
  
+
+
+# reset game if you click that button
+func _on_reset_game_pressed() -> void:
+	Globals.reset()
+	get_tree().change_scene_to_file("res://scenes/worlds/menu.tscn")

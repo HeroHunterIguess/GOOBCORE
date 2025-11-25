@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene load_steps=43 format=3 uid="uid://dh0s4wxpw43wx"]
 
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 [ext_resource type="Shader" uid="uid://b1xuob6aqtiku" path="res://shaders/main_background.gdshader" id="2_dq5l5"]
@@ -48,6 +48,119 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_718pp"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8mih"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfjan"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j501q"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br5fy"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgil2"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfwqq"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xmen"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajui3"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wf1r"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0vru"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8etg"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6klfb"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k41wj"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(896, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub14p"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(960, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jqkp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_718pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8mih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfjan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j501q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br5fy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgil2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfwqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xmen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajui3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wf1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0vru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8etg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6klfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k41wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub14p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ltt4m"]
@@ -133,12 +246,19 @@ offset_bottom = 864.0
 metadata/_edit_use_anchors_ = true
 
 [node name="goobert" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(640, 688.00006)
 scale = Vector2(1.2499995, 1.250001)
 sprite_frames = SubResource("SpriteFrames_dq5l5")
 autoplay = "default"
 frame_progress = 0.73467404
+
+[node name="goobertSpin" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 688)
+scale = Vector2(1.2500006, 1.25)
+sprite_frames = SubResource("SpriteFrames_8jqkp")
+frame_progress = 0.05858782
 
 [node name="playerHitbox" type="Area2D" parent="." groups=["Player"]]
 position = Vector2(576, 616)
@@ -164,13 +284,19 @@ metadata/_edit_use_anchors_ = true
 [node name="ui" type="CanvasLayer" parent="."]
 
 [node name="Health" type="Label" parent="ui"]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = -0.9
+anchor_right = 0.34375
+anchor_bottom = -0.86527777
 offset_left = 688.0
 offset_top = 648.0
 offset_right = 840.0
 offset_bottom = 711.0
 theme_override_fonts/font = ExtResource("5_seagn")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "HP:"
+horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="waveNum" type="Label" parent="ui"]
