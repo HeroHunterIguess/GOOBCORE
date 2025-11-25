@@ -89,6 +89,8 @@ func _ready():
 	await get_tree().create_timer(1.7).timeout
 	$goobert.visible = true
 	$goobertSpin.visible = false
+	
+	
 
 
 
@@ -194,7 +196,6 @@ func _process(delta):
 	
 	
 	# display info on screen
-	$ui/Orbs.text = str(Globals.orbs) + " orbs"
 	if Globals.noWave == false:
 		$ui/waveNum.text =  str(Globals.currentWave)
 	$ui/Health.text = str(Globals.playerHealth) + " HP"

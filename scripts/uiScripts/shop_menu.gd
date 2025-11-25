@@ -1,5 +1,7 @@
 extends Control
 
+
+
 func updateUpgradeText():
 	# text for all abilities at slot 1
 	if Globals.ability1 == "Basic bullet":

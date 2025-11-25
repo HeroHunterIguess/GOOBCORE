@@ -22,7 +22,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_02aew"]
@@ -37,7 +37,7 @@ position = Vector2(-5.684342e-14, -8.000001)
 scale = Vector2(1.53125, 1.9687499)
 sprite_frames = SubResource("SpriteFrames_qf3ha")
 autoplay = "default"
-frame_progress = 0.9957356
+frame_progress = 0.30206224
 
 [node name="Area2D" type="Area2D" parent="."]
 
