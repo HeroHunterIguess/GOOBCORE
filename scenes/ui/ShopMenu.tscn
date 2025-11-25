@@ -53,7 +53,7 @@ position = Vector2(248.47057, 161.14287)
 scale = Vector2(0.6457721, 0.5465045)
 sprite_frames = SubResource("SpriteFrames_hadpg")
 autoplay = "default"
-frame_progress = 0.05850872
+frame_progress = 0.53559524
 
 [node name="Resume" type="Button" parent="."]
 layout_mode = 0

@@ -258,7 +258,7 @@ frame_progress = 0.73467404
 position = Vector2(640, 688)
 scale = Vector2(1.2500006, 1.25)
 sprite_frames = SubResource("SpriteFrames_8jqkp")
-frame_progress = 0.05858782
+frame_progress = 0.19958392
 
 [node name="playerHitbox" type="Area2D" parent="." groups=["Player"]]
 position = Vector2(576, 616)
@@ -356,7 +356,7 @@ position = Vector2(392, 720)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(640, 288)
 stream = ExtResource("9_c7761")
-volume_db = -6.842
+volume_db = -10.742
 autoplay = true
 
 [node name="ability menu sprite" type="AnimatedSprite2D" parent="."]

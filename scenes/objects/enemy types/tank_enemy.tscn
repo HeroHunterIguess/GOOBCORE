@@ -1,47 +1,47 @@
 [gd_scene load_steps=11 format=3 uid="uid://d1k7oanp3mdeg"]
 
 [ext_resource type="Script" uid="uid://bs4nclnswi5kv" path="res://scripts/tank_enemy.gd" id="1_yei3t"]
-[ext_resource type="Texture2D" uid="uid://b4r3dmlpg4v00" path="res://art/character sprites/fat.png" id="2_yei3t"]
+[ext_resource type="Texture2D" uid="uid://dp7v56sqw8u0u" path="res://art/character sprites/fatv2.png" id="2_0c2ub"]
 [ext_resource type="AudioStream" uid="uid://bopkl656uji88" path="res://audio/sfx/trimmedOuchie.mp3" id="3_0c2ub"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0c2ub"]
-atlas = ExtResource("2_yei3t")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_636vg"]
-atlas = ExtResource("2_yei3t")
-region = Rect2(0, 32, 32, 32)
+atlas = ExtResource("2_0c2ub")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tm3ml"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm3ml"]
+atlas = ExtResource("2_0c2ub")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vb11s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_636vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm3ml")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c2ub"]
+atlas = ExtResource("2_0c2ub")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb11s"]
+atlas = ExtResource("2_0c2ub")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_753go"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0c2ub")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_636vg")
-}],
-"loop": true,
-"name": &"default",
-"speed": 7.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yei3t"]
-atlas = ExtResource("2_yei3t")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tm3ml"]
-atlas = ExtResource("2_yei3t")
-region = Rect2(0, 96, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vb11s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yei3t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tm3ml")
+"texture": SubResource("AtlasTexture_vb11s")
 }],
 "loop": true,
 "name": &"default",
@@ -55,17 +55,19 @@ size = Vector2(96, 96)
 script = ExtResource("1_yei3t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_tm3ml")
+position = Vector2(-2.861023e-06, -2.861023e-06)
+scale = Vector2(1.4999999, 1.4999999)
+sprite_frames = SubResource("SpriteFrames_vb11s")
 autoplay = "default"
-frame_progress = 0.48718247
+frame_progress = 0.8113163
 
 [node name="hurtanim" type="AnimatedSprite2D" parent="."]
 visible = false
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_vb11s")
+position = Vector2(-2.861023e-06, -2.861023e-06)
+scale = Vector2(1.4999999, 1.4999999)
+sprite_frames = SubResource("SpriteFrames_753go")
 autoplay = "default"
-frame_progress = 0.27814475
+frame_progress = 0.9475845
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 
