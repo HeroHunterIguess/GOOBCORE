@@ -11,7 +11,8 @@ func _ready():
 		$ldmButton.text = "Low detail mode Enabled"
 	else:
 		$ldmButton.text = "Low detail mode disabled"
-
+	
+	
 
 # enable/disable ldm
 func _on_ldm_button_pressed() -> void:
