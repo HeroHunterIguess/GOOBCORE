@@ -121,6 +121,7 @@ func _process(_time):
 	
 	if purchasing == false:
 		$buyNewAbility.visible = true
+	
 
 
 # check if you open shop and like youre paused or smth yk
