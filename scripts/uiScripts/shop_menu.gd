@@ -175,7 +175,7 @@ func upgradeFragGrenade():
 
 func upgradeBurstAttack():
 	Globals.orbs -= Globals.burstLevel * 35
-	Globals.burstAmount += 4
+	Globals.burstAmount += 2
 	Globals.burstDamage += 0.75
 	Globals.burstCooldown -= 40
 	Globals.burstLevel += 1

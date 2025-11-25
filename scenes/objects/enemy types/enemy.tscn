@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjg11et2mdoda"]
+[gd_scene load_steps=13 format=3 uid="uid://cjg11et2mdoda"]
 
 [ext_resource type="Script" uid="uid://dn2oymd7sclxd" path="res://scripts/BasicEnemy.gd" id="1_p0amp"]
 [ext_resource type="Texture2D" uid="uid://deiiqrc87l1kp" path="res://art/character sprites/BasicEnemy.png" id="2_p0amp"]
+[ext_resource type="AudioStream" uid="uid://bopkl656uji88" path="res://audio/sfx/trimmedOuchie.mp3" id="3_klu8s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_klu8s"]
 atlas = ExtResource("2_p0amp")
@@ -77,6 +78,11 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_bg23f")
 autoplay = "default"
 frame_progress = 0.047847
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_klu8s")
+volume_db = -9.58
+pitch_scale = 1.38
 
 [node name="basicEnemyHitbox" type="Area2D" parent="." groups=["Enemy"]]
 scale = Vector2(0.5, 0.5)

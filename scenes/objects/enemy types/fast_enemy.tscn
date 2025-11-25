@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://dteniksdjlqeb"]
+[gd_scene load_steps=22 format=3 uid="uid://dteniksdjlqeb"]
 
 [ext_resource type="Script" uid="uid://1l412ero0cg4" path="res://scripts/fast_enemy.gd" id="1_uskad"]
 [ext_resource type="Texture2D" uid="uid://bj3obgjeinm56" path="res://art/character sprites/fastEnemy.png" id="2_uskad"]
+[ext_resource type="AudioStream" uid="uid://bopkl656uji88" path="res://audio/sfx/trimmedOuchie.mp3" id="3_vixxe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vixxe"]
 atlas = ExtResource("2_uskad")
@@ -125,6 +126,11 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_5ehnx")
 autoplay = "default"
 frame_progress = 0.56929594
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vixxe")
+volume_db = -9.58
+pitch_scale = 1.54
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 

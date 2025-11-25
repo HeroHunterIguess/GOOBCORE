@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1k7oanp3mdeg"]
+[gd_scene load_steps=11 format=3 uid="uid://d1k7oanp3mdeg"]
 
 [ext_resource type="Script" uid="uid://bs4nclnswi5kv" path="res://scripts/tank_enemy.gd" id="1_yei3t"]
 [ext_resource type="Texture2D" uid="uid://b4r3dmlpg4v00" path="res://art/character sprites/fat.png" id="2_yei3t"]
+[ext_resource type="AudioStream" uid="uid://bopkl656uji88" path="res://audio/sfx/trimmedOuchie.mp3" id="3_0c2ub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0c2ub"]
 atlas = ExtResource("2_yei3t")
@@ -70,3 +71,8 @@ frame_progress = 0.27814475
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_kuxre")
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0c2ub")
+volume_db = -8.211
+pitch_scale = 1.12
