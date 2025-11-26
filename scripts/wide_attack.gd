@@ -8,7 +8,7 @@ var enemyHitCount = 0
 
 
 func _ready():
-	await get_tree().create_timer(1.75).timeout
+	await get_tree().create_timer(1.85).timeout
 	queue_free()
 
 

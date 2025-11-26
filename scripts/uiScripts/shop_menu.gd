@@ -5,24 +5,24 @@ extends Control
 func updateUpgradeText():
 	# text for all abilities at slot 1
 	if Globals.ability1 == "Basic bullet":
-		$ability1Upgrade.text = "Purchase Basic Bullet MK." + str(Globals.basicBulletLevel + 1) + "\n " + str(Globals.basicBulletLevel * 35) +" orbs"
+		$ability1Upgrade.text = "Upgrade Basic Bullet"  + "\n " + str(Globals.basicBulletLevel * 35) +" orbs"
 	if Globals.ability1 == "Push wall":
-		$ability1Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n " + str(Globals.wideAttackLevel * 35) +" orbs"
+		$ability1Upgrade.text = "Upgrade Push Wall" + "\n " + str(Globals.wideAttackLevel * 35) +" orbs"
 	if Globals.ability1 == "Frag grenade":
-		$ability1Upgrade.text = "Purchase Frag Grenade MK." + str(Globals.fragGrenadeLevel + 1) + "\n " + str(Globals.fragGrenadeLevel * 35) +" orbs"
+		$ability1Upgrade.text = "Upgrade Frag Grenade" + "\n " + str(Globals.fragGrenadeLevel * 35) +" orbs"
 	if Globals.ability1 == "Burst attack":
-		$ability1Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n " + str(Globals.burstLevel * 35) +" orbs"
+		$ability1Upgrade.text = "Upgrade Burst Attack" + "\n " + str(Globals.burstLevel * 35) +" orbs"
 	
 	
 	# text for all abilities at slot 2
 	if Globals.ability2 == "Basic bullet":
-		$ability2Upgrade.text = "Purchase Basic Bullet MK." + str(Globals.basicBulletLevel + 1) + "\n " + str(Globals.basicBulletLevel * 35) +" orbs"
+		$ability2Upgrade.text = "Upgrade Basic Bullet" + "\n " + str(Globals.basicBulletLevel * 35) +" orbs"
 	if Globals.ability2 == "Push wall":
-		$ability2Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n " + str(Globals.wideAttackLevel * 35) +" orbs"
+		$ability2Upgrade.text = "Upgrade Push Wall" + "\n " + str(Globals.wideAttackLevel * 35) +" orbs"
 	if Globals.ability2 == "Frag grenade":
-		$ability2Upgrade.text = "Purchase Frag Grenade MK." + str(Globals.fragGrenadeLevel + 1) + "\n " + str(Globals.fragGrenadeLevel * 35) +" orbs"
+		$ability2Upgrade.text = "Upgrade Frag Grenade" + "\n " + str(Globals.fragGrenadeLevel * 35) +" orbs"
 	if Globals.ability2 == "Burst attack":
-		$ability2Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n " + str(Globals.burstLevel * 35) +" orbs"
+		$ability2Upgrade.text = "Upgrade Burst Attack" + "\n " + str(Globals.burstLevel * 35) +" orbs"
 	
 	
 	# new ability purchasing thing

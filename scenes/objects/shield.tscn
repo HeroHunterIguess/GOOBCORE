@@ -37,7 +37,7 @@ position = Vector2(-5.684342e-14, -8.000001)
 scale = Vector2(1.53125, 1.9687499)
 sprite_frames = SubResource("SpriteFrames_qf3ha")
 autoplay = "default"
-frame_progress = 0.30206224
+frame_progress = 0.0793872
 
 [node name="Area2D" type="Area2D" parent="."]
 
