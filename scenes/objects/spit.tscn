@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dukhv5sbweigp"]
+[gd_scene load_steps=7 format=3 uid="uid://dukhv5sbweigp"]
 
+[ext_resource type="Script" uid="uid://dwxnqspnul1he" path="res://scripts/spit.gd" id="1_ju7c1"]
 [ext_resource type="Texture2D" uid="uid://cdvls332qs6kx" path="res://art/world sprites/lilguy.png" id="1_rn6pj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ju7c1"]
@@ -28,14 +29,15 @@ animations = [{
 radius = 11.313708
 
 [node name="spit" type="Node2D"]
+script = ExtResource("1_ju7c1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.6666666, 1.6666666)
 sprite_frames = SubResource("SpriteFrames_s7886")
 autoplay = "default"
-frame_progress = 0.75612545
+frame_progress = 0.262687
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_rn6pj")
