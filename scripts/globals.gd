@@ -73,11 +73,11 @@ func hitByBasicBullet(EnemyHP):
 
 # resetting all essential variables back to defaults 
 func reset():
-	orbs = 10999
+	orbs = 10
 	rerollCost = 5
 	overallScore = 0
 	playerHealth = 30
-	currentWave = 25
+	currentWave = 1
 	noWave = false
 	ability1 = "Basic bullet" 
 	ability2 = "empty slot"
@@ -110,7 +110,7 @@ func reset():
 
 
 	# vars for bullet burst attack
-	burstAmount = 8
+	burstAmount = 6
 	burstDamage = 8
 	burstCooldown = 180
 	burstLevel = 1

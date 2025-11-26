@@ -57,6 +57,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ability2Cooldown" type="Label" parent="ability2"]
 anchors_preset = -1
+anchor_left = 0.00625
 anchor_top = -0.016666668
 anchor_bottom = -0.016666668
 offset_top = 692.0
@@ -67,6 +68,8 @@ theme_override_font_sizes/font_size = 14
 metadata/_edit_use_anchors_ = true
 
 [node name="ability2Damage" type="Label" parent="ability2"]
+anchors_preset = -1
+anchor_left = 0.00625
 offset_top = 648.0
 offset_right = 191.99994
 offset_bottom = 682.0
@@ -76,7 +79,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ability2Name" type="Label" parent="ability2"]
 anchors_preset = -1
-anchor_left = 1.0
+anchor_left = 1.00625
 anchor_top = 2.8235295
 anchor_right = 1.0
 anchor_bottom = 2.8235295
@@ -90,7 +93,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="X" type="Label" parent="ability2"]
 anchors_preset = -1
-anchor_left = 9.0
+anchor_left = 9.00625
 anchor_top = 3.7647057
 anchor_right = 9.1375
 anchor_bottom = 3.7647057
