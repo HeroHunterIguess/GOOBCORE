@@ -297,7 +297,7 @@ offset_right = 840.0
 offset_bottom = 711.0
 theme_override_fonts/font = ExtResource("5_seagn")
 theme_override_font_sizes/font_size = 48
-text = "HP:"
+text = "x HP"
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
