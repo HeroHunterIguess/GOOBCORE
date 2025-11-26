@@ -1,0 +1,126 @@
+[gd_scene load_steps=16 format=3 uid="uid://dsy2ccc5mjqqu"]
+
+[ext_resource type="Script" uid="uid://c2vfaoi383xku" path="res://scripts/spit_enemy.gd" id="1_5bo6f"]
+[ext_resource type="Texture2D" uid="uid://del80vqii53v0" path="res://art/character sprites/hawktuah-Sheet.png" id="1_l2dly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bo6f"]
+atlas = ExtResource("1_l2dly")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_povbj"]
+atlas = ExtResource("1_l2dly")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c63n5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bo6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_povbj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xpd7l"]
+radius = 32.984844
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2dly"]
+atlas = ExtResource("1_l2dly")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c63n5"]
+atlas = ExtResource("1_l2dly")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xpd7l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2dly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c63n5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpd7l"]
+atlas = ExtResource("1_l2dly")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1qpv"]
+atlas = ExtResource("1_l2dly")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkdba"]
+atlas = ExtResource("1_l2dly")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rus0i"]
+atlas = ExtResource("1_l2dly")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf1t7"]
+atlas = ExtResource("1_l2dly")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vg3n0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpd7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1qpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkdba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rus0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf1t7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.5
+}]
+
+[node name="spitEnemy" type="Node2D"]
+script = ExtResource("1_5bo6f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c63n5")
+autoplay = "default"
+frame_progress = 0.98745
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xpd7l")
+debug_color = Color(0.7761291, 0.34174266, 0.71009505, 0.41960785)
+
+[node name="hurtanim" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_xpd7l")
+autoplay = "default"
+frame_progress = 0.12831919
+
+[node name="hawktuah" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_vg3n0")
+frame_progress = 0.9771842
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="spitTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="spitTimer" to="." method="_on_spit_timer_timeout"]

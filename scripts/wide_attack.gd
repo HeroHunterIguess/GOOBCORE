@@ -8,13 +8,13 @@ var enemyHitCount = 0
 
 
 func _ready():
-	await get_tree().create_timer(1.85).timeout
+	await get_tree().create_timer(1.75).timeout
 	queue_free()
 
 
 # go to position based on velocity
 func _process(delta: float):
-	self.scale.x += 1 * delta
+	self.scale.x += 0.6 * delta
 	
 	if velocity != Vector2.ZERO:
 		global_position += velocity * delta

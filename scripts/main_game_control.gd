@@ -6,6 +6,7 @@ const basicEnemyPreload = preload("res://scenes/objects/enemy types/enemy.tscn")
 const basicBulletPreload = preload("res://scenes/objects/basic_bullet.tscn")
 const fastEnemyPreload = preload("res://scenes/objects/enemy types/fast_enemy.tscn")
 const tankEnemyPreload = preload("res://scenes/objects/enemy types/tank_enemy.tscn")
+const spitterPreload = preload("res://scenes/objects/enemy types/spit_enemy.tscn")
 const wideAttackPreload = preload("res://scenes/objects/wide_attack.tscn")
 const fragGrenadePreload = preload("res://scenes/objects/frag_grenade.tscn")
 const burstAttackPreload = preload("res://scenes/objects/bullet_burst.tscn")
@@ -30,12 +31,18 @@ func advancedWaveControl(waveNum):
 	elif waveNum > 1 && waveNum < 5:
 		spawnBasicWave(waveNum + 2, 4.2 + 0.12 * waveNum) # spawn amount of basic enemies w/ scaled hp
 		spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.15 * waveNum) # spawn fast enemies w/ scaled hp
-	# full standardized waves starting at wave 5
-	elif waveNum >= 6:
+	# full standardized waves starting at wave 5 till 25 when spitter gets added
+	elif waveNum >= 6 && waveNum < 25:
 		spawnBasicWave(waveNum + 1, 4.2 + 0.18 * waveNum) # spawn amount of basic enemies w/ scaled hp
 		spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.15 * waveNum) # spawn fast enemies w/ scaled hp
 		spawnTankEnemyWave(round((waveNum / 4))+ 0.5, 18 + 0.22 * waveNum) # spawn tank enemies w/ amount of scaled hp
-	
+	# spawn standardized waves after 25 also with spitter enemy
+	elif waveNum >= 25:
+		spawnBasicWave(waveNum + 1, 4.2 + 0.18 * waveNum) # spawn amount of basic enemies w/ scaled hp
+		spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.15 * waveNum) # spawn fast enemies w/ scaled hp
+		spawnTankEnemyWave(round((waveNum / 4))+ 0.5, 18 + 0.22 * waveNum) # spawn tank enemies w/ amount of scaled hp
+		spawnSpitterWave(round((waveNum / 8)), 8 + 0.2 * waveNum) # spawn spitters w/ amount of scaled hp
+
 
 
 
@@ -55,7 +62,7 @@ func spawnFastEnemyWave(amountOfEnemies,hp):
 		var fastEnemy = fastEnemyPreload.instantiate()
 		add_child(fastEnemy)
 		fastEnemy.health = hp
-		fastEnemy.global_position = Vector2(rng.randi_range(-50,1200),rng.randi_range(-70,-1000))
+		fastEnemy.global_position = Vector2(rng.randi_range(-50,1200),rng.randi_range(-100,-1000))
 
 # spawn a wave of tank enemies
 func spawnTankEnemyWave(amountOfEnemies,hp):
@@ -64,6 +71,14 @@ func spawnTankEnemyWave(amountOfEnemies,hp):
 		add_child(tankEnemy)
 		tankEnemy.health = hp
 		tankEnemy.global_position = Vector2(rng.randi_range(-50,1200),rng.randi_range(-70,-200))
+
+# spawn a wave of spitters
+func spawnSpitterWave(amountOfEnemies,hp):
+	for i in amountOfEnemies: 
+		var spitter = spitterPreload.instantiate()
+		add_child(spitter)
+		spitter.health = hp
+		spitter.global_position = Vector2(rng.randi_range(-50,1200),rng.randi_range(-100,-800))
 
 
 

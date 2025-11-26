@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dukhv5sbweigp"]
+
+[ext_resource type="Texture2D" uid="uid://cdvls332qs6kx" path="res://art/world sprites/lilguy.png" id="1_rn6pj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju7c1"]
+atlas = ExtResource("1_rn6pj")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xahj4"]
+atlas = ExtResource("1_rn6pj")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7886"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju7c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xahj4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rn6pj"]
+radius = 11.313708
+
+[node name="spit" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.6666666, 1.6666666)
+sprite_frames = SubResource("SpriteFrames_s7886")
+autoplay = "default"
+frame_progress = 0.75612545
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rn6pj")
