@@ -99,7 +99,7 @@ script = ExtResource("1_5bo6f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c63n5")
 autoplay = "default"
-frame_progress = 0.07058297
+frame_progress = 0.2707502
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 
@@ -111,17 +111,17 @@ debug_color = Color(0.7761291, 0.34174266, 0.71009505, 0.41960785)
 visible = false
 sprite_frames = SubResource("SpriteFrames_xpd7l")
 autoplay = "default"
-frame_progress = 0.21145223
+frame_progress = 0.41161683
 
 [node name="hawktuah" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_vg3n0")
-frame_progress = 0.48390955
+frame_progress = 0.8672969
 
 [node name="deathSound" type="AudioStreamPlayer2D" parent="."]
 
 [node name="spitTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="spitTimer" to="." method="_on_spit_timer_timeout"]

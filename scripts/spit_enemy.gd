@@ -62,6 +62,16 @@ func _process(delta):
 
 
 func _on_spit_timer_timeout() -> void:
+	# play hawk tuah animation
+	$AnimatedSprite2D.visible = false
+	$hawktuah.visible = true
+	$hawktuah.play()
+	
+	await get_tree().create_timer(0.7).timeout
+	$hawktuah.visible = false
+	$hawktuah.stop()
+	$AnimatedSprite2D.visible = true
+	
 	var spit = spitPreload.instantiate()
 	add_child(spit)
 	spit.global_position = Vector2(self.global_position)

@@ -38,9 +38,9 @@ func advancedWaveControl(waveNum):
 		spawnTankEnemyWave(round((waveNum / 4))+ 0.5, 18 + 0.22 * waveNum) # spawn tank enemies w/ amount of scaled hp
 	# spawn standardized waves after 25 also with spitter enemy
 	elif waveNum >= 25:
-		spawnBasicWave(waveNum + 1, 4.2 + 0.18 * waveNum) # spawn amount of basic enemies w/ scaled hp
-		spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.15 * waveNum) # spawn fast enemies w/ scaled hp
-		spawnTankEnemyWave(round((waveNum / 4))+ 0.5, 18 + 0.22 * waveNum) # spawn tank enemies w/ amount of scaled hp
+		#spawnBasicWave(waveNum + 1, 4.2 + 0.18 * waveNum) # spawn amount of basic enemies w/ scaled hp
+		#spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.15 * waveNum) # spawn fast enemies w/ scaled hp
+		#spawnTankEnemyWave(round((waveNum / 4))+ 0.5, 18 + 0.22 * waveNum) # spawn tank enemies w/ amount of scaled hp
 		spawnSpitterWave(round((waveNum / 8)), 8 + 0.2 * waveNum) # spawn spitters w/ amount of scaled hp
 
 

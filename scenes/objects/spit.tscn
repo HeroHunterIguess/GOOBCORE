@@ -35,7 +35,7 @@ script = ExtResource("1_ju7c1")
 scale = Vector2(1.6666666, 1.6666666)
 sprite_frames = SubResource("SpriteFrames_s7886")
 autoplay = "default"
-frame_progress = 0.262687
+frame_progress = 0.46183693
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 
