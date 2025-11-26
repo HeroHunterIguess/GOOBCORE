@@ -26,7 +26,7 @@ func advancedWaveControl(waveNum):
 	# create a basic wave for the first one
 	if waveNum == 1:
 		spawnBasicWave(waveNum + 2, 4.2 + 0.17 * waveNum) # spawn amount of basic enemies w/ scaled hp
-	# slightly more advanced waves until wave 5
+	# slightly more advanced waves until wave
 	elif waveNum > 1 && waveNum < 5:
 		spawnBasicWave(waveNum + 2, 4.2 + 0.12 * waveNum) # spawn amount of basic enemies w/ scaled hp
 		spawnFastEnemyWave(round(waveNum / 2), 2.5 + 0.15 * waveNum) # spawn fast enemies w/ scaled hp
@@ -86,7 +86,7 @@ func _ready():
 	
 	# play spin animation when you initially start
 	$goobertSpin.play()
-	await get_tree().create_timer(1.7).timeout
+	await get_tree().create_timer(1.88).timeout
 	$goobert.visible = true
 	$goobertSpin.visible = false
 	
