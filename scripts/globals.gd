@@ -93,7 +93,7 @@ func reset():
 	# vars for push wall attack
 	wideAttackBaseCost = 25
 	wideAttackCooldown = 200
-	wideAttackDamage = 0.5
+	wideAttackDamage = 0.575
 	wideAttackSpeed = 190
 	wideAttackLevel = 1
 
@@ -116,7 +116,7 @@ func reset():
 
 
 	# vars for bullet burst attack
-	burstAmount = 6
+	burstAmount = 9
 	burstDamage = 8
 	burstCooldown = 180
 	burstLevel = 1
@@ -127,7 +127,7 @@ func reset():
 	
 	piercerBaseCost = 30
 	piercerCooldown = 16
-	piercerDamage = 1.1
+	piercerDamage = 1.3
 	piercerSpeed = 585
 	piercerLevel = 1
 	

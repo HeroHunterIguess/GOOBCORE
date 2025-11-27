@@ -4,6 +4,6 @@ func _process(_delta):
 	self.text = str(Globals.orbs) + " orbs"
 	
 	
-	# harrison made this
-	if Globals.orbs > 999999:
+	# my nephnew told me to add this lmao
+	if Globals.orbs == 250:
 		self.text = "poop"
