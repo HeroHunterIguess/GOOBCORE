@@ -166,7 +166,7 @@ func _on_resume_pressed() -> void:
 func upgradeBasicBullet():
 	Globals.orbs -= Globals.basicBulletLevel * 35
 	Globals.basicBulletCooldown -= 3
-	Globals.basicBulletDamage += 1.1
+	Globals.basicBulletDamage += 0.7
 	Globals.basicBulletSpeed += 30
 	Globals.basicBulletLevel += 1
 
@@ -180,22 +180,22 @@ func upgradePushWall():
 func upgradeFragGrenade():
 	Globals.orbs -= Globals.fragGrenadeLevel * 35
 	Globals.fragGrenadeCooldown -= 25
-	Globals.fragGrenadeDamage += 1
+	Globals.fragGrenadeDamage += 0.6
 	Globals.fragGrenadeSpeed += 25
 	Globals.fragGrenadeAmount += 1
 	Globals.fragGrenadeLevel += 1
-	Globals.fragDamage += 0.8
+	Globals.fragDamage += 0.5
 
 func upgradeBurstAttack():
 	Globals.orbs -= Globals.burstLevel * 35
-	Globals.burstAmount += 2
-	Globals.burstDamage += 0.75
+	Globals.burstAmount += 1
+	Globals.burstDamage += 0.45
 	Globals.burstCooldown -= 40
 	Globals.burstLevel += 1
 
 func upgradePiercer():
 	Globals.orbs -= Globals.piercerLevel * 35
-	Globals.piercerDamage += 0.25
+	Globals.piercerDamage += 0.75
 	Globals.piercerSpeed += 22
 	Globals.piercerLevel += 1
 
@@ -368,6 +368,8 @@ func _on_select_ability_2_pressed() -> void:
 	updateUpgradeText()
 	
 	$buyNewAbility.visible = true
+
+
 
 
 # reroll

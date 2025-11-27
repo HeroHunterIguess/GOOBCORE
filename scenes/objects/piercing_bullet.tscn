@@ -1,9 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsyv3cdbhayv"]
+[gd_scene load_steps=7 format=3 uid="uid://dsyv3cdbhayv"]
 
-[ext_resource type="Texture2D" uid="uid://bdtelb8l835qf" path="res://art/character sprites/bullet-Sheet.png" id="1_8g5f3"]
 [ext_resource type="Script" uid="uid://1s1nreb87ins" path="res://scripts/piercing_bullet.gd" id="1_mhhi8"]
+[ext_resource type="Texture2D" uid="uid://cvilr8fxo1xhl" path="res://art/character sprites/piercer.png" id="2_mhhi8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0n0y"]
+atlas = ExtResource("2_mhhi8")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kklb"]
+atlas = ExtResource("2_mhhi8")
+region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ujj5n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0n0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kklb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8g5f3"]
 radius = 8.0
@@ -13,15 +33,14 @@ height = 32.0
 script = ExtResource("1_mhhi8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.625, 0.5625)
 sprite_frames = SubResource("SpriteFrames_ujj5n")
+autoplay = "default"
+frame_progress = 0.354826
 
 [node name="Area2D" type="Area2D" parent="." groups=["basicBulletShot"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_8g5f3")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 2)
-texture = ExtResource("1_8g5f3")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
