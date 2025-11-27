@@ -127,7 +127,7 @@ func reset():
 	
 	piercerBaseCost = 30
 	piercerCooldown = 16
-	piercerDamage = 1
+	piercerDamage = 1.1
 	piercerSpeed = 585
 	piercerLevel = 1
 	
