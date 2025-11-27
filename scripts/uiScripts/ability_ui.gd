@@ -26,6 +26,10 @@ func _process(_delta):
 		# if the ability is the burst attack
 		$ability1/ability1Damage.text = str(Globals.burstDamage) + " DMG"
 		$ability1/ability1Cooldown.text = str(int(round(Globals.burstCooldown))) + " COOLDOWN"
+	elif Globals.ability1 == "Piercer":
+		# if the ability is the piercing bullet
+		$ability1/ability1Damage.text = str(Globals.piercerDamage) + " DMG"
+		$ability1/ability1Cooldown.text = str(int(round(Globals.piercerCooldown))) + " COOLDOWN"
 	
 	
 	
@@ -46,5 +50,8 @@ func _process(_delta):
 		# if the ability is the burst attack
 		$ability2/ability2Damage.text = str(Globals.burstDamage) + " DMG"
 		$ability2/ability2Cooldown.text = str(int(round(Globals.burstCooldown))) + " COOLDOWN"
-	
+	elif Globals.ability2 == "Piercer":
+		# if the ability is the piercing bullet
+		$ability2/ability2Damage.text = str(Globals.piercerDamage) + " DMG"
+		$ability2/ability2Cooldown.text = str(int(round(Globals.piercerCooldown))) + " COOLDOWN"
 	
