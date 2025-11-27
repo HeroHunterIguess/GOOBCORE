@@ -86,7 +86,7 @@ func reset():
 	currentWave = 1
 	noWave = false
 	ability1 = "Basic bullet" 
-	ability2 = "Piercer"
+	ability2 = "empty slot"
 	
 	# reset all ability stats
 

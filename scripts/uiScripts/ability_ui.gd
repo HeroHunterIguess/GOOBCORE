@@ -3,7 +3,10 @@ extends Node2D
 func _process(_delta):
 	# show ability names
 	$ability1/ability1Name.text = Globals.ability1
-	$ability2/ability2Name.text = Globals.ability2
+	
+	
+	# this space is bc smth is bugged that for some reason offsets the text
+	$ability2/ability2Name.text = "  " + Globals.ability2
 	
 	
 	
