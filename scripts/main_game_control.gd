@@ -11,6 +11,7 @@ const wideAttackPreload = preload("res://scenes/objects/wide_attack.tscn")
 const fragGrenadePreload = preload("res://scenes/objects/frag_grenade.tscn")
 const burstAttackPreload = preload("res://scenes/objects/bullet_burst.tscn")
 const shieldPreload = preload("res://scenes/objects/shield.tscn")
+const piercerPreload = preload("res://scenes/objects/piercing_bullet.tscn")
 
 var mousePos
 
@@ -175,6 +176,24 @@ func spawnBurstAttack():
 	# sfx
 	$sfx/burst.play()
 
+# spawning piercer
+func spawnPiercer():
+	Globals.piercerCooldown = 25
+	
+	# set position
+	var peircer = piercerPreload.instantiate()
+	add_child(peircer)
+	peircer.global_position = Vector2(640,688)
+	
+	# get direction and set velocity to go there
+	var dir = (get_global_mouse_position() - peircer.global_position).normalized()
+	peircer.velocity = dir * peircer.speed
+	
+	# sfx     (same as basic bullet)
+	$sfx/splat1.play()
+
+
+
 
 
 # runs every frame
@@ -185,6 +204,7 @@ func _process(delta):
 	Globals.basicBulletCooldown -= 125 * delta
 	Globals.fragGrenadeCooldown -= 125 * delta
 	Globals.burstCooldown -= 125 * delta
+	Globals.piercerCooldown -= 125 * delta
 
 	# keeping cooldowns at 0 so the ui displays it nicely
 	if Globals.wideAttackCooldown < 0:
@@ -195,6 +215,8 @@ func _process(delta):
 		Globals.fragGrenadeCooldown = 0
 	if Globals.burstCooldown < 0:
 		Globals.burstCooldown = 0
+	if Globals.piercerCooldown < 0:
+		Globals.piercerCooldown = 0
 	
 	
 	
@@ -242,6 +264,8 @@ func _process(delta):
 			spawnFragGrenade()
 		if Globals.ability1 == "Burst attack" && Globals.burstCooldown <= 0:
 			spawnBurstAttack()
+		if Globals.ability1 == "Piercer" && Globals.piercerCooldown <= 0:
+			spawnPiercer()
 		
 		
 		# checking for abilities in slot 2 and spawning those
@@ -255,6 +279,8 @@ func _process(delta):
 			spawnFragGrenade()
 		if Globals.ability2 == "Burst attack" && Globals.burstCooldown <= 0:
 			spawnBurstAttack()
+		if Globals.ability2 == "Piercer" && Globals.piercerCooldown <= 0:
+			spawnPiercer()
 	
 	
 	

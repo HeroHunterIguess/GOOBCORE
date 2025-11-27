@@ -5,38 +5,49 @@ extends Control
 func updateUpgradeText():
 	# text for all abilities at slot 1
 	if Globals.ability1 == "Basic bullet":
-		$ability1Upgrade.text = "Upgrade Basic Bullet"  + "\n " + str(Globals.basicBulletLevel * 35) +" orbs"
+		$ability1Upgrade.text = "Upgrade Basic Bullet\n " + str(Globals.basicBulletLevel * 35) + " orbs"
 	if Globals.ability1 == "Push wall":
-		$ability1Upgrade.text = "Upgrade Push Wall" + "\n " + str(Globals.wideAttackLevel * 35) +" orbs"
+		$ability1Upgrade.text = "Upgrade Push Wall\n " + str(Globals.wideAttackLevel * 35) + " orbs"
 	if Globals.ability1 == "Frag grenade":
-		$ability1Upgrade.text = "Upgrade Frag Grenade" + "\n " + str(Globals.fragGrenadeLevel * 35) +" orbs"
+		$ability1Upgrade.text = "Upgrade Frag Grenade\n " + str(Globals.fragGrenadeLevel * 35) + " orbs"
 	if Globals.ability1 == "Burst attack":
-		$ability1Upgrade.text = "Upgrade Burst Attack" + "\n " + str(Globals.burstLevel * 35) +" orbs"
+		$ability1Upgrade.text = "Upgrade Burst Attack\n " + str(Globals.burstLevel * 35) + " orbs"
+	if Globals.ability1 == "Piercer":
+		$ability1Upgrade.text = "Upgrade Piercer\n " + str(Globals.piercerLevel * 35) + " orbs"
 	
 	
 	# text for all abilities at slot 2
 	if Globals.ability2 == "Basic bullet":
-		$ability2Upgrade.text = "Upgrade Basic Bullet" + "\n " + str(Globals.basicBulletLevel * 35) +" orbs"
+		$ability2Upgrade.text = "Upgrade Basic Bullet\n " + str(Globals.basicBulletLevel * 35) + " orbs"
 	if Globals.ability2 == "Push wall":
-		$ability2Upgrade.text = "Upgrade Push Wall" + "\n " + str(Globals.wideAttackLevel * 35) +" orbs"
+		$ability2Upgrade.text = "Upgrade Push Wall\n " + str(Globals.wideAttackLevel * 35) + " orbs"
 	if Globals.ability2 == "Frag grenade":
-		$ability2Upgrade.text = "Upgrade Frag Grenade" + "\n " + str(Globals.fragGrenadeLevel * 35) +" orbs"
+		$ability2Upgrade.text = "Upgrade Frag Grenade\n " + str(Globals.fragGrenadeLevel * 35) + " orbs"
 	if Globals.ability2 == "Burst attack":
-		$ability2Upgrade.text = "Upgrade Burst Attack" + "\n " + str(Globals.burstLevel * 35) +" orbs"
+		$ability2Upgrade.text = "Upgrade Burst Attack\n " + str(Globals.burstLevel * 35) + " orbs"
+	if Globals.ability2 == "Piercer":
+		$ability2Upgrade.text = "Upgrade Piercer\n " + str(Globals.piercerLevel * 35) + " orbs"
 	
 	
 	# new ability purchasing thing
 	if currentNewAbility == "Push wall":
-			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " for " + str(Globals.wideAttackBaseCost) + " orbs"
+		$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " for " + str(Globals.wideAttackBaseCost) + " orbs"
 	elif currentNewAbility == "Frag grenade":
-			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " for " + str(Globals.fragGrenadeBaseCost) + " orbs"
+		$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " for " + str(Globals.fragGrenadeBaseCost) + " orbs"
 	elif currentNewAbility == "Burst attack":
-			$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " for " + str(Globals.burstBaseCost) + " orbs"
+		$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " for " + str(Globals.burstBaseCost) + " orbs"
+	elif currentNewAbility == "Piercer":
+		$buyNewAbility.text = "Replace an ability slot with " + currentNewAbility + " for " + str(Globals.piercerBaseCost) + " orbs"
 	
 	
 	# new passive ability purchasing
 	if currentNewPassive == "Shield":
 		$newPassiveAbility.text = "Buy " + currentNewPassive + " for " + str(newPassiveCost) + " orbs"
+	
+	
+	# reroll text
+	$rerollNewAbilities.text = "Reroll for " + str(Globals.rerollCost) + " orbs"
+
 
 var currentNewPassive = ""
 var currentNewAbility = ""
@@ -53,19 +64,20 @@ func checkAbilitiesToRandomNumber(number):
 	elif number == 3:
 		currentNewAbility = "Burst attack"
 		newAbilityCost = Globals.burstBaseCost
+	elif number == 4:
+		currentNewAbility = "Piercer"
+		newAbilityCost = Globals.piercerBaseCost
 
 
 var rng = RandomNumberGenerator.new()
 func setRandomNewAbility(current):
 	# the random new ability for you to purchase
-	var rngAbilityNum = rng.randi_range(1,3)
+	var rngAbilityNum = rng.randi_range(1,4)
 	
-	# initially select an ability
-	checkAbilitiesToRandomNumber(rngAbilityNum)
 	
 	# if the ability is the same as the current new ability then pick new one till its diff
 	while current == currentNewAbility:
-		rngAbilityNum = rng.randi_range(1,3)
+		rngAbilityNum = rng.randi_range(1,4)
 		checkAbilitiesToRandomNumber(rngAbilityNum)
 	
 	
@@ -79,6 +91,10 @@ func setRandomNewAbility(current):
 var newAbilityCost = 0
 var newPassiveCost = 0
 
+
+
+# right now these two functions are basically useless bc there is only 1 passive
+# this is just support in case i add more passives
 func checkPassivesToRandomNumber(number):
 	if number == 1:
 		currentNewPassive = "Shield"
@@ -92,7 +108,6 @@ func setRandomNewPassive():
 	
 	
 	updateUpgradeText()
-	
 
 
 
@@ -104,9 +119,6 @@ func setRandomNewPassive():
 func _ready():
 	
 	updateUpgradeText()
-	
-	# reroll text
-	$rerollNewAbilities.text = "Reroll for " + str(Globals.rerollCost) + " orbs"
 	
 	
 	# set random ability & passive to buy
@@ -157,8 +169,6 @@ func upgradeBasicBullet():
 	Globals.basicBulletDamage += 1.1
 	Globals.basicBulletSpeed += 30
 	Globals.basicBulletLevel += 1
-	if Globals.basicBulletCooldown <= 0:
-		Globals.basicBulletCooldown = 0
 
 func upgradePushWall():
 	Globals.orbs -= Globals.wideAttackLevel * 35
@@ -183,7 +193,11 @@ func upgradeBurstAttack():
 	Globals.burstCooldown -= 40
 	Globals.burstLevel += 1
 
-
+func upgradePiercer():
+	Globals.orbs -= Globals.piercerLevel * 35
+	Globals.piercerDamage += 0.25
+	Globals.piercerSpeed += 22
+	Globals.piercerLevel += 1
 
 
 
@@ -230,6 +244,15 @@ func _on_ability_1_upgrade_pressed() -> void:
 			await get_tree().create_timer(0.75).timeout
 			updateUpgradeText()
 	
+	if Globals.ability1 == "Piercer":
+		if Globals.orbs >= Globals.piercerLevel * 35:
+			upgradePiercer()
+			updateUpgradeText()
+		else:
+			$ability1Upgrade.text = "NOT ENOUGH ORBS"
+			await get_tree().create_timer(0.75).timeout
+			updateUpgradeText()
+	
 
 
 func _on_ability_2_upgrade_pressed() -> void:
@@ -267,6 +290,15 @@ func _on_ability_2_upgrade_pressed() -> void:
 			upgradeFragGrenade()
 			updateUpgradeText()
 		else: 
+			$ability2Upgrade.text = "NOT ENOUGH ORBS"
+			await get_tree().create_timer(0.75).timeout
+			updateUpgradeText()
+	
+	if Globals.ability2 == "Piercer":
+		if Globals.orbs >= Globals.piercerLevel * 35:
+			upgradePiercer()
+			updateUpgradeText()
+		else:
 			$ability2Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
 			updateUpgradeText()

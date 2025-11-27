@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsyv3cdbhayv"]
+
+[ext_resource type="Texture2D" uid="uid://bdtelb8l835qf" path="res://art/character sprites/bullet-Sheet.png" id="1_8g5f3"]
+[ext_resource type="Script" uid="uid://1s1nreb87ins" path="res://scripts/piercing_bullet.gd" id="1_mhhi8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujj5n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8g5f3"]
+radius = 8.0
+height = 32.0
+
+[node name="piercing bullet" type="Node2D"]
+script = ExtResource("1_mhhi8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ujj5n")
+
+[node name="Area2D" type="Area2D" parent="." groups=["basicBulletShot"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_8g5f3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(0.5, 2)
+texture = ExtResource("1_8g5f3")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

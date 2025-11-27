@@ -36,6 +36,11 @@ var burstLevel = 1
 var burstBaseCost = 30
 var ability1 = "Basic bullet" 
 var ability2 = "empty slot"
+var piercerBaseCost = 25
+var piercerCooldown = 15
+var piercerDamage = 1
+var piercerSpeed = 190
+var piercerLevel = 1
 
 
 
@@ -46,6 +51,7 @@ var ability2 = "empty slot"
 # Burst attack
 # Frag grenade      
 # Giant bullet      (not done)
+# Piercer
 # empty slot
 
 
@@ -80,7 +86,7 @@ func reset():
 	currentWave = 1
 	noWave = false
 	ability1 = "Basic bullet" 
-	ability2 = "empty slot"
+	ability2 = "Piercer"
 	
 	# reset all ability stats
 
@@ -115,6 +121,16 @@ func reset():
 	burstCooldown = 180
 	burstLevel = 1
 	burstBaseCost = 35
+	
+	
+	
+	
+	piercerBaseCost = 30
+	piercerCooldown = 15
+	piercerDamage = 1
+	piercerSpeed = 400
+	piercerLevel = 1
+	
 	
 	
 	
