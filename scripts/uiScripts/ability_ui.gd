@@ -17,30 +17,35 @@ func _process(_delta):
 		# if the ability is basic bullet
 		$ability1/ability1Damage.text = str(Globals.basicBulletDamage) + " DMG"
 		$ability1/ability1Cooldown.text = str(int(round(Globals.basicBulletCooldown))) + " COOLDOWN"
+		# say ready if cooldown is gone
 		if Globals.basicBulletCooldown == 0:
 			$ability1/ability1Cooldown.text = "READY!"
 	elif Globals.ability1 == "Push wall":
 		# if the ability is push wall/wide attack
 		$ability1/ability1Damage.text = str(Globals.wideAttackDamage) + " DMG"
 		$ability1/ability1Cooldown.text = str(int(round(Globals.wideAttackCooldown))) + " COOLDOWN"
+		# say ready if cooldown is gone
 		if Globals.wideAttackCooldown == 0:
 			$ability1/ability1Cooldown.text = "READY!"
 	elif Globals.ability1 == "Frag grenade":
 		# if the ability is the frag grenade
 		$ability1/ability1Damage.text = str(Globals.fragGrenadeDamage) + " DMG"
 		$ability1/ability1Cooldown.text = str(int(round(Globals.fragGrenadeCooldown))) + " COOLDOWN"
+		# say ready if cooldown is gone
 		if Globals.fragGrenadeCooldown == 0:
 			$ability1/ability1Cooldown.text = "READY!"
 	elif Globals.ability1 == "Burst attack":
 		# if the ability is the burst attack
 		$ability1/ability1Damage.text = str(Globals.burstDamage) + " DMG"
 		$ability1/ability1Cooldown.text = str(int(round(Globals.burstCooldown))) + " COOLDOWN"
+		# say ready if cooldown is gone
 		if Globals.burstCooldown == 0:
 			$ability1/ability1Cooldown.text = "READY!"
 	elif Globals.ability1 == "Piercer":
 		# if the ability is the piercer
 		$ability1/ability1Damage.text = str(Globals.piercerDamage) + " DMG"
 		$ability1/ability1Cooldown.text = str(int(round(Globals.piercerCooldown))) + " COOLDOWN"
+		# say ready if cooldown is gone
 		if Globals.piercerCooldown == 0:
 			$ability1/ability1Cooldown.text = "READY!"
 	
@@ -51,30 +56,35 @@ func _process(_delta):
 		# if the ability is basic bullet
 		$ability2/ability2Damage.text = str(Globals.basicBulletDamage) + " DMG"
 		$ability2/ability2Cooldown.text = str(int(round(Globals.basicBulletCooldown))) + " COOLDOWN"
+		# say ready if cooldown is gone
 		if Globals.basicBulletCooldown == 0:
 			$ability2/ability2Cooldown.text = "READY!"
 	elif Globals.ability2 == "Push wall":
 		# if the ability is push wall/wide attack
 		$ability2/ability2Damage.text = str(Globals.wideAttackDamage) + " DMG"
 		$ability2/ability2Cooldown.text = str(int(round(Globals.wideAttackCooldown))) + " COOLDOWN"
+		# say ready if cooldown is gone
 		if Globals.wideAttackCooldown == 0:
 			$ability2/ability2Cooldown.text = "READY!"
 	elif Globals.ability2 == "Frag grenade":
 		# if the ability is the frag grenade
 		$ability2/ability2Damage.text = str(Globals.fragGrenadeDamage) + " DMG"
 		$ability2/ability2Cooldown.text = str(int(round(Globals.fragGrenadeCooldown))) + " COOLDOWN"
+		# say ready if cooldown is gone
 		if Globals.fragGrenadeCooldown == 0:
 			$ability2/ability2Cooldown.text = "READY!"
 	elif Globals.ability2 == "Burst attack":
 		# if the ability is the burst attack
 		$ability2/ability2Damage.text = str(Globals.burstDamage) + " DMG"
 		$ability2/ability2Cooldown.text = str(int(round(Globals.burstCooldown))) + " COOLDOWN"
+		# say ready if cooldown is gone
 		if Globals.burstCooldown == 0:
 			$ability2/ability2Cooldown.text = "READY!"
 	elif Globals.ability2 == "Piercer":
 		# if the ability is the piercer
 		$ability2/ability2Damage.text = str(Globals.piercerDamage) + " DMG"
 		$ability2/ability2Cooldown.text = str(int(round(Globals.piercerCooldown))) + " COOLDOWN"
+		# say ready if cooldown is gone
 		if Globals.piercerCooldown == 0:
 			$ability2/ability2Cooldown.text = "READY!"
 	
