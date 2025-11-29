@@ -195,7 +195,7 @@ func upgradeBurstAttack():
 
 func upgradePiercer():
 	Globals.orbs -= Globals.piercerLevel * 35
-	Globals.piercerDamage += 0.75
+	Globals.piercerDamage += 0.5
 	Globals.piercerSpeed += 22
 	Globals.piercerLevel += 1
 
