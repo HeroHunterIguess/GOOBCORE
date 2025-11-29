@@ -22,3 +22,7 @@ func _on_ldm_button_pressed() -> void:
 	else:
 		Globals.ldm = false
 		$ldmButton.text = "Low detail mode disabled"
+
+
+func _on_quit_game_pressed() -> void:
+	get_tree().quit()

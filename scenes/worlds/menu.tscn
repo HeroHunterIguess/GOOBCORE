@@ -105,5 +105,15 @@ theme_override_fonts/font = ExtResource("2_jg4ok")
 theme_override_font_sizes/font_size = 16
 text = "Low detail mode disabled"
 
+[node name="quitGame" type="Button" parent="."]
+offset_left = 568.0
+offset_top = 680.0
+offset_right = 712.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("2_jg4ok")
+theme_override_font_sizes/font_size = 14
+text = "QUIT GAME"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ldmButton" to="." method="_on_ldm_button_pressed"]
+[connection signal="pressed" from="quitGame" to="." method="_on_quit_game_pressed"]
