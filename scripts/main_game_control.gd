@@ -294,7 +294,25 @@ func _process(delta):
 	
 	# send to game over screen if player dies
 	if Globals.playerHealth <= 0:
+		
+		# pause and play death animation
+		get_tree().paused = true
+		
+		$goobDie.visible = true
+		$goobert.visible = false
+		$goobertHurt.visible = false
+		$goobDie.play()
+		
+		await get_tree().create_timer(0.95).timeout
+		
+		get_tree().paused = false
+		$goobert.visible = true
+		$goobertHurt.visible = true
+		$goobDie.visible = false
+		$goobDie.stop()
+		
 		get_tree().change_scene_to_file("res://scenes/worlds/game_over.tscn")
+		
 	
 	# spawn new wave if current wave ends
 	if is_inside_tree():
@@ -309,4 +327,10 @@ func _process(delta):
 func _on_player_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
 		Globals.decreasePlayerHealth(area.get_parent().damage)
-		print(Globals.playerHealth)
+		
+		# play hurt animation and sfx
+		$goobertHurt.visible = true
+		$goobertHurtSfx.play()
+		await get_tree().create_timer(0.5).timeout
+		$goobertHurt.visible = false
+		

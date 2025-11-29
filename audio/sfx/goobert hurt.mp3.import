@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpymkdlh51a6y"
+path="res://.godot/imported/goobert hurt.mp3-fc74d87cca1fbd961289126717d0c134.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/goobert hurt.mp3"
+dest_files=["res://.godot/imported/goobert hurt.mp3-fc74d87cca1fbd961289126717d0c134.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene load_steps=60 format=3 uid="uid://dh0s4wxpw43wx"]
 
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 [ext_resource type="Shader" uid="uid://b1xuob6aqtiku" path="res://shaders/main_background.gdshader" id="2_dq5l5"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://68v45nhxvho8" path="res://audio/sfx/splat 1.mp3" id="11_jumef"]
 [ext_resource type="AudioStream" uid="uid://dt0cgnudhi3dy" path="res://audio/sfx/disgusting explosion.wav" id="13_wo2sw"]
 [ext_resource type="AudioStream" uid="uid://beuttq7l5hyqh" path="res://audio/sfx/splat 2.mp3" id="14_718pp"]
+[ext_resource type="AudioStream" uid="uid://bpymkdlh51a6y" path="res://audio/sfx/goobert hurt.mp3" id="16_kfjan"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_faocy"]
 shader = ExtResource("2_dq5l5")
@@ -224,6 +225,113 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jqkp"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(1856, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe7ei"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(1920, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mhpgv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jqkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe7ei")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b07n"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(1984, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1061l"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(2048, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr5m3"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(2112, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg60r"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(2176, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svugd"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(2240, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6e32"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(2304, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stush"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(2368, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apb84"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(2432, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qseq"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(2496, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcu3l"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(2560, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_785nq"]
+atlas = ExtResource("2_yqbs0")
+region = Rect2(2624, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qkqj0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b07n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1061l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr5m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg60r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svugd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6e32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stush")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apb84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qseq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcu3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_785nq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
 [node name="MainGameScene" type="Node2D"]
 script = ExtResource("1_ltt4m")
 
@@ -383,14 +491,37 @@ volume_db = -4.106
 pitch_scale = 0.69
 
 [node name="burst" type="AudioStreamPlayer2D" parent="sfx"]
+position = Vector2(640, 504)
 stream = ExtResource("13_wo2sw")
 volume_db = -5.474
 pitch_scale = 0.95
 
 [node name="splat2" type="AudioStreamPlayer2D" parent="sfx"]
+position = Vector2(640, 520)
 stream = ExtResource("14_718pp")
 volume_db = -2.737
 pitch_scale = 0.84
+
+[node name="goobertHurt" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(640, 688)
+scale = Vector2(1.2500007, 1.2499996)
+sprite_frames = SubResource("SpriteFrames_mhpgv")
+autoplay = "default"
+frame_progress = 0.45192483
+
+[node name="goobDie" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+visible = false
+position = Vector2(640, 688)
+scale = Vector2(1.2500004, 1.2499996)
+sprite_frames = SubResource("SpriteFrames_qkqj0")
+frame_progress = 0.81907094
+
+[node name="goobertHurtSfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(640, 536)
+stream = ExtResource("16_kfjan")
+pitch_scale = 1.25
 
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]
