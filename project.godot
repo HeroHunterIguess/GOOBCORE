@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="waves"
+config/name="GOOBCORE"
+config/description="A fast paced shooter rogue-like"
 run/main_scene="uid://cdpcax5u84qrl"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0.08855995, 0.0885599, 0.08855987, 1)
