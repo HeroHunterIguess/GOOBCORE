@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene load_steps=61 format=3 uid="uid://dh0s4wxpw43wx"]
 
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 [ext_resource type="Shader" uid="uid://b1xuob6aqtiku" path="res://shaders/main_background.gdshader" id="2_dq5l5"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dt0cgnudhi3dy" path="res://audio/sfx/disgusting explosion.wav" id="13_wo2sw"]
 [ext_resource type="AudioStream" uid="uid://beuttq7l5hyqh" path="res://audio/sfx/splat 2.mp3" id="14_718pp"]
 [ext_resource type="AudioStream" uid="uid://bpymkdlh51a6y" path="res://audio/sfx/goobert hurt.mp3" id="16_kfjan"]
+[ext_resource type="AudioStream" uid="uid://c7n4lws4sgy2y" path="res://audio/sfx/stupid death sound.mp3" id="17_j501q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_faocy"]
 shader = ExtResource("2_dq5l5")
@@ -378,6 +379,7 @@ position = Vector2(78.76931, 88.61544)
 shape = SubResource("CircleShape2D_ltt4m")
 
 [node name="SpawningTimer" type="Timer" parent="."]
+process_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -508,7 +510,7 @@ position = Vector2(640, 688)
 scale = Vector2(1.2500007, 1.2499996)
 sprite_frames = SubResource("SpriteFrames_mhpgv")
 autoplay = "default"
-frame_progress = 0.35748252
+frame_progress = 0.036548525
 
 [node name="goobDie" type="AnimatedSprite2D" parent="."]
 process_mode = 3
@@ -522,6 +524,11 @@ frame_progress = 0.81907094
 position = Vector2(640, 536)
 stream = ExtResource("16_kfjan")
 pitch_scale = 1.25
+
+[node name="goobDieSFX" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("17_j501q")
+pitch_scale = 0.8
 
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]

@@ -29,6 +29,7 @@ window/size/mode=4
 window/size/resizable=false
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://kgjuhofk873x"
+mouse_cursor/custom_image_hotspot=Vector2(16, 16)
 
 [global_group]
 

@@ -302,6 +302,7 @@ func _process(delta):
 		$goobert.visible = false
 		$goobertHurt.visible = false
 		$goobDie.play()
+		$goobDieSFX.playing = true
 		
 		await get_tree().create_timer(0.95).timeout
 		
@@ -309,6 +310,7 @@ func _process(delta):
 		$goobert.visible = true
 		$goobertHurt.visible = true
 		$goobDie.visible = false
+		$goobDieSFX.playing = false
 		$goobDie.stop()
 		
 		get_tree().change_scene_to_file("res://scenes/worlds/game_over.tscn")
