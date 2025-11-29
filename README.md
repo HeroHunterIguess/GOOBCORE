@@ -3,7 +3,7 @@
 
 ## general info
 This is a relatively small rogue-like game made for Game Off 2025.
-I have made only few relatively small games before, so this is my biggest game to date.
+I have made only few relatively small games before, so this is my biggest (and best!) game to date.
 
 
 
