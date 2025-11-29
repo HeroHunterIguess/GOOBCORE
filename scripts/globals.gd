@@ -82,7 +82,7 @@ func reset():
 	orbs = 10
 	rerollCost = 5
 	overallScore = 0
-	playerHealth = 1
+	playerHealth = 30
 	currentWave = 1
 	noWave = false
 	ability1 = "Basic bullet" 
