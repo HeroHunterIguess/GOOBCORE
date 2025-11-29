@@ -77,6 +77,7 @@ func hitByBasicBullet(EnemyHP):
 
 
 
+
 # resetting all essential variables back to defaults 
 func reset():
 	orbs = 10
