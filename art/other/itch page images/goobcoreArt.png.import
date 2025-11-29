@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drw5a8vljerbg"
-path="res://.godot/imported/itchIOBackground.png-df18a19c6abf36816d7e59cb28bad852.ctex"
+uid="uid://dikep1iwulmhl"
+path="res://.godot/imported/goobcoreArt.png-14f658cd257226cbebaa9db289f9a555.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/other/itchIOBackground.png"
-dest_files=["res://.godot/imported/itchIOBackground.png-df18a19c6abf36816d7e59cb28bad852.ctex"]
+source_file="res://art/other/itch page images/goobcoreArt.png"
+dest_files=["res://.godot/imported/goobcoreArt.png-14f658cd257226cbebaa9db289f9a555.ctex"]
 
 [params]
 
