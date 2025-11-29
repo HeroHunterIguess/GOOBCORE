@@ -36,7 +36,7 @@ script = ExtResource("1_mhhi8")
 scale = Vector2(0.625, 0.5625)
 sprite_frames = SubResource("SpriteFrames_ujj5n")
 autoplay = "default"
-frame_progress = 0.354826
+frame_progress = 0.3177888
 
 [node name="Area2D" type="Area2D" parent="." groups=["basicBulletShot"]]
 

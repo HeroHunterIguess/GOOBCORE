@@ -251,9 +251,14 @@ func _process(delta):
 		$pauseMenuLayer.visible = true
 	
 	
+	if Input.is_action_just_pressed("DevPermanentPause"):
+		get_tree().paused = true
+	
+	
+	
 	
 	#keybind for abilities
-	
+	 
 	if Input.is_action_just_pressed("ability3"):
 		## checking for abilities in slot 1 and doing that
 		if Globals.ability1 == "Basic bullet" && Globals.basicBulletCooldown <= 0:
@@ -269,7 +274,7 @@ func _process(delta):
 		
 		
 		# checking for abilities in slot 2 and spawning those
-		
+	
 	if Input.is_action_just_pressed("ability2"):
 		if Globals.ability2 == "Basic bullet" && Globals.basicBulletCooldown <= 0:
 			spawnBullet()
