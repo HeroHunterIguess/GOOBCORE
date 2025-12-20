@@ -1,6 +1,7 @@
 # GOOBCORE
 
 ## ⚠️ This is the version that is submitted to the Game Off 2025 and as of right now is the newset public version
+Keep in mind this branch will no longer be updated, other then maybe updates to this readme.
 
 ## general info
 This is a relatively small rogue-like game made for Game Off 2025.
