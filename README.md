@@ -1,6 +1,6 @@
 # GOOBCORE
 
-## public game jam version is migrated to the game-jam-version branch
+## ⚠️ public game jam version is migrated to the game-jam-version branch
 
 ## general info
 This is a relatively small rogue-like game made for Game Off 2025.
