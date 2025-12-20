@@ -4,13 +4,13 @@
 Keep in mind this branch will no longer be updated.
 This will become outdated if I continue releasing updates. 
 
-## general info
+## General info
 This is a relatively small rogue-like game made for Game Off 2025.
 I have made only few relatively small games before, so this is my biggest (and best!) game to date.
 
 
 
-## development info
+## Development info
 All game development was done by me (Herohunter), while majority of the sprites and art was done by Dan (Dan O Lantern on itch.io).
 
 If you plan on actually looking through this code to either use it or contribute, keep in mind that I'm aware lots of the code is currently innefficent. 
