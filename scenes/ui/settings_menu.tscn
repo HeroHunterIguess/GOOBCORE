@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://chgmms18xkcyr"]
+
+[ext_resource type="Texture2D" uid="uid://ck87m27403yjp" path="res://art/world sprites/lowDetailBackground.png" id="1_mhswj"]
+[ext_resource type="Shader" uid="uid://b1xuob6aqtiku" path="res://shaders/main_background.gdshader" id="2_x3vyp"]
+[ext_resource type="Texture2D" uid="uid://cfqc8p7vgikvy" path="res://art/ui sprites/newshopui.png" id="3_x3vyp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0b1cv"]
+shader = ExtResource("2_x3vyp")
+shader_parameter/speed = 0.25
+shader_parameter/pixelation = 2.5
+shader_parameter/zoom = 2.5
+shader_parameter/gradient_pixelation = 0.134000006365
+shader_parameter/background_threshold = 0.050000002375
+shader_parameter/color_low_threshold = 0.2070000098325
+shader_parameter/color_mid_threshold = 0.430000020425
+shader_parameter/color_low = Color(0.01, 0.41, 0.51, 1)
+shader_parameter/color_mid = Color(0.07450981, 0.5568628, 0.36078432, 1)
+shader_parameter/color_high = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq6we"]
+atlas = ExtResource("3_x3vyp")
+region = Rect2(0, 0, 256, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34qjv"]
+atlas = ExtResource("3_x3vyp")
+region = Rect2(256, 0, 256, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0b1cv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq6we")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34qjv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="settingsMenu" type="Node2D"]
+
+[node name="LowDetailBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.9460459, 0.8977556)
+texture = ExtResource("1_mhswj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(3.85046e-07, 0.1639067, 0.23488745, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="shaderBG" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_0b1cv")
+offset_left = -136.0
+offset_top = -136.0
+offset_right = 1496.0
+offset_bottom = 864.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 348)
+scale = Vector2(3.2499998, 3.4468086)
+sprite_frames = SubResource("SpriteFrames_0b1cv")
+autoplay = "default"
