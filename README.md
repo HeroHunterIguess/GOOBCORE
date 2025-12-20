@@ -1,15 +1,15 @@
 # GOOBCORE
 
-## ⚠️ public game jam version is migrated to the game-jam-version branch
+## ⚠️ Public game jam version is migrated to the game-jam-version branch
 This main branch will contain the most up-to-date code, however may not be released.
 
-## general info
+## General info
 This is a relatively small rogue-like game made for Game Off 2025.
 I have made only few relatively small games before, so this is my biggest (and best!) game to date.
 
 
 
-## development info
+## Development info
 All game development was done by me (HeroHunter), while majority of the sprites and art was done by Dan (Dan O' Lantern on itch.io).
 
 If you plan on actually looking through this code to either use it or contribute, keep in mind that I'm aware lots of the code is currently innefficent. 
