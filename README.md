@@ -15,7 +15,7 @@ All game development was done by me (HeroHunter), while majority of the sprites 
 If you plan on actually looking through this code to either use it or contribute, keep in mind that I'm aware lots of the code is currently innefficent. 
 I am aware I am not the best at coding, and that is part of the reason for the messy code, but also I rushed some of this to get it done in time for the jam.
 
-This game is currently inactive and not being developed.
+This game not is currently inactive and not being developed.
 
 Play the game at: 
 https://herohunterr.itch.io/goobcore
