@@ -1,7 +1,7 @@
 extends Node2D
 
 
-# preload enemy scenes
+# preload all required scenes
 const basicEnemyPreload = preload("res://scenes/objects/enemy types/enemy.tscn")
 const basicBulletPreload = preload("res://scenes/objects/basic_bullet.tscn")
 const fastEnemyPreload = preload("res://scenes/objects/enemy types/fast_enemy.tscn")
