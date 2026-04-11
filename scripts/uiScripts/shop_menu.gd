@@ -165,21 +165,18 @@ func _on_resume_pressed() -> void:
 # funcs to do the upgrading
 func upgradeBasicBullet():
 	Globals.orbs -= Globals.basicBulletLevel * 35
-	Globals.basicBulletCooldown -= 3
 	Globals.basicBulletDamage += 0.7
 	Globals.basicBulletSpeed += 30
 	Globals.basicBulletLevel += 1
 
 func upgradePushWall():
 	Globals.orbs -= Globals.wideAttackLevel * 35
-	Globals.wideAttackCooldown -= 20
 	Globals.wideAttackDamage += 0.35
 	Globals.wideAttackSpeed += 20
 	Globals.wideAttackLevel += 1
 
 func upgradeFragGrenade():
 	Globals.orbs -= Globals.fragGrenadeLevel * 35
-	Globals.fragGrenadeCooldown -= 25
 	Globals.fragGrenadeDamage += 0.6
 	Globals.fragGrenadeSpeed += 25
 	Globals.fragGrenadeAmount += 1
@@ -190,7 +187,6 @@ func upgradeBurstAttack():
 	Globals.orbs -= Globals.burstLevel * 35
 	Globals.burstAmount += 1
 	Globals.burstDamage += 0.45
-	Globals.burstCooldown -= 40
 	Globals.burstLevel += 1
 
 func upgradePiercer():
@@ -402,4 +398,4 @@ func _on_reset_game_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	$settingsLayer.visible = true
+	$/root/MainGameScene/settingsMenu.visible = true

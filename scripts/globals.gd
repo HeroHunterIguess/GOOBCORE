@@ -2,6 +2,8 @@ extends Node
 
 
 # setting a bajillion variables to the default irrelevant values (they get changed by reset() anyways)
+# might impliment an object oriented method later
+
 var orbs = 10
 var overallScore = 0
 var currentWave = 1
