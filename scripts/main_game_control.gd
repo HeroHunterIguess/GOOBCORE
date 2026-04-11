@@ -1,7 +1,7 @@
 extends Node2D
 
 
-# preload enemy scenes
+# preload all required scenes
 const basicEnemyPreload = preload("res://scenes/objects/enemy types/enemy.tscn")
 const basicBulletPreload = preload("res://scenes/objects/basic_bullet.tscn")
 const fastEnemyPreload = preload("res://scenes/objects/enemy types/fast_enemy.tscn")
@@ -46,8 +46,6 @@ func advancedWaveControl(waveNum):
 
 
 
-
-
 # spawn a wave with a certain amount of basic enemies at random positions (off-screen)
 var rng = RandomNumberGenerator.new()
 func spawnBasicWave(amountOfEnemies,hp):
@@ -80,8 +78,6 @@ func spawnSpitterWave(amountOfEnemies,hp):
 		add_child(spitter)
 		spitter.health = hp
 		spitter.global_position = Vector2(rng.randi_range(-50,1200),rng.randi_range(-50,-400))
-
-
 
 
 
@@ -194,8 +190,6 @@ func spawnPiercer():
 
 
 
-
-
 # runs every frame
 func _process(delta):
 	
@@ -230,8 +224,6 @@ func _process(delta):
 		# maybe play sfx here as sheild spawns
 	
 	
-	
-	
 	# display info on screen
 	if Globals.noWave == false:
 		$ui/waveNum.text =  str(Globals.currentWave)
@@ -243,8 +235,6 @@ func _process(delta):
 	$goobert.rotation_degrees += 90
 	
 	
-	
-	
 	if Input.is_action_just_pressed("openShop"):
 		$ui/openShopLabel.visible = false
 		get_tree().paused = true
@@ -253,8 +243,6 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("DevPermanentPause"):
 		get_tree().paused = true
-	
-	
 	
 	
 	#keybind for abilities
@@ -290,8 +278,6 @@ func _process(delta):
 	
 	
 	
-	
-	
 	# send to game over screen if player dies
 	if Globals.playerHealth <= 0:
 		
@@ -321,7 +307,6 @@ func _process(delta):
 		if get_tree().get_nodes_in_group("Enemy").size() == 0 && Globals.noWave == false:
 			Globals.currentWave += 1
 			advancedWaveControl(Globals.currentWave)
-
 
 
 
