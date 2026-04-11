@@ -339,7 +339,7 @@ func _on_buy_new_ability_pressed() -> void:
 		# set back to default text if youre broke
 		$buyNewAbility.text = "NOT ENOUGH ORBS"
 		await get_tree().create_timer(0.75).timeout
-		
+		updateUpgradeText()
 
 
 
