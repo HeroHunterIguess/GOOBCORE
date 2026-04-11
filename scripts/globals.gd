@@ -5,6 +5,7 @@ extends Node
 var orbs = 10
 var overallScore = 0
 var currentWave = 1
+
 var rerollCost = 5
 var ldm = false
 var playerLocation = Vector2(640,688)
@@ -125,8 +126,8 @@ func reset():
 	
 	
 	
-	piercerBaseCost = 32
-	piercerCooldown = 65
+	piercerBaseCost = 35
+	piercerCooldown = 70
 	piercerDamage = 1.9
 	piercerSpeed = 585
 	piercerLevel = 1

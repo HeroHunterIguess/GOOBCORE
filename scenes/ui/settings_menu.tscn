@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://chgmms18xkcyr"]
+[gd_scene load_steps=10 format=3 uid="uid://chgmms18xkcyr"]
 
 [ext_resource type="Texture2D" uid="uid://ck87m27403yjp" path="res://art/world sprites/lowDetailBackground.png" id="1_mhswj"]
+[ext_resource type="Script" uid="uid://h71p0qjogaco" path="res://scripts/uiScripts/settings_menu.gd" id="1_yu862"]
 [ext_resource type="Shader" uid="uid://b1xuob6aqtiku" path="res://shaders/main_background.gdshader" id="2_x3vyp"]
 [ext_resource type="Texture2D" uid="uid://cfqc8p7vgikvy" path="res://art/ui sprites/newshopui.png" id="3_x3vyp"]
 [ext_resource type="FontFile" uid="uid://cq6pxojdhmyhs" path="res://fonts/daydream_3/Daydream DEMO.otf" id="4_0b1cv"]
@@ -41,6 +42,7 @@ animations = [{
 }]
 
 [node name="settingsMenu" type="Node2D"]
+script = ExtResource("1_yu862")
 
 [node name="LowDetailBackground" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
@@ -66,14 +68,14 @@ position = Vector2(640, 348)
 scale = Vector2(3.2499998, 3.4468086)
 sprite_frames = SubResource("SpriteFrames_0b1cv")
 autoplay = "default"
-frame_progress = 0.44563767
+frame_progress = 0.5065625
 
 [node name="buttons" type="Node" parent="."]
 
 [node name="backToGame" type="Button" parent="buttons"]
-offset_left = 264.0
+offset_left = 256.0
 offset_top = 88.0
-offset_right = 1016.0
+offset_right = 1024.0
 offset_bottom = 144.0
 theme_override_fonts/font = ExtResource("4_0b1cv")
 theme_override_font_sizes/font_size = 24
@@ -127,3 +129,5 @@ theme_override_font_sizes/font_size = 20
 text = "Visual"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="buttons/backToGame" to="." method="_on_back_to_game_pressed"]

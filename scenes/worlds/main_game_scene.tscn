@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene format=3 uid="uid://dh0s4wxpw43wx"]
 
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 [ext_resource type="Shader" uid="uid://b1xuob6aqtiku" path="res://shaders/main_background.gdshader" id="2_dq5l5"]
@@ -333,21 +333,21 @@ animations = [{
 "speed": 11.0
 }]
 
-[node name="MainGameScene" type="Node2D"]
+[node name="MainGameScene" type="Node2D" unique_id=519004655]
 script = ExtResource("1_ltt4m")
 
-[node name="LowDetailBackground" type="Sprite2D" parent="."]
+[node name="LowDetailBackground" type="Sprite2D" parent="." unique_id=660220199]
 position = Vector2(640, 360)
 scale = Vector2(0.9460459, 0.8977556)
 texture = ExtResource("2_q7wkj")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1298997386]
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(3.85046e-07, 0.1639067, 0.23488745, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="shaderBG" type="ColorRect" parent="."]
+[node name="shaderBG" type="ColorRect" parent="." unique_id=234732517]
 material = SubResource("ShaderMaterial_faocy")
 offset_left = -136.0
 offset_top = -136.0
@@ -355,7 +355,7 @@ offset_right = 1496.0
 offset_bottom = 864.0
 metadata/_edit_use_anchors_ = true
 
-[node name="goobert" type="AnimatedSprite2D" parent="."]
+[node name="goobert" type="AnimatedSprite2D" parent="." unique_id=66587152]
 visible = false
 texture_filter = 1
 position = Vector2(640, 688.00006)
@@ -364,26 +364,26 @@ sprite_frames = SubResource("SpriteFrames_dq5l5")
 autoplay = "default"
 frame_progress = 0.73467404
 
-[node name="goobertSpin" type="AnimatedSprite2D" parent="."]
+[node name="goobertSpin" type="AnimatedSprite2D" parent="." unique_id=1987086025]
 position = Vector2(640, 688)
 scale = Vector2(1.2500006, 1.25)
 sprite_frames = SubResource("SpriteFrames_8jqkp")
 frame_progress = 0.19958392
 
-[node name="playerHitbox" type="Area2D" parent="." groups=["Player"]]
+[node name="playerHitbox" type="Area2D" parent="." unique_id=1407472104 groups=["Player"]]
 position = Vector2(576, 616)
 scale = Vector2(0.8125, 0.81250024)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox" unique_id=1759473230]
 position = Vector2(78.76931, 88.61544)
 shape = SubResource("CircleShape2D_ltt4m")
 
-[node name="SpawningTimer" type="Timer" parent="."]
+[node name="SpawningTimer" type="Timer" parent="." unique_id=368681773]
 process_mode = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=482585175]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1699898228]
 material = SubResource("ShaderMaterial_xxp0d")
 offset_left = -208.0
 offset_top = -152.0
@@ -392,10 +392,10 @@ offset_bottom = 832.0
 color = Color(0, 0, 0, 0.30588236)
 metadata/_edit_use_anchors_ = true
 
-[node name="ui" type="CanvasLayer" parent="."]
+[node name="ui" type="CanvasLayer" parent="." unique_id=2019936696]
 process_mode = 3
 
-[node name="Health" type="Label" parent="ui"]
+[node name="Health" type="Label" parent="ui" unique_id=990638393]
 anchors_preset = -1
 anchor_left = 0.2875
 anchor_top = -0.9
@@ -411,7 +411,7 @@ text = "x HP"
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="waveNum" type="Label" parent="ui"]
+[node name="waveNum" type="Label" parent="ui" unique_id=1713420584]
 modulate = Color(0.98240346, 0.9709955, 0.9668992, 1)
 texture_filter = 1
 anchors_preset = -1
@@ -425,7 +425,7 @@ theme_override_font_sizes/font_size = 70
 text = "1"
 metadata/_edit_use_anchors_ = true
 
-[node name="Orbs" type="Label" parent="ui"]
+[node name="Orbs" type="Label" parent="ui" unique_id=1109009979]
 anchors_preset = -1
 anchor_left = 0.019000001
 anchor_top = 0.17788889
@@ -441,7 +441,7 @@ text = "x orbs"
 script = ExtResource("7_f8mih")
 metadata/_edit_use_anchors_ = true
 
-[node name="waveTextAnimation" type="AnimatedSprite2D" parent="ui"]
+[node name="waveTextAnimation" type="AnimatedSprite2D" parent="ui" unique_id=1941834585]
 texture_filter = 1
 position = Vector2(111.99999, 64.00001)
 scale = Vector2(1.5833335, 1.875)
@@ -449,7 +449,7 @@ sprite_frames = SubResource("SpriteFrames_c7761")
 autoplay = "default"
 frame_progress = 0.37356403
 
-[node name="openShopLabel" type="Label" parent="ui"]
+[node name="openShopLabel" type="Label" parent="ui" unique_id=783635771]
 offset_left = 384.0
 offset_right = 896.0
 offset_bottom = 88.0
@@ -458,53 +458,53 @@ theme_override_font_sizes/font_size = 20
 text = "Press tab to open the shop!"
 horizontal_alignment = 1
 
-[node name="pauseMenuLayer" type="CanvasLayer" parent="."]
+[node name="pauseMenuLayer" type="CanvasLayer" parent="." unique_id=959069246]
 
-[node name="pauseMenu" parent="pauseMenuLayer" instance=ExtResource("3_yqbs0")]
+[node name="pauseMenu" parent="pauseMenuLayer" unique_id=1259490283 instance=ExtResource("3_yqbs0")]
 metadata/_edit_use_anchors_ = true
 
-[node name="abilityUI" parent="." instance=ExtResource("8_seagn")]
+[node name="abilityUI" parent="." unique_id=210054277 instance=ExtResource("8_seagn")]
 position = Vector2(392, 720)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=412721552]
 position = Vector2(640, 288)
 stream = ExtResource("9_c7761")
 volume_db = -10.742
 autoplay = true
 
-[node name="ability menu sprite" type="AnimatedSprite2D" parent="."]
+[node name="ability menu sprite" type="AnimatedSprite2D" parent="." unique_id=1621226420]
 position = Vector2(166, 720.00006)
 scale = Vector2(1.859375, 1.7340425)
 sprite_frames = SubResource("SpriteFrames_wo2sw")
 autoplay = "default"
 frame_progress = 0.29447833
 
-[node name="sfx" type="Node" parent="."]
+[node name="sfx" type="Node" parent="." unique_id=241237257]
 
-[node name="splat1" type="AudioStreamPlayer2D" parent="sfx"]
+[node name="splat1" type="AudioStreamPlayer2D" parent="sfx" unique_id=703617453]
 position = Vector2(640, 576)
 stream = ExtResource("11_jumef")
 volume_db = -6.842
 
-[node name="lowerPitchSplat" type="AudioStreamPlayer2D" parent="sfx"]
+[node name="lowerPitchSplat" type="AudioStreamPlayer2D" parent="sfx" unique_id=760942915]
 position = Vector2(640, 568)
 stream = ExtResource("11_jumef")
 volume_db = -4.106
 pitch_scale = 0.69
 
-[node name="burst" type="AudioStreamPlayer2D" parent="sfx"]
+[node name="burst" type="AudioStreamPlayer2D" parent="sfx" unique_id=1808238824]
 position = Vector2(640, 504)
 stream = ExtResource("13_wo2sw")
 volume_db = -5.474
 pitch_scale = 0.95
 
-[node name="splat2" type="AudioStreamPlayer2D" parent="sfx"]
+[node name="splat2" type="AudioStreamPlayer2D" parent="sfx" unique_id=506472436]
 position = Vector2(640, 520)
 stream = ExtResource("14_718pp")
 volume_db = -2.737
 pitch_scale = 0.84
 
-[node name="goobertHurt" type="AnimatedSprite2D" parent="."]
+[node name="goobertHurt" type="AnimatedSprite2D" parent="." unique_id=1269327817]
 visible = false
 position = Vector2(640, 688)
 scale = Vector2(1.2500007, 1.2499996)
@@ -512,7 +512,7 @@ sprite_frames = SubResource("SpriteFrames_mhpgv")
 autoplay = "default"
 frame_progress = 0.036548525
 
-[node name="goobDie" type="AnimatedSprite2D" parent="."]
+[node name="goobDie" type="AnimatedSprite2D" parent="." unique_id=1484265126]
 process_mode = 3
 visible = false
 position = Vector2(640, 688)
@@ -520,13 +520,13 @@ scale = Vector2(1.2500004, 1.2499996)
 sprite_frames = SubResource("SpriteFrames_qkqj0")
 frame_progress = 0.81907094
 
-[node name="goobertHurtSfx" type="AudioStreamPlayer2D" parent="."]
+[node name="goobertHurtSfx" type="AudioStreamPlayer2D" parent="." unique_id=1838048662]
 position = Vector2(640, 536)
 stream = ExtResource("16_kfjan")
 volume_db = 1.3
 pitch_scale = 0.75
 
-[node name="goobDieSFX" type="AudioStreamPlayer2D" parent="."]
+[node name="goobDieSFX" type="AudioStreamPlayer2D" parent="." unique_id=219674853]
 process_mode = 3
 stream = ExtResource("17_j501q")
 pitch_scale = 0.8

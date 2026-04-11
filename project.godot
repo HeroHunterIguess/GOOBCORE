@@ -8,12 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="GOOBCORE"
 config/description="A fast paced shooter rogue-like"
 run/main_scene="uid://cdpcax5u84qrl"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.08855995, 0.0885599, 0.08855987, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"

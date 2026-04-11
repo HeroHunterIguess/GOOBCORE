@@ -49,11 +49,11 @@ autoplay = "default"
 frame_progress = 0.20768091
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
-position = Vector2(248.47057, 161.14287)
+position = Vector2(245.4588, 136.97144)
 scale = Vector2(0.6457721, 0.5465045)
 sprite_frames = SubResource("SpriteFrames_hadpg")
 autoplay = "default"
-frame_progress = 0.8908849
+frame_progress = 0.71303844
 
 [node name="Resume" type="Button" parent="."]
 layout_mode = 0
@@ -140,12 +140,21 @@ text = "Replace [ability 2]"
 
 [node name="resetGame" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1144.0
+offset_left = 1136.0
 offset_top = 728.0
 offset_right = 1312.0
 offset_bottom = 792.0
 theme_override_fonts/font = ExtResource("3_kq6we")
 text = "RESET GAME"
+
+[node name="settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1136.0
+offset_top = 656.0
+offset_right = 1312.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("3_kq6we")
+text = "settings"
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="ability1Upgrade" to="." method="_on_ability_1_upgrade_pressed"]
@@ -156,3 +165,4 @@ text = "RESET GAME"
 [connection signal="pressed" from="whichAbility/selectAbility1" to="." method="_on_select_ability_1_pressed"]
 [connection signal="pressed" from="whichAbility/selectAbility2" to="." method="_on_select_ability_2_pressed"]
 [connection signal="pressed" from="resetGame" to="." method="_on_reset_game_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

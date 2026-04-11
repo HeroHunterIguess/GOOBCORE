@@ -397,3 +397,9 @@ func _on_reset_game_pressed() -> void:
 	Globals.reset()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/worlds/menu.tscn")
+
+
+
+
+func _on_settings_pressed() -> void:
+	$settingsLayer.visible = true
